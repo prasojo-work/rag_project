@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block title %}Evaluasi · TravelKita CS Copilot{% endblock %}
+{% block content %}
+<section class="page-head">
+  <p class="eyebrow">Internal review · Measurement</p>
+  <h1>Evaluasi retrieval</h1>
+  <p class="lede">
+    50 pertanyaan uji, 48 di antaranya punya ground-truth dokumen. Metrik
+    dihitung pada level dokumen, bukan sekadar “terasa relevan”.
+  </p>
+</section>
+
+{% if not view %}
+  <div class="callout callout-warn">
+    <strong>Belum ada hasil evaluasi.</strong>
+    Jalankan <code>uv run python scripts/evaluate_retrieval.py</code> terlebih dahulu.
+  </div>
+{% else %}
+  <section class="metric-cards">
+    <div class="metric-card">
+      <span class="metric-label">Pertanyaan</span>
+      <strong>{{ view.meta.question_count or 50 }}</strong>
+      <small>{{ view.modes[0].overall.answerable if view.modes else 48 }} answerable</small>
+    </div>
+    <div class="metric-card">
+      <span class="metric-label">Embedding</span>
+      <strong class="metric-model">{{ view.meta.embedding_model or '—' }}</strong>
+      <small>{{ view.meta.as_of or '—' }}</small>
+    </div>
+    <div class="metric-card">
+      <span class="metric-label">Index</span>
+      <strong class="metric-model">{{ view.meta.index_version or '—' }}</strong>
+      <small>top-k {{ view.meta.top_k or 10 }}</small>
+    </div>
+  </section>
+
+  <section class="content-card">
+    <div class="card-head">
+      <div>
+        <p class="eyebrow">Overall</p>
+        <h2>Perbandingan mode</h2>
+      </div>
+      <span class="muted">Semakin tinggi, semakin baik</span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Mode</th>
+            <th>Recall@5</th>
+            <th>Hit@5</th>
+            <th>Precision@5</th>
+            <th>MRR@10</th>
+            <th>nDCG@5</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for mode in view.modes %}
+            <tr>
+              <td>
+                <span class="mode-dot mode-{{ mode.key }}"></span>
+                <strong>{{ mode.label }}</strong>
+              </td>
+              {% for key in ['recall@5', 'hit@5', 'precision@5', 'mrr@10', 'ndcg@5'] %}
+                <td>
+                  <div class="metric-cell">
+                    <span>{{ '%.3f'|format(mode.overall[key] or 0) }}</span>
+                    <div class="bar">
+                      <span
+                        class="bar-fill mode-{{ mode.key }}"
+                        style="width: {{ ((mode.overall[key] or 0) * 100)|round(1) }}%"
+                      ></span>
+                    </div>
+                  </div>
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="hint">
+      Hybrid unggul di Recall@5; Dense unggul di MRR/nDCG pada run terakhir.
+      Lihat failure case di bawah untuk melihat di mana retrieval masih meleset.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <div class="card-head">
+      <div>
+        <p class="eyebrow">Breakdown</p>
+        <h2>Per difficulty</h2>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Mode</th>
+            <th>Difficulty</th>
+            <th>Recall@5</th>
+            <th>Hit@5</th>
+            <th>MRR@10</th>
+            <th>nDCG@5</th>
+            <th>n</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for mode in view.modes %}
+            {% for difficulty, values in mode.by_difficulty.items() %}
+              <tr>
+                <td><strong>{{ mode.label }}</strong></td>
+                <td><span class="badge">{{ difficulty }}</span></td>
+                <td>{{ '%.3f'|format(values['recall@5'] or 0) }}</td>
+                <td>{{ '%.3f'|format(values['hit@5'] or 0) }}</td>
+                <td>{{ '%.3f'|format(values['mrr@10'] or 0) }}</td>
+                <td>{{ '%.3f'|format(values['ndcg@5'] or 0) }}</td>
+                <td>{{ values.count }}</td>
+              </tr>
+            {% endfor %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="content-card">
+    <div class="card-head">
+      <div>
+        <p class="eyebrow">Failure analysis</p>
+        <h2>Pertanyaan yang belum sempurna</h2>
+      </div>
+      <span class="muted">{{ view.failure_count }} pertanyaan</span>
+    </div>
+
+    {% if not view.failure_cases %}
+      <p class="muted">Tidak ada failure case pada run ini.</p>
+    {% else %}
+      <div class="failure-list">
+        {% for item in view.failure_cases %}
+          <article class="failure-card">
+            <div class="failure-head">
+              <span class="badge">{{ item.difficulty }}</span>
+              <span class="badge">{{ item.category }}</span>
+              <span class="badge badge-warn">recall {{ '%.3f'|format(item.recall) }}</span>
+            </div>
+            <h3>{{ item.question }}</h3>
+            <div class="failure-meta">
+              <div>
+                <span class="muted">Dibutuhkan</span>
+                <div class="doc-list">
+                  {% for doc_id in item.relevant %}<code>{{ doc_id }}</code>{% endfor %}
+                </div>
+              </div>
+              <div>
+                <span class="muted">Top-5 retrieved</span>
+                <div class="doc-list">
+                  {% for doc_id in item.ranked %}<code>{{ doc_id }}</code>{% endfor %}
+                </div>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <p class="hint">
+        Sebagian besar miss adalah pertanyaan multi-dokumen: model retrieval
+        menemukan satu sumber utama, tetapi belum menemukan sumber pendukung
+        dalam top-5. Kandidat perbaikan: menaikkan top-k context, query
+        expansion, atau rerank.
+      </p>
+    {% endif %}
+  </section>
+{% endif %}
+{% endblock %}

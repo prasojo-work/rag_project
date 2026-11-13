@@ -1,0 +1,527 @@
+[
+  {
+    "question": "Saya mau pesan tiket pesawat Jakarta–Bali. Bagaimana langkah booking di TravelKita?",
+    "ground_truth_answer": "Buka aplikasi atau situs TravelKita, masukkan kota asal/tujuan, tanggal, dan jumlah penumpang. Pilih penerbangan maskapai mitra sambil memperhatikan bagasi, transit, dan fare rules. Isi data penumpang sesuai KTP (domestik) atau paspor (internasional), pilih add-on, lalu pilih metode pembayaran: kartu kredit/debit, VA, GoPay/OVO/Dana, QRIS, atau TravelKita PayLater. Selesaikan pembayaran sebelum batas waktu umumnya 30 menit. E-tiket terbit maksimal 15 menit setelah pembayaran ke email dan aplikasi. Jika e-tiket belum diterima, cek spam atau kirim ulang dari menu Pesanan (KB-FAQ-010).",
+    "source_doc_ids": [
+      "KB-FAQ-001"
+    ],
+    "difficulty": "easy",
+    "category": "booking",
+    "notes": "Jawaban langsung tersedia di satu FAQ; langkah booking pesawat."
+  },
+  {
+    "question": "Bagaimana cara booking hotel dan tiket kereta api di TravelKita?",
+    "ground_truth_answer": "Hotel: buka menu Hotel, masukkan destinasi, tanggal check-in/check-out, jumlah kamar dan tamu, lalu pilih properti dan tipe kamar. Perhatikan rate policy (flexible atau non-refundable), isi nama tamu sesuai identitas, dan bayar; voucher terbit maksimal 30 menit setelah pembayaran. Kereta: buka menu Kereta, pilih stasiun asal/tujuan, tanggal, dan jumlah penumpang, lalu pilih jadwal KAI dan kelas. Isi data penumpang sesuai KTP, pilih kursi bila tersedia, dan bayar; e-tiket dapat diunduh dari menu Pesanan.",
+    "source_doc_ids": [
+      "KB-FAQ-002"
+    ],
+    "difficulty": "easy",
+    "category": "booking",
+    "notes": "Dua alur booking dijelaskan dalam satu FAQ."
+  },
+  {
+    "question": "Untuk pesan tiket kereta Jakarta–Yogyakarta, data apa yang harus disiapkan dan bagaimana caranya?",
+    "ground_truth_answer": "Siapkan identitas penumpang sesuai KTP. Buka menu Kereta di aplikasi, pilih stasiun asal dan tujuan, tanggal, serta jumlah penumpang. Pilih jadwal KAI dan kelas (Ekonomi, Eksekutif, atau Luxury), lalu tentukan kursi bila tersedia. Isi data penumpang dan bayar. Setelah pembayaran berhasil, e-tiket diterbitkan dan dapat diunduh dari menu Pesanan. Perubahan jadwal kereta mengikuti KB-POL-004.",
+    "source_doc_ids": [
+      "KB-FAQ-002"
+    ],
+    "difficulty": "easy",
+    "category": "booking",
+    "notes": "Langkah booking kereta ada di satu FAQ."
+  },
+  {
+    "question": "E-tiket pesawat saya belum masuk email padahal pembayaran berhasil. Apa yang harus saya lakukan?",
+    "ground_truth_answer": "E-tiket biasanya dikirim maksimal 15 menit setelah pembayaran. Periksa folder Spam, Promosi, dan All Mail, lalu pastikan alamat email pada akun dan pesanan benar. Buka Pesanan > Detail Pesanan > Kirim Ulang E-tiket, tunggu 5–10 menit, dan tambahkan domain travelkita.co.id ke kontak. E-tiket juga tersedia sebagai PDF di menu Pesanan. Jika setelah 30 menit tetap tidak diterima, hubungi CS dengan Ticket ID TK-YYYYMMDD-XXXX, nama penumpang, kode booking, dan email alternatif.",
+    "source_doc_ids": [
+      "KB-FAQ-010"
+    ],
+    "difficulty": "easy",
+    "category": "booking",
+    "notes": "Troubleshooting e-tiket di satu FAQ."
+  },
+  {
+    "question": "Saya bayar pakai Virtual Account, saldo terpotong tetapi pesanan gagal. Bagaimana proses refundnya?",
+    "ground_truth_answer": "Jangan mengulang pembayaran agar tidak terpotong dua kali. Buka menu Pesanan dan cek status GAGAL, PENDING, atau BERHASIL, lalu tunggu maksimal 1x24 jam untuk rekonsiliasi otomatis. Jika status GAGAL dan dana belum kembali, hubungi CS dengan Ticket ID TK-YYYYMMDD-XXXX serta lampirkan bukti pembayaran, mutasi, dan tangkapan layar. Refund VA/transfer bank diproses 3–7 hari kerja dan tidak dikenakan biaya admin karena kegagalan sistem. Jika dana belum masuk melewati 7 hari kerja, tiket dieskalasi ke L2.",
+    "source_doc_ids": [
+      "KB-FAQ-003"
+    ],
+    "difficulty": "easy",
+    "category": "pembayaran",
+    "notes": "Langkah dan timeline refund pembayaran gagal ada di satu FAQ."
+  },
+  {
+    "question": "Refund ke GoPay berapa lama dan berapa biaya adminnya?",
+    "ground_truth_answer": "Refund ke GoPay/OVO/Dana diproses 1–3 hari kerja ke nomor e-wallet asal, dengan biaya admin Rp 10.000. Dana tidak dapat dialihkan ke rekening pihak ketiga. Untuk metode lain: VA/transfer bank 3–7 hari kerja (admin Rp 25.000), QRIS 3–7 hari kerja (admin Rp 15.000), kartu kredit/debit maksimal 7 hari kerja (admin Rp 25.000), dan PayLater 3–5 hari kerja (gratis).",
+    "source_doc_ids": [
+      "KB-POL-002"
+    ],
+    "difficulty": "easy",
+    "category": "refund",
+    "notes": "Tabel metode refund ada di satu kebijakan."
+  },
+  {
+    "question": "Berapa biaya administrasi refund dan kapan biaya itu dibebaskan?",
+    "ground_truth_answer": "Biaya admin refund sukarela adalah Rp 25.000 per transaksi. Biaya ini dibebaskan untuk pembatalan oleh maskapai/hotel/KAI, force majeure, kesalahan sistem TravelKita, dan pelanggan tier Platinum. Biaya tidak dipotong dua kali bila satu pembatalan mencakup beberapa penumpang dalam satu kode booking. Metode e-wallet dikenakan Rp 10.000, QRIS Rp 15.000, dan PayLater gratis.",
+    "source_doc_ids": [
+      "KB-POL-002"
+    ],
+    "difficulty": "easy",
+    "category": "refund",
+    "notes": "Ketentuan potongan admin ada di satu kebijakan."
+  },
+  {
+    "question": "Di mana saya bisa cek status refund dan apa arti masing-masing status?",
+    "ground_truth_answer": "Buka menu Pesanan, pilih pesanan yang dibatalkan, lalu masuk ke tab Refund atau Pengembalian Dana. Status DIAJUKAN berarti menunggu verifikasi dokumen; DIPROSES berarti sedang diverifikasi Divisi Refund & Settlement; DISETUJUI berarti nominal final dan menunggu transfer; DANA DIKIRIM berarti dana sudah dikirim; SELESAI berarti dana diterima; DITOLAK disertai alasan. Jika status tidak berubah lebih dari 7 hari kerja, hubungi CS dengan Ticket ID.",
+    "source_doc_ids": [
+      "KB-FAQ-005"
+    ],
+    "difficulty": "easy",
+    "category": "refund",
+    "notes": "Daftar status refund ada di satu FAQ."
+  },
+  {
+    "question": "Saya sakit dan harus membatalkan penerbangan. Surat dokter seperti apa yang diperlukan?",
+    "ground_truth_answer": "Surat keterangan sakit dari dokter klinik atau rumah sakit, diterbitkan maksimal 7 hari sebelum keberangkatan, memuat nama pasien sesuai tiket, diagnosis, tanggal pemeriksaan, tanda tangan, dan stempel dokter. Jika dirawat, lampirkan surat rawat inap. Sertakan KTP, bukti pemesanan, dan surat pernyataan tiket tidak digunakan. Ajukan melalui CS sebelum keberangkatan. Hasil evaluasi keluar 3–7 hari kerja dan dapat berupa refund penuh, refund pajak saja, credit shell, atau penolakan; refund penuh tidak dijamin.",
+    "source_doc_ids": [
+      "KB-FAQ-006"
+    ],
+    "difficulty": "easy",
+    "category": "pembatalan",
+    "notes": "Syarat surat dokter dan alur klaim ada di satu FAQ."
+  },
+  {
+    "question": "Bisakah nama penumpang pada tiket pesawat diganti ke orang lain?",
+    "ground_truth_answer": "Tidak. Tiket pesawat bersifat non-transferable sehingga nama tidak dapat dialihkan ke orang lain. Yang diperbolehkan hanya koreksi salah ketik maksimal 3 karakter, diajukan maksimal 24 jam setelah tiket diterbitkan dengan KTP dan tiket asli; maskapai dapat mengenakan biaya dan persetujuan memakan 1–3 hari kerja. Tiket promo atau non-refundable umumnya tidak dapat diubah. Untuk hotel, nama tamu dapat diubah tanpa biaya sampai H-1 sebelum check-in.",
+    "source_doc_ids": [
+      "KB-FAQ-009"
+    ],
+    "difficulty": "easy",
+    "category": "pembatalan",
+    "notes": "Aturan perubahan nama ada di satu FAQ."
+  },
+  {
+    "question": "Hotel saya memakai rate Flexible. Kapan batas pembatalan gratis dan apa penaltinya?",
+    "ground_truth_answer": "Rate Flexible dapat dibatalkan gratis sampai H-3 pukul 14.00 waktu lokal hotel. Rate Semi-flexible gratis sampai H-7 pukul 14.00, tetapi pembatalan setelahnya dikenakan penalti satu malam pertama. Rate Promo non-refundable tidak memiliki free cancellation window dan dikenakan penalti 100% dari total. Rate Pay at Hotel dapat dibatalkan gratis sampai H-2 pukul 18.00, setelah itu dikenakan satu malam. Semua batas waktu memakai waktu lokal hotel, bukan WIB.",
+    "source_doc_ids": [
+      "KB-POL-003"
+    ],
+    "difficulty": "easy",
+    "category": "pembatalan",
+    "notes": "Tabel free cancellation window ada di satu kebijakan."
+  },
+  {
+    "question": "Saya tidak check-in hotel sampai pukul 23.59 tanpa memberi kabar. Apa yang akan ditagihkan?",
+    "ground_truth_answer": "Tamu yang tidak check-in sampai pukul 23.59 waktu lokal tanpa pemberitahuan dianggap no-show. Untuk rate Flexible dikenakan biaya satu malam; untuk rate non-refundable dikenakan 100% dari total. Jika no-show disebabkan keterlambatan penerbangan atau force majeure, pelanggan dapat mengajukan klaim dalam 24 jam dengan boarding pass atau surat maskapai. Agent mengajukan waiver ke hotel, dan keputusan hotel bersifat final.",
+    "source_doc_ids": [
+      "KB-POL-003"
+    ],
+    "difficulty": "easy",
+    "category": "pembatalan",
+    "notes": "No-show policy ada di satu kebijakan."
+  },
+  {
+    "question": "Berapa biaya reschedule tiket kereta api dan sampai kapan bisa diajukan?",
+    "ground_truth_answer": "Reschedule diajukan paling lambat H-1 pukul 23.59 WIB, maksimal dua kali, untuk rute dan kelas yang sama. Biaya perubahan: 10% dari harga tiket (minimal Rp 10.000) bila lebih dari H-7, atau 25% (minimal Rp 10.000) bila H-7 sampai H-1. Biaya dibatasi maksimal Rp 150.000 per penumpang per perubahan, belum termasuk fare difference dan biaya layanan TravelKita Rp 15.000. Pada hari keberangkatan, reschedule tidak dilayani.",
+    "source_doc_ids": [
+      "KB-POL-004"
+    ],
+    "difficulty": "easy",
+    "category": "pembatalan",
+    "notes": "Tabel biaya reschedule kereta ada di satu kebijakan."
+  },
+  {
+    "question": "Bagaimana cara membatalkan tiket pesawat, hotel, atau kereta di TravelKita?",
+    "ground_truth_answer": "Buka Pesanan > Pilih Pesanan > Batalkan, atau hubungi CS bila tombol tidak tersedia. Tiket pesawat: ajukan sebelum keberangkatan, cek jenis fare (refundable, non-refundable, atau promo), setujui rincian cancellation fee dan biaya admin Rp 25.000, lalu pantau status refund. Hotel: cek free cancellation window pada voucher; pembatalan setelah batas dikenakan penalti satu malam atau 100% untuk rate non-refundable. Kereta: refund 100% bila lebih dari H-7, 75% pada H-7 sampai H-2, 50% pada H-1, dan 0% pada hari keberangkatan atau no-show. Simpan Ticket ID sebagai referensi.",
+    "source_doc_ids": [
+      "KB-FAQ-007"
+    ],
+    "difficulty": "easy",
+    "category": "pembatalan",
+    "notes": "Langkah pembatalan lintas produk dirangkum di satu FAQ."
+  },
+  {
+    "question": "Berapa SLA respons pelanggan Platinum di live chat dan telepon?",
+    "ground_truth_answer": "Pelanggan Platinum mendapat respons live chat/WhatsApp maksimal 2 menit, email maksimal 1 jam, dan telepon maksimal 2 menit melalui jalur khusus. Target penyelesaian 4 jam untuk kasus sederhana dan 8 jam untuk kasus kompleks. Waktu respons dihitung sejak pesan masuk ke sistem, bukan sejak agent membuka percakapan.",
+    "source_doc_ids": [
+      "KB-POL-005"
+    ],
+    "difficulty": "easy",
+    "category": "sop",
+    "notes": "Tabel SLA per tier ada di satu kebijakan."
+  },
+  {
+    "question": "Jam operasional CS TravelKita bagaimana, termasuk email dan kasus darurat?",
+    "ground_truth_answer": "Live chat, WhatsApp, dan telepon beroperasi 07.00–22.00 WIB setiap hari, termasuk hari libur nasional. Email diterima 24/7 dan diproses pada jam operasional berikutnya. Kasus darurat P1 di luar jam operasional ditangani melalui on-call supervisor dengan respons maksimal 60 menit.",
+    "source_doc_ids": [
+      "KB-POL-005"
+    ],
+    "difficulty": "easy",
+    "category": "sop",
+    "notes": "Jam operasional ada di satu kebijakan."
+  },
+  {
+    "question": "Apa saja yang harus dicatat saat handover shift CS dan bagaimana formatnya?",
+    "ground_truth_answer": "Yang wajib di-log: tiket P1 dan Platinum yang masih terbuka, refund yang melewati SLA atau menunggu dokumen, kasus viral dan eskalasi L2/L3 beserta approver, indikasi fraud atau akun beku, kendala sistem (pembayaran, e-tiket, OTP, integrasi mitra), janji kepada pelanggan yang belum ditepati, serta perubahan kebijakan atau promo. Formatnya: SHIFT/TANGGAL, AGENT, TIKET TERBUKA, REFUND OVERDUE, ESKALASI, FRAUD, SISTEM, dan CATATAN. Ringkasan disiapkan 15 menit sebelum shift berakhir, dikirim ke #cs-handover, P1 di-warm transfer, dan agent penerima wajib ACK.",
+    "source_doc_ids": [
+      "KB-SOP-005"
+    ],
+    "difficulty": "easy",
+    "category": "sop",
+    "notes": "Checklist dan format handover ada di satu SOP."
+  },
+  {
+    "question": "Bagaimana cara aktivasi TravelKita PayLater dan berapa tenor cicilan yang tersedia?",
+    "ground_truth_answer": "Syaratnya WNI minimal 18 tahun, memiliki KTP, nomor HP aktif, dan akun TravelKita terverifikasi. Buka Akun > TravelKita PayLater, isi data sesuai KTP, unggah foto KTP dan selfie, setujui syarat, lalu kirim pengajuan. Verifikasi maksimal 1x24 jam dengan limit awal umumnya Rp 1.000.000–Rp 5.000.000. Saat checkout, pilih PayLater dan tenor 1, 3, 6, atau 12 bulan; periksa biaya admin dan bunga sebelum konfirmasi.",
+    "source_doc_ids": [
+      "KB-FAQ-004"
+    ],
+    "difficulty": "easy",
+    "category": "pembayaran",
+    "notes": "Syarat aktivasi dan tenor ada di satu FAQ."
+  },
+  {
+    "question": "Saya tidak menerima kode OTP. Apa yang harus dilakukan dan apakah boleh dibagikan ke CS?",
+    "ground_truth_answer": "OTP adalah kode 6 digit yang berlaku 5 menit dengan maksimal 3 percobaan. Jika tidak diterima, pastikan nomor HP/email aktif, tunggu 60 detik lalu klik Kirim Ulang OTP, periksa folder Spam/Promosi, aktifkan lalu matikan mode pesawat, bersihkan cache, atau gunakan metode pengiriman alternatif. Setelah 3 kali gagal, tunggu 30 menit. OTP tidak boleh dibagikan kepada siapa pun, termasuk pihak yang mengaku CS TravelKita. Jika menerima OTP tanpa transaksi, segera ubah password dan keluarkan perangkat asing.",
+    "source_doc_ids": [
+      "KB-FAQ-014"
+    ],
+    "difficulty": "easy",
+    "category": "pembayaran",
+    "notes": "Troubleshooting OTP dan aturan kerahasiaan ada di satu FAQ."
+  },
+  {
+    "question": "Bagaimana cara verifikasi akun TravelKita untuk keperluan PayLater atau refund besar?",
+    "ground_truth_answer": "Verifikasi dasar: daftar dengan email aktif dan nomor HP Indonesia, masukkan OTP 6 digit, buka tautan verifikasi email dalam 24 jam, lalu lengkapi nama lengkap, tanggal lahir, dan nomor HP di Akun > Profil. Verifikasi lanjutan: buka Akun > Verifikasi Identitas, unggah foto KTP yang jelas dan selfie, pastikan nama dan NIK terbaca, lalu tunggu maksimal 1x24 jam. Statusnya BELUM VERIFIKASI, DALAM PROSES, atau TERVERIFIKASI. Jika ditolak, perbaiki dokumen dan ajukan ulang.",
+    "source_doc_ids": [
+      "KB-FAQ-011"
+    ],
+    "difficulty": "easy",
+    "category": "booking",
+    "notes": "Langkah verifikasi akun ada di satu FAQ."
+  },
+  {
+    "question": "Saya punya tiket Garuda refundable Rp 1.850.000 dan membatalkannya H-5. Berapa refund bersih yang saya terima?",
+    "ground_truth_answer": "Untuk Garuda domestik refundable, cancellation fee Rp 150.000 per penumpang per segmen ditambah biaya admin TravelKita Rp 25.000, sehingga potongan total Rp 175.000. Refund bersih = Rp 1.850.000 − Rp 175.000 = Rp 1.675.000. Permintaan harus diajukan sebelum keberangkatan; persetujuan maskapai 3–7 hari kerja dan pencairan refund maksimal 7 hari kerja; total proses pembatalan hingga 15 hari kerja.",
+    "source_doc_ids": [
+      "KB-POL-001",
+      "KB-POL-002"
+    ],
+    "difficulty": "medium",
+    "category": "refund",
+    "notes": "Butuh gabung tabel cancellation fee KB-POL-001 dengan aturan admin/refund KB-POL-002."
+  },
+  {
+    "question": "Tiket Citilink promo Rp 750.000 saya batalkan. Apakah saya mendapat refund?",
+    "ground_truth_answer": "Fare promo/Lite bersifat non-refundable, sehingga nilai tiket tidak dikembalikan. Yang dapat dikembalikan hanya pajak bandara (PSC) dan biaya layanan. Contoh: PSC Rp 120.000 dikurangi biaya admin Rp 25.000 = refund Rp 95.000. Jika pembatalan disebabkan maskapai atau force majeure, pelanggan berhak atas refund 100% tanpa cancellation fee atau credit shell 12 bulan.",
+    "source_doc_ids": [
+      "KB-POL-001",
+      "KB-POL-002"
+    ],
+    "difficulty": "medium",
+    "category": "refund",
+    "notes": "Butuh klasifikasi fare KB-POL-001 dan aturan potongan admin KB-POL-002."
+  },
+  {
+    "question": "Saya batalkan hotel flexible 3 malam Rp 2.400.000 pada H-1. Berapa refundnya?",
+    "ground_truth_answer": "Pembatalan H-1 sudah melewati free cancellation window H-3 pukul 14.00 waktu lokal hotel, sehingga dikenakan penalti satu malam. Satu malam = Rp 800.000, ditambah biaya admin refund Rp 25.000, maka refund = Rp 2.400.000 − Rp 800.000 − Rp 25.000 = Rp 1.575.000. Pencairan mengikuti metode pembayaran asal, maksimal 7 hari kerja, dengan total SLA 7 hari kerja.",
+    "source_doc_ids": [
+      "KB-POL-003",
+      "KB-POL-002"
+    ],
+    "difficulty": "medium",
+    "category": "refund",
+    "notes": "Butuh aturan penalti hotel KB-POL-003 dan aturan admin/refund KB-POL-002."
+  },
+  {
+    "question": "Saya mau reschedule hotel dari tanggal 20 ke 22, diajukan H-1. Apakah bisa dan apa biayanya?",
+    "ground_truth_answer": "Reschedule hotel diajukan maksimal H-2 pukul 14.00 waktu lokal hotel, maksimal satu kali per reservasi. Pengajuan H-1 sudah melewati batas, sehingga tidak dapat diproses sebagai reschedule standar. Rate non-refundable tidak dapat direschedule. Jika rate flexible, pelanggan dapat membatalkan dengan penalti satu malam atau mengajukan permintaan khusus ke hotel; jika hotel menyetujui, rate difference menjadi beban pelanggan.",
+    "source_doc_ids": [
+      "KB-POL-003",
+      "KB-FAQ-008"
+    ],
+    "difficulty": "medium",
+    "category": "pembatalan",
+    "notes": "Butuh batas waktu di KB-POL-003 dan langkah reschedule di KB-FAQ-008."
+  },
+  {
+    "question": "Hotel saya overbooking dan tidak bisa memberi kamar. Apa hak saya?",
+    "ground_truth_answer": "Hotel wajib menyediakan akomodasi pengganti setara atau lebih tinggi di lokasi berdekatan. TravelKita menanggung transportasi ke hotel pengganti maksimal Rp 300.000 per reservasi. Jika kamar pengganti lebih rendah, selisih tarif dikembalikan ditambah kompensasi 20% dari nilai selisih. Jika pelanggan menolak relokasi, refund 100% diproses dalam 3 hari kerja. Insiden dicatat sebagai OVB dan dilaporkan ke Account Manager Akomodasi dalam 1x24 jam. Kasus overbooking juga termasuk prioritas P1 dengan respons awal 5 menit.",
+    "source_doc_ids": [
+      "KB-POL-003",
+      "KB-POL-005"
+    ],
+    "difficulty": "medium",
+    "category": "pembatalan",
+    "notes": "Butuh aturan overbooking KB-POL-003 dan klasifikasi prioritas P1 di KB-POL-005."
+  },
+  {
+    "question": "Saya batalkan tiket kereta Rp 450.000 pada H-6. Berapa refund bersihnya?",
+    "ground_truth_answer": "Pembatalan H-6 masuk rentang H-7 sampai H-2, sehingga refund 75% dari Rp 450.000 = Rp 337.500. Setelah dipotong biaya admin refund Rp 25.000, dana yang diterima Rp 312.500. Refund diproses maksimal 7 hari kerja ke instrumen pembayaran asal.",
+    "source_doc_ids": [
+      "KB-POL-004",
+      "KB-POL-002"
+    ],
+    "difficulty": "medium",
+    "category": "refund",
+    "notes": "Butuh tabel refund kereta KB-POL-004 dan aturan admin KB-POL-002."
+  },
+  {
+    "question": "Tiket kereta Rp 450.000 saya reschedule H-3 ke jadwal Rp 520.000. Berapa total biaya yang harus saya bayar?",
+    "ground_truth_answer": "Biaya perubahan H-3 adalah 25% x Rp 450.000 = Rp 112.500. Fare difference = Rp 520.000 − Rp 450.000 = Rp 70.000, ditambah biaya layanan TravelKita Rp 15.000, sehingga total Rp 197.500. Biaya perubahan masih di bawah batas maksimal Rp 150.000. Reschedule maksimal dua kali dan diajukan paling lambat H-1 pukul 23.59 WIB.",
+    "source_doc_ids": [
+      "KB-POL-004",
+      "KB-FAQ-008"
+    ],
+    "difficulty": "medium",
+    "category": "pembatalan",
+    "notes": "Butuh tarif perubahan KB-POL-004 dan langkah reschedule KB-FAQ-008."
+  },
+  {
+    "question": "Refund kartu kredit saya sudah 10 hari kerja tetapi dana belum masuk. Apa yang harus dilakukan CS?",
+    "ground_truth_answer": "SLA kartu kredit/debit maksimal 7 hari kerja, sehingga 10 hari kerja sudah melewati SLA. CS membuka dashboard refund dan mencatat status, tanggal pengajuan, nominal, serta nomor referensi. Jika status DANA DIKIRIM, minta bukti transfer atau UTR dan ajukan trace ke bank. Jika dokumen kurang, hubungi pelanggan maksimal 1x24 jam. Karena sudah melewati 7 hari kerja, eskalasi ke L2 dengan kronologi lengkap dan perbarui pelanggan setiap 3 hari kerja.",
+    "source_doc_ids": [
+      "KB-POL-002",
+      "KB-SOP-001"
+    ],
+    "difficulty": "medium",
+    "category": "refund",
+    "notes": "Butuh SLA metode KB-POL-002 dan langkah penanganan KB-SOP-001."
+  },
+  {
+    "question": "Refund saya sudah lewat 7 hari kerja. Apa langkah eskalasinya?",
+    "ground_truth_answer": "Verifikasi Ticket ID, kode booking, identitas pemesan, metode pembayaran, dan status refund. Jika total sudah melewati 7 hari kerja, eskalasi ke L2 dengan kronologi lengkap, bukti, dan tindakan yang sudah dilakukan. Jika status DANA DIKIRIM, ajukan trace ke bank/e-wallet; jika dokumen kurang, minta kelengkapan maksimal 1x24 jam; jika menunggu mitra, follow-up maksimal 3 hari kerja. Perbarui pelanggan setiap 3 hari kerja dan jangan menjanjikan tanggal di luar SLA.",
+    "source_doc_ids": [
+      "KB-POL-002",
+      "KB-SOP-001"
+    ],
+    "difficulty": "medium",
+    "category": "refund",
+    "notes": "Butuh ambang SLA 7 hari KB-POL-002 dan decision tree KB-SOP-001."
+  },
+  {
+    "question": "Pelanggan Platinum komplain refund tertunda. Bagaimana prioritas dan SLA-nya?",
+    "ground_truth_answer": "Pelanggan Platinum mendapat respons live chat/WhatsApp maksimal 2 menit, email 1 jam, dan telepon 2 menit jalur khusus. Komplain refund tertunda ditangani dengan SOP refund overdue: cek SLA metode, dashboard refund, dan eskalasi ke L2 bila melewati SLA atau 7 hari kerja. Selama tiket berada di L2/L3, pelanggan menerima pembaruan status minimal setiap 4 jam.",
+    "source_doc_ids": [
+      "KB-POL-005",
+      "KB-SOP-001"
+    ],
+    "difficulty": "medium",
+    "category": "sop",
+    "notes": "Butuh SLA tier Platinum KB-POL-005 dan prosedur refund tertunda KB-SOP-001."
+  },
+  {
+    "question": "Keluhan pelanggan viral di media sosial. Bagaimana langkah penanganannya?",
+    "ground_truth_answer": "Kasus viral adalah unggahan dengan lebih dari 10.000 views atau dibagikan berulang dalam 24 jam. Buat Ticket ID dan tag VIRAL, kirim respons awal maksimal 15 menit, tetapkan dedicated agent, dan verifikasi fakta. Jangan berdebat atau menyebut data pribadi di ruang publik; arahkan ke DM. Eskalasi ke L2 maksimal 15 menit, lalu libatkan Manager CX dan Communications/Legal maksimal 1 jam untuk menyiapkan holding statement. Hubungi pelanggan setiap 4 jam hingga selesai.",
+    "source_doc_ids": [
+      "KB-POL-005",
+      "KB-SOP-002"
+    ],
+    "difficulty": "medium",
+    "category": "sop",
+    "notes": "Butuh dasar SLA KB-POL-005 dan prosedur kasus viral KB-SOP-002."
+  },
+  {
+    "question": "Penerbangan saya dibatalkan karena bencana alam. Dokumen apa yang diperlukan untuk klaim force majeure dan apa hasilnya?",
+    "ground_truth_answer": "Dokumen yang diperlukan: bukti pemesanan/Ticket ID, surat pembatalan atau perubahan resmi dari maskapai, bukti peristiwa dari BMKG/BNPB/otoritas bandara/media kredibel, identitas pemesan dan bukti pembayaran, serta surat keterangan medis bila klaim terkait kesehatan. Jika tanggal, rute, dan lokasi peristiwa cocok, klaim diklasifikasikan FULL_WAIVER: refund 100% tanpa biaya admin atau credit shell 12 bulan dengan bonus 10% maksimal Rp 500.000. Nilai di atas Rp 5.000.000 memerlukan persetujuan supervisor; keputusan dikirim maksimal 3 hari kerja setelah dokumen lengkap.",
+    "source_doc_ids": [
+      "KB-POL-001",
+      "KB-SOP-003"
+    ],
+    "difficulty": "medium",
+    "category": "pembatalan",
+    "notes": "Butuh ketentuan force majeure KB-POL-001 dan checklist dokumen KB-SOP-003."
+  },
+  {
+    "question": "Pembatalan karena force majeure apakah kena biaya admin dan berapa kompensasinya?",
+    "ground_truth_answer": "Pembatalan force majeure tidak dikenakan cancellation fee maupun biaya admin refund. Pelanggan berhak atas refund 100% atau credit shell berlaku 12 bulan. Jika memilih credit shell, diberikan bonus 10% dengan maksimal Rp 500.000. Refund force majeure juga diprioritaskan 3 hari kerja lebih cepat. Dokumen pendukung wajib diunggah maksimal 30 hari sejak kejadian.",
+    "source_doc_ids": [
+      "KB-POL-001",
+      "KB-POL-002"
+    ],
+    "difficulty": "medium",
+    "category": "refund",
+    "notes": "Butuh aturan force majeure KB-POL-001 dan ketentuan admin/bonus KB-POL-002."
+  },
+  {
+    "question": "Pelanggan minta refund dialihkan ke rekening saudaranya karena kartunya sudah tutup. Boleh?",
+    "ground_truth_answer": "Tidak. Refund hanya dapat dikirim ke instrumen pembayaran asal, bukan rekening pihak ketiga. Permintaan pengalihan ke rekening lain merupakan indikator fraud. CS harus menghentikan sementara transaksi, menandai FRAUD-REVIEW, memverifikasi identitas melalui kontak terdaftar, dan mengeskalasi ke Tim Risk & Fraud maksimal 15 menit. Jangan meminta atau menerima OTP, dan simpan bukti minimal 90 hari.",
+    "source_doc_ids": [
+      "KB-SOP-004",
+      "KB-POL-002"
+    ],
+    "difficulty": "medium",
+    "category": "sop",
+    "notes": "Butuh aturan refund ke instrumen asal KB-POL-002 dan prosedur fraud KB-SOP-004."
+  },
+  {
+    "question": "Saya bayar dengan PayLater dan sudah mencicil. Bagaimana refundnya?",
+    "ground_truth_answer": "Refund transaksi PayLater mengikuti KB-POL-002. Jika tagihan belum berjalan, refund mengurangi tagihan berjalan. Jika cicilan sudah berjalan, nilai refund dikonversi menjadi saldo kredit TravelKita Wallet. Prosesnya 3–5 hari kerja dan tidak dikenakan biaya admin. Keterlambatan pembayaran tetap dikenakan denda dan dapat memengaruhi limit.",
+    "source_doc_ids": [
+      "KB-FAQ-004",
+      "KB-POL-002"
+    ],
+    "difficulty": "medium",
+    "category": "refund",
+    "notes": "Butuh alur PayLater KB-FAQ-004 dan ketentuan refund KB-POL-002."
+  },
+  {
+    "question": "Pembayaran VA gagal tetapi saldo terpotong. Kapan dana kembali dan apakah kena biaya admin?",
+    "ground_truth_answer": "Jangan mengulang pembayaran. Tunggu maksimal 1x24 jam untuk rekonsiliasi otomatis, lalu cek status pesanan dan mutasi. Jika status GAGAL dan dana belum kembali, hubungi CS dengan Ticket ID dan bukti pembayaran. Refund VA/transfer bank diproses 3–7 hari kerja. Biaya admin tidak dikenakan karena kegagalan sistem. Jika dana belum masuk melewati 7 hari kerja, tiket dieskalasi ke L2.",
+    "source_doc_ids": [
+      "KB-FAQ-003",
+      "KB-POL-002"
+    ],
+    "difficulty": "medium",
+    "category": "pembayaran",
+    "notes": "Butuh langkah KB-FAQ-003 dan timeline/metode KB-POL-002."
+  },
+  {
+    "question": "Nama saya salah ketik 2 karakter di tiket pesawat. Bisa diperbaiki?",
+    "ground_truth_answer": "Bisa, karena ini koreksi typo, bukan penggantian nama. Ajukan maksimal 24 jam setelah tiket diterbitkan melalui CS dengan KTP penumpang dan tiket asli. Koreksi maksimal 3 karakter dan tidak boleh mengubah identitas orang. Maskapai dapat mengenakan biaya koreksi, dengan proses persetujuan 1–3 hari kerja. Tiket promo atau non-refundable umumnya tidak dapat diubah, dan nama tidak dapat dialihkan ke orang lain.",
+    "source_doc_ids": [
+      "KB-FAQ-009",
+      "KB-POL-001"
+    ],
+    "difficulty": "medium",
+    "category": "booking",
+    "notes": "Butuh prosedur koreksi nama KB-FAQ-009 dan fare rules KB-POL-001."
+  },
+  {
+    "question": "Tiket pesawat promo saya ingin ganti tanggal. Apakah bisa direschedule?",
+    "ground_truth_answer": "Kemungkinan reschedule bergantung pada fare rules. Tiket promo, Lite, atau Basic Economy umumnya tidak dapat direschedule; tiket Flexi/Business dapat diubah dengan fare difference dan biaya sesuai maskapai. Ajukan sebelum keberangkatan melalui Pesanan > Ubah Jadwal atau CS, lalu bayar selisih tarif sebelum batas waktu. Jika reschedule tidak diizinkan, pelanggan dapat mempertimbangkan pembatalan sesuai KB-POL-001, dengan konsekuensi refund terbatas atau hanya pajak.",
+    "source_doc_ids": [
+      "KB-POL-001",
+      "KB-FAQ-008"
+    ],
+    "difficulty": "medium",
+    "category": "pembatalan",
+    "notes": "Butuh fare rules KB-POL-001 dan langkah reschedule KB-FAQ-008."
+  },
+  {
+    "question": "Hotel non-refundable saya batalkan karena sakit. Apakah ada refund?",
+    "ground_truth_answer": "Rate non-refundable memiliki penalti 100% dan tidak memiliki free cancellation window. Namun pembatalan karena sakit dapat diajukan sebagai klaim khusus: surat dokter maksimal 7 hari sebelum check-in, memuat nama pasien, diagnosis, tanggal, tanda tangan, dan stempel; surat rawat inap bila dirawat; KTP, bukti pemesanan, dan surat pernyataan. Hotel/partner mengevaluasi 3–7 hari kerja. Hasilnya dapat berupa refund penuh, refund sebagian, credit, atau penolakan, sehingga refund tidak dijamin.",
+    "source_doc_ids": [
+      "KB-POL-003",
+      "KB-FAQ-006"
+    ],
+    "difficulty": "medium",
+    "category": "pembatalan",
+    "notes": "Butuh aturan rate non-refundable KB-POL-003 dan syarat klaim sakit KB-FAQ-006."
+  },
+  {
+    "question": "Voucher saya gagal terpasang saat checkout. Apa yang harus dicek?",
+    "ground_truth_answer": "Periksa masa berlaku, minimum transaksi, kuota, metode pembayaran yang disyaratkan, rute/tanggal/produk yang termasuk kampanye, eligibility akun, dan apakah ada voucher lain yang sudah terpasang. Masukkan kode tanpa spasi pada bagian Voucher/Promo di Ringkasan Pesanan, klik Terapkan, dan pastikan nominal potongan muncul sebelum membayar. Satu voucher per transaksi dan tidak dapat digabung kecuali dinyatakan boleh. Jika tetap gagal, hubungi CS dengan tangkapan layar dan Ticket ID.",
+    "source_doc_ids": [
+      "KB-FAQ-013",
+      "KB-FAQ-012"
+    ],
+    "difficulty": "medium",
+    "category": "pembayaran",
+    "notes": "Butuh langkah pemakaian voucher KB-FAQ-013 dan daftar penyebab kegagalan KB-FAQ-012."
+  },
+  {
+    "question": "Saya menemukan dua versi kebijakan refund: versi 2023 menyebut 14 hari kerja dan versi 2025 menyebut 7 hari kerja. Versi mana yang berlaku?",
+    "ground_truth_answer": "Versi terbaru 2025 (KB-POL-002 v2.5) yang berlaku: refund diselesaikan maksimal 7 hari kerja sejak persetujuan untuk semua metode pembayaran. Versi 1.0 (2023) dan FAQ lama yang menyebut 14 hari kerja sudah digantikan dan tidak boleh dijadikan acuan. Untuk kartu kredit/debit, dana dikirim ke issuer maksimal 7 hari kerja, sedangkan waktu posting di statement mengikuti kebijakan bank penerbit.",
+    "source_doc_ids": [
+      "KB-POL-002",
+      "KB-FAQ-005"
+    ],
+    "difficulty": "hard",
+    "category": "refund",
+    "notes": "Konflik versi: v2.5 (2025) menang atas v1.0 (2023) dan FAQ lama. v2.5 mempertahankan SLA 7 hari dari v2.1; menguji prioritas version/last_updated."
+  },
+  {
+    "question": "FAQ lama di aplikasi masih menyebut refund 14 hari kerja, tetapi CS bilang 7 hari. Mana yang benar?",
+    "ground_truth_answer": "Yang benar adalah kebijakan terbaru 2025 (KB-POL-002 v2.5), yaitu maksimal 7 hari kerja. FAQ lama yang diterbitkan 2023 sudah kedaluwarsa dan tidak boleh dijadikan acuan. Jika ada perbedaan antar-dokumen, gunakan dokumen dengan version dan last_updated terbaru, lalu perbarui atau tarik FAQ lama dari knowledge base.",
+    "source_doc_ids": [
+      "KB-FAQ-005",
+      "KB-POL-002"
+    ],
+    "difficulty": "hard",
+    "category": "refund",
+    "notes": "Konflik versi lama vs baru; v2.5 (2025) dan v2.1 sama-sama menetapkan 7 hari, sedangkan FAQ 2023 masih menyebut 14 hari. Menguji kemampuan mengabaikan dokumen kedaluwarsa."
+  },
+  {
+    "question": "Untuk SLA refund, apakah saya harus mengikuti KB-POL-002 versi 1.0 atau versi 2.5?",
+    "ground_truth_answer": "Ikuti KB-POL-002 versi 2.5 (2025), yang menetapkan refund maksimal 7 hari kerja. Versi 1.0 (2023) sudah superseded dan tidak berlaku. Metadata version 2.5 dan last_updated 2025 menunjukkan versi tersebut lebih baru daripada versi 1.0.",
+    "source_doc_ids": [
+      "KB-POL-002"
+    ],
+    "difficulty": "hard",
+    "category": "refund",
+    "notes": "Konflik versi eksplisit; jawaban ditentukan oleh version dan last_updated, bukan popularitas dokumen. v2.5 adalah versi produksi terbaru."
+  },
+  {
+    "question": "Tiket pesawat non-refundable saya dibatalkan karena letusan gunung dan bandara ditutup. Apakah saya tetap bisa refund penuh?",
+    "ground_truth_answer": "Bisa, jika memenuhi force majeure. Pembatalan penerbangan oleh maskapai, penutupan bandara, bencana alam, perubahan jadwal lebih dari 2 jam, atau kebijakan pemerintah membebaskan cancellation fee. Pelanggan berhak atas refund 100% tanpa biaya admin atau credit shell 12 bulan dengan bonus 10% maksimal Rp 500.000. Sertakan surat maskapai dan bukti resmi BMKG/BNPB/otoritas bandara; verifikasi memastikan tanggal, rute, dan lokasi peristiwa cocok. Keputusan diberikan maksimal 3 hari kerja setelah dokumen lengkap.",
+    "source_doc_ids": [
+      "KB-POL-001",
+      "KB-POL-002",
+      "KB-SOP-003"
+    ],
+    "difficulty": "hard",
+    "category": "pembatalan",
+    "notes": "Butuh reasoning force majeure lintas 3 dokumen: hak refund, kompensasi, dan verifikasi dokumen."
+  },
+  {
+    "question": "Kereta saya dibatalkan KAI karena banjir. Saya sudah beli tiket Rp 450.000. Apa hak refund saya?",
+    "ground_truth_answer": "Pembatalan oleh KAI karena gangguan operasional, cuaca ekstrem, atau force majeure mendapat refund 100% tanpa potongan, bukan mengikuti tabel 75% atau 50% untuk pembatalan oleh penumpang. Refund diproses sesuai KB-POL-002 ke instrumen pembayaran asal. Jika KAI menawarkan jadwal pengganti, pelanggan juga dapat memilih reschedule tanpa biaya perubahan.",
+    "source_doc_ids": [
+      "KB-POL-004",
+      "KB-POL-002"
+    ],
+    "difficulty": "hard",
+    "category": "refund",
+    "notes": "Harus membedakan pembatalan oleh penumpang vs pembatalan oleh KAI; butuh reasoning atas tabel refund."
+  },
+  {
+    "question": "Pelanggan Platinum punya penerbangan besok, refund-nya macet 10 hari, dan mengancam viral. Bagaimana urutan penanganannya?",
+    "ground_truth_answer": "Kategorikan sebagai P1 karena keberangkatan kurang dari 24 jam dan ada potensi kehilangan dana, dengan tag P1-PLAT/VIRAL. Respons awal maksimal 2 menit, tetapkan dedicated agent, dan verifikasi kronologi serta bukti. Buka dashboard refund: untuk kartu kredit, SLA maksimal 7 hari kerja, sehingga 10 hari sudah melewati SLA dan memicu SOP refund tertunda. Eskalasi ke L2 maksimal 15 menit; karena ada ancaman viral, libatkan Manager CX dan Communications/Legal maksimal 1 jam untuk holding statement. Beri pembaruan setiap 4 jam dan jangan menjanjikan tanggal di luar SLA.",
+    "source_doc_ids": [
+      "KB-POL-005",
+      "KB-SOP-001",
+      "KB-SOP-002"
+    ],
+    "difficulty": "hard",
+    "category": "sop",
+    "notes": "Butuh prioritas P1/Platinum, prosedur refund overdue, dan protokol viral secara bersamaan."
+  },
+  {
+    "question": "Saya curiga akun saya diambil alih dan ada permintaan refund ke rekening orang lain. Apa yang harus dilakukan?",
+    "ground_truth_answer": "Bekukan sementara akun dan transaksi, tandai FRAUD-REVIEW, dan jangan menuduh pelanggan. Verifikasi identitas hanya melalui kontak terdaftar, minta pelanggan mengganti password dan logout semua perangkat, lalu kumpulkan log login, IP, perangkat, riwayat pembayaran, dan rekaman komunikasi. Eskalasi ke Tim Risk & Fraud maksimal 15 menit. Tolak refund ke rekening pihak ketiga karena refund hanya ke instrumen asal. Jika melibatkan PayLater, koordinasikan penangguhan tagihan. Simpan bukti minimal 90 hari.",
+    "source_doc_ids": [
+      "KB-SOP-004",
+      "KB-POL-002",
+      "KB-FAQ-015"
+    ],
+    "difficulty": "hard",
+    "category": "sop",
+    "notes": "Butuh penggabungan prosedur fraud, aturan refund ke instrumen asal, dan langkah pengamanan akun."
+  },
+  {
+    "question": "Hotel overbooking menurunkan saya ke kamar lebih murah. Saya minta refund selisih plus kompensasi 20%. Apakah benar?",
+    "ground_truth_answer": "Benar. Jika kamar pengganti lebih rendah, selisih tarif dikembalikan ditambah kompensasi 20% dari nilai selisih, bukan 20% dari total reservasi. Contoh: selisih Rp 450.000, kompensasi 20% = Rp 90.000, sehingga total yang diterima Rp 540.000. TravelKita juga menanggung transportasi ke hotel pengganti maksimal Rp 300.000. Jika pelanggan menolak relokasi, refund 100% diproses dalam 3 hari kerja.",
+    "source_doc_ids": [
+      "KB-POL-003"
+    ],
+    "difficulty": "hard",
+    "category": "pembatalan",
+    "notes": "Butuh perhitungan kompensasi 20% dari selisih dan reasoning atas skenario overbooking."
+  },
+  {
+    "question": "Apakah TravelKita bisa mengurus visa Jepang dan berapa biayanya?",
+    "ground_truth_answer": "Tidak ada informasi layanan visa Jepang maupun biayanya di knowledge base. TravelKita menjual tiket pesawat, hotel, kereta api, dan paket wisata; untuk layanan visa, CS harus menyatakan bahwa informasinya tidak tersedia, tidak mengarang biaya, dan mengarahkan pelanggan ke kanal resmi atau melakukan eskalasi.",
+    "source_doc_ids": [],
+    "difficulty": "hard",
+    "category": "booking",
+    "notes": "Tidak ada di KB — menguji kemampuan menjawab 'I don't know' dan tidak berhalusinasi."
+  },
+  {
+    "question": "Apakah ada diskon khusus untuk lansia atau mahasiswa?",
+    "ground_truth_answer": "Tidak ada informasi diskon khusus lansia atau mahasiswa di knowledge base. Promo yang tersedia mengikuti kampanye dan syarat yang tercantum di halaman promo. CS tidak boleh menjanjikan diskon yang tidak terdokumentasi; arahkan pelanggan untuk memeriksa syarat promo atau lakukan eskalasi bila perlu.",
+    "source_doc_ids": [],
+    "difficulty": "hard",
+    "category": "pembayaran",
+    "notes": "Tidak ada di KB — menguji 'I don't know' dan pencegahan halusinasi promo."
+  }
+]

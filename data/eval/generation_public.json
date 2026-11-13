@@ -1,0 +1,2444 @@
+{
+  "meta": {
+    "mode": "public",
+    "as_of": "2026-11-13",
+    "index_version": "20261113T130908Z-f7cc4e68",
+    "chat_provider": "deepseek",
+    "chat_model": "deepseek-flash",
+    "judge_model": "none",
+    "judge_limit": 0,
+    "question_count": 8,
+    "error_count": 0,
+    "eval_file": "hasil_evaluasi/eval_set.json",
+    "tag": "",
+    "public_ground_truth_only": false
+  },
+  "summary": {
+    "count": 8,
+    "retrieval_mode_counts": {
+      "bm25": 8
+    },
+    "answerable_questions": 8,
+    "expected_refusal_questions": 0,
+    "answered": 7,
+    "answer_rate": 0.875,
+    "refusal_accuracy": null,
+    "citation_validity": 1.0,
+    "source_hit_rate": 0.875,
+    "citation_hit_rate": 1.0,
+    "leak_count": 0,
+    "internal_source_count": 0,
+    "latency_p50_ms": 2986.0,
+    "latency_p95_ms": 4096.0,
+    "prompt_tokens": 20698,
+    "completion_tokens": 3456,
+    "judge_count": 0,
+    "judge_correctness": null,
+    "judge_completeness": null,
+    "judge_faithfulness": null,
+    "judge_citation_support": null,
+    "judge_escalation": null,
+    "hallucination_count": 0,
+    "judge_errors": 0
+  },
+  "by_difficulty": {
+    "easy": {
+      "count": 3,
+      "retrieval_mode_counts": {
+        "bm25": 3
+      },
+      "answerable_questions": 3,
+      "expected_refusal_questions": 0,
+      "answered": 2,
+      "answer_rate": 0.6666666666666666,
+      "refusal_accuracy": null,
+      "citation_validity": 1.0,
+      "source_hit_rate": 0.6666666666666666,
+      "citation_hit_rate": 1.0,
+      "leak_count": 0,
+      "internal_source_count": 0,
+      "latency_p50_ms": 2449.0,
+      "latency_p95_ms": 2449.0,
+      "prompt_tokens": 8136,
+      "completion_tokens": 940,
+      "judge_count": 0,
+      "judge_correctness": null,
+      "judge_completeness": null,
+      "judge_faithfulness": null,
+      "judge_citation_support": null,
+      "judge_escalation": null,
+      "hallucination_count": 0
+    },
+    "hard": {
+      "count": 2,
+      "retrieval_mode_counts": {
+        "bm25": 2
+      },
+      "answerable_questions": 2,
+      "expected_refusal_questions": 0,
+      "answered": 2,
+      "answer_rate": 1.0,
+      "refusal_accuracy": null,
+      "citation_validity": 1.0,
+      "source_hit_rate": 1.0,
+      "citation_hit_rate": 1.0,
+      "leak_count": 0,
+      "internal_source_count": 0,
+      "latency_p50_ms": 3481.0,
+      "latency_p95_ms": 2866.0,
+      "prompt_tokens": 4824,
+      "completion_tokens": 1111,
+      "judge_count": 0,
+      "judge_correctness": null,
+      "judge_completeness": null,
+      "judge_faithfulness": null,
+      "judge_citation_support": null,
+      "judge_escalation": null,
+      "hallucination_count": 0
+    },
+    "medium": {
+      "count": 3,
+      "retrieval_mode_counts": {
+        "bm25": 3
+      },
+      "answerable_questions": 3,
+      "expected_refusal_questions": 0,
+      "answered": 3,
+      "answer_rate": 1.0,
+      "refusal_accuracy": null,
+      "citation_validity": 1.0,
+      "source_hit_rate": 1.0,
+      "citation_hit_rate": 1.0,
+      "leak_count": 0,
+      "internal_source_count": 0,
+      "latency_p50_ms": 3070.0,
+      "latency_p95_ms": 3070.0,
+      "prompt_tokens": 7738,
+      "completion_tokens": 1405,
+      "judge_count": 0,
+      "judge_correctness": null,
+      "judge_completeness": null,
+      "judge_faithfulness": null,
+      "judge_citation_support": null,
+      "judge_escalation": null,
+      "hallucination_count": 0
+    }
+  },
+  "by_category": {
+    "sop": {
+      "count": 8,
+      "retrieval_mode_counts": {
+        "bm25": 8
+      },
+      "answerable_questions": 8,
+      "expected_refusal_questions": 0,
+      "answered": 7,
+      "answer_rate": 0.875,
+      "refusal_accuracy": null,
+      "citation_validity": 1.0,
+      "source_hit_rate": 0.875,
+      "citation_hit_rate": 1.0,
+      "leak_count": 0,
+      "internal_source_count": 0,
+      "latency_p50_ms": 2986.0,
+      "latency_p95_ms": 4096.0,
+      "prompt_tokens": 20698,
+      "completion_tokens": 3456,
+      "judge_count": 0,
+      "judge_correctness": null,
+      "judge_completeness": null,
+      "judge_faithfulness": null,
+      "judge_citation_support": null,
+      "judge_escalation": null,
+      "hallucination_count": 0
+    }
+  },
+  "conflict": {
+    "count": 0,
+    "citation_hit_rate": null,
+    "judge_correctness": null
+  },
+  "failures": [
+    {
+      "question": "Apa saja yang harus dicatat saat handover shift CS dan bagaimana formatnya?",
+      "difficulty": "easy",
+      "category": "sop",
+      "reasons": [
+        "tidak menjawab padahal answerable"
+      ],
+      "customer_reply": "Mohon maaf, untuk saat ini saya belum memiliki informasi yang cukup untuk menjawab pertanyaan tersebut. Agar tidak memberikan informasi yang keliru, saya sarankan Anda menghubungi Customer Service TravelKita melalui live chat, email, WhatsApp, atau telepon pada pukul 07.00–22.00 WIB. Tim kami akan dengan senang hati membantu Anda. Terima kasih atas pengertiannya.",
+      "judge_notes": "",
+      "judge_correctness": null
+    }
+  ],
+  "results": [
+    {
+      "index": 1,
+      "question": "Berapa SLA respons pelanggan Platinum di live chat dan telepon?",
+      "ground_truth": "Pelanggan Platinum mendapat respons live chat/WhatsApp maksimal 2 menit, email maksimal 1 jam, dan telepon maksimal 2 menit melalui jalur khusus. Target penyelesaian 4 jam untuk kasus sederhana dan 8 jam untuk kasus kompleks. Waktu respons dihitung sejak pesan masuk ke sistem, bukan sejak agent membuka percakapan.",
+      "difficulty": "easy",
+      "category": "sop",
+      "notes": "Tabel SLA per tier ada di satu kebijakan.",
+      "source_doc_ids": [
+        "KB-POL-005"
+      ],
+      "expected_refusal": false,
+      "response": {
+        "request_id": "77867417c96a40529aae1347772e21f1",
+        "answerable": true,
+        "internal_notes": "Dasar: tabel Response Time per Tier [KB-POL-005] bagian 3 — Platinum: live chat/WhatsApp 2 menit, telepon 2 menit (jalur khusus), email 1 jam, penyelesaian 4 jam (sederhana)/8 jam (kompleks). Jam operasional live chat & telepon 07.00–22.00 WIB [KB-POL-005] bagian 2. Contoh penerapan P1 juga menyebut respons maksimal 2 menit [KB-POL-005] bagian 7. Tidak perlu eskalasi.",
+        "customer_reply": "Halo! Terima kasih sudah menghubungi TravelKita. Untuk pelanggan Platinum, standar waktu respons kami adalah 2 menit baik di live chat maupun telepon (telepon melalui jalur khusus). Sebagai gambaran, target penyelesaiannya 4 jam untuk kasus sederhana dan 8 jam untuk kasus kompleks. Layanan live chat dan telepon tersedia setiap hari pukul 07.00–22.00 WIB. Jika butuh bantuan lebih lanjut, silakan hubungi kami melalui live chat, WhatsApp, email, atau telepon di jam tersebut, ya. Mohon diingat, CS TravelKita tidak pernah meminta OTP, PIN, atau password Anda.",
+        "citations": [
+          {
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "section_path": "7. Contoh Penerapan",
+            "snippet": "## 7. Contoh Penerapan\n\nPelanggan Platinum menghubungi live chat pukul 21.50 WIB terkait penerbangan besok pagi. Tiket dikategorikan P1 dan harus direspons maksimal pukul 21.52. Jika belum tuntas dalam 4 jam, tiket dieskalasi ke L2 dan pelanggan dihubungi melalui telepon jalur khusus. Pelanggan Regular dengan pertanyaan refund menerima respons awal maksimal 15 menit dan penyelesaian maksimal 3x24 jam.",
+            "cited": true
+          }
+        ],
+        "sources": [
+          {
+            "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "7. Contoh Penerapan",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 7. Contoh Penerapan\n\nPelanggan Platinum menghubungi live chat pukul 21.50 WIB terkait penerbangan besok pagi. Tiket dikategorikan P1 dan harus direspons maksimal pukul 21.52. Jika belum tuntas dalam 4 jam, tiket dieskalasi ke L2 dan pelanggan dihubungi melalui telepon jalur khusus. Pelanggan Regular dengan pertanyaan refund menerima respons awal maksimal 15 menit dan penyelesaian maksimal 3x24 jam.",
+            "dense_score": null,
+            "bm25_score": 14.556783758182943,
+            "rrf_score": null,
+            "rank": 1,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-005::1-tujuan-dan-ruang-lingkup::01",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "1. Tujuan dan Ruang Lingkup",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 1. Tujuan dan Ruang Lingkup\n\nKebijakan ini menetapkan standar waktu respons dan penyelesaian untuk seluruh kanal Customer Service TravelKita: live chat, email, WhatsApp, dan telepon. SLA berlaku untuk semua produk (tiket pesawat, hotel, kereta, paket wisata) dan seluruh tier pelanggan. Setiap interaksi wajib tercatat dalam Ticket ID `TK-YYYYMMDD-XXXX`.",
+            "dense_score": null,
+            "bm25_score": 13.167373546788188,
+            "rrf_score": null,
+            "rank": 2,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-005::2-jam-operasional::02",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "2. Jam Operasional",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "steps",
+            "snippet": "## 2. Jam Operasional\n\n- Live chat, WhatsApp, dan telepon: 07.00–22.00 WIB setiap hari, termasuk hari libur nasional.\n- Email: diterima 24/7, diproses pada jam operasional berikutnya.\n- Kanal darurat P1 di luar jam operasional: melalui on-call supervisor, maksimal 60 menit.",
+            "dense_score": null,
+            "bm25_score": 10.10617590975912,
+            "rrf_score": null,
+            "rank": 3,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-005::3-response-time-per-tier::03",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "3. Response Time per Tier",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "table",
+            "snippet": "## 3. Response Time per Tier\n\n| Tier | Live chat / WhatsApp | Email | Telepon | Target penyelesaian |\n|---|---|---|---|---|\n| Regular | 15 menit | 4 jam | 10 menit | 1x24 jam (sederhana), 3x24 jam (kompleks) |\n| Silver | 10 menit | 3 jam | 7 menit | 18 jam (sederhana), 2x24 jam (kompleks) |\n| Gold | 5 menit | 2 jam | 4 menit | 12 jam (sederhana), 1x24 jam (kompleks) |\n| Platinum | 2 menit | 1 jam | 2 menit (jalur khusus) | 4 jam (sederhana), 8 jam (kompleks) |",
+            "dense_score": null,
+            "bm25_score": 9.980601481609131,
+            "rrf_score": null,
+            "rank": 4,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-001::1-ruang-lingkup::01",
+            "doc_id": "KB-POL-001",
+            "title": "Kebijakan Pembatalan Tiket Pesawat",
+            "section_path": "1. Ruang Lingkup",
+            "version": "3.2",
+            "effective_date": "2025-03-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 1. Ruang Lingkup\n\nKebijakan ini mengatur pembatalan tiket pesawat domestik dan internasional ASEAN yang diterbitkan TravelKita, baik melalui kanal live chat, email, WhatsApp, maupun telepon. Setiap permintaan wajib memiliki Ticket ID format `TK-YYYYMMDD-XXXX` dan diverifikasi terhadap nama penumpang serta kode booking maskapai.",
+            "dense_score": null,
+            "bm25_score": 9.15104603795987,
+            "rrf_score": null,
+            "rank": 5,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-POL-005::6-pemantauan-dan-konsekuensi::08",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "6. Pemantauan dan Konsekuensi",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "steps",
+            "snippet": "## 6. Pemantauan dan Konsekuensi\n\n- Dashboard SLA direview harian pukul 09.00 WIB dan dilaporkan mingguan ke Head of Customer Experience.\n- Tiket yang berpotensi breach diberi flag otomatis 30 menit sebelum batas waktu.\n- Breach P1 pada tier Platinum wajib diikuti analisis akar masalah dalam 3 hari kerja.",
+            "dense_score": null,
+            "bm25_score": 3.3703707948565715,
+            "rrf_score": null,
+            "rank": 6,
+            "cited": true
+          }
+        ],
+        "confidence": 0.97,
+        "needs_escalation": false,
+        "escalation_reason": null,
+        "refusal_reason": null,
+        "citation_valid": true,
+        "model": "deepseek-flash",
+        "index_version": "20261113T130908Z-f7cc4e68",
+        "prompt_version": "1.0",
+        "latency_ms": 2904,
+        "usage": {
+          "prompt_tokens": 2029,
+          "completion_tokens": 337,
+          "total_tokens": 2366,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 1261
+        },
+        "warnings": [
+          "Embedding query tidak tersedia; memakai BM25 fallback."
+        ],
+        "debug": {
+          "mode": "public",
+          "question_for_retrieval": "Berapa SLA respons pelanggan Platinum di live chat dan telepon?",
+          "min_dense_score": 0.2,
+          "context_top_k": 6,
+          "retrieval_mode": "bm25",
+          "retrieval": [
+            {
+              "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+              "doc_id": "KB-POL-005",
+              "section_path": "7. Contoh Penerapan",
+              "dense_score": null,
+              "bm25_score": 14.556783758182943,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::1-tujuan-dan-ruang-lingkup::01",
+              "doc_id": "KB-POL-005",
+              "section_path": "1. Tujuan dan Ruang Lingkup",
+              "dense_score": null,
+              "bm25_score": 13.167373546788188,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::2-jam-operasional::02",
+              "doc_id": "KB-POL-005",
+              "section_path": "2. Jam Operasional",
+              "dense_score": null,
+              "bm25_score": 10.10617590975912,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::3-response-time-per-tier::03",
+              "doc_id": "KB-POL-005",
+              "section_path": "3. Response Time per Tier",
+              "dense_score": null,
+              "bm25_score": 9.980601481609131,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-001::1-ruang-lingkup::01",
+              "doc_id": "KB-POL-001",
+              "section_path": "1. Ruang Lingkup",
+              "dense_score": null,
+              "bm25_score": 9.15104603795987,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::6-pemantauan-dan-konsekuensi::08",
+              "doc_id": "KB-POL-005",
+              "section_path": "6. Pemantauan dan Konsekuensi",
+              "dense_score": null,
+              "bm25_score": 3.3703707948565715,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::3-response-time-per-tier::04",
+              "doc_id": "KB-POL-005",
+              "section_path": "3. Response Time per Tier",
+              "dense_score": null,
+              "bm25_score": 3.303334040979778,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::3-potongan-admin::04",
+              "doc_id": "KB-POL-002",
+              "section_path": "3. Potongan Admin",
+              "dense_score": null,
+              "bm25_score": 3.186018954197591,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::4-prioritas-tiket::05",
+              "doc_id": "KB-POL-005",
+              "section_path": "4. Prioritas Tiket",
+              "dense_score": null,
+              "bm25_score": 3.097447570281592,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::6-alur-dan-sla::07",
+              "doc_id": "KB-POL-002",
+              "section_path": "6. Alur dan SLA",
+              "dense_score": null,
+              "bm25_score": 2.2312964196954925,
+              "rrf_score": null
+            }
+          ],
+          "top_dense": null,
+          "generation_attempts": 1,
+          "cited_doc_ids_from_model": [
+            "KB-POL-005"
+          ],
+          "cited_doc_ids_valid": [
+            "KB-POL-005"
+          ]
+        }
+      },
+      "metrics": {
+        "answered": true,
+        "refused": false,
+        "expected_refusal": false,
+        "refusal_correct": true,
+        "citation_valid": true,
+        "citation_count": 1,
+        "source_count": 6,
+        "source_hit": true,
+        "source_coverage": 1.0,
+        "citation_hit": true,
+        "citation_coverage": 1.0,
+        "retrieval_docs": [
+          "KB-POL-005",
+          "KB-POL-001"
+        ],
+        "cited_docs": [
+          "KB-POL-005"
+        ],
+        "internal_source_count": 0,
+        "leak": false,
+        "latency_ms": 2904,
+        "confidence": 0.97,
+        "customer_reply_length": 560,
+        "internal_notes_length": 370,
+        "needs_escalation": false,
+        "retrieval_mode": "bm25"
+      },
+      "judge": null,
+      "error": null
+    },
+    {
+      "index": 2,
+      "question": "Jam operasional CS TravelKita bagaimana, termasuk email dan kasus darurat?",
+      "ground_truth": "Live chat, WhatsApp, dan telepon beroperasi 07.00–22.00 WIB setiap hari, termasuk hari libur nasional. Email diterima 24/7 dan diproses pada jam operasional berikutnya. Kasus darurat P1 di luar jam operasional ditangani melalui on-call supervisor dengan respons maksimal 60 menit.",
+      "difficulty": "easy",
+      "category": "sop",
+      "notes": "Jam operasional ada di satu kebijakan.",
+      "source_doc_ids": [
+        "KB-POL-005"
+      ],
+      "expected_refusal": false,
+      "response": {
+        "request_id": "f04e714229494e5295503aeff1865591",
+        "answerable": true,
+        "internal_notes": "Audit: jam operasional diambil dari KB-POL-005 bagian 2 (versi 4.1, berlaku 2025-07-01): live chat/WhatsApp/telepon 07.00-22.00 WIB tiap hari termasuk libur nasional; email 24/7 diproses pada jam operasional berikutnya; kanal darurat P1 di luar jam operasional via on-call supervisor maks 60 menit. Sumber lain tidak relevan. Tidak perlu eskalasi.",
+        "customer_reply": "Halo! Berikut jam operasional layanan Customer Service TravelKita:\n\n- Live chat, WhatsApp, dan telepon: setiap hari pukul 07.00–22.00 WIB, termasuk hari libur nasional.\n- Email: dapat dikirim kapan saja (24/7). Email yang masuk di luar jam operasional akan diproses pada jam operasional berikutnya.\n- Kasus darurat di luar jam operasional: ditangani melalui jalur khusus dengan waktu respons maksimal 60 menit.\n\nJika Anda mengalami kendala mendesak, silakan hubungi kami melalui live chat, WhatsApp, atau telepon pada jam operasional di atas. Demi keamanan, CS TravelKita tidak pernah meminta OTP, PIN, atau password Anda. Ada hal lain yang bisa kami bantu?",
+        "citations": [
+          {
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "section_path": "2. Jam Operasional",
+            "snippet": "## 2. Jam Operasional\n\n- Live chat, WhatsApp, dan telepon: 07.00–22.00 WIB setiap hari, termasuk hari libur nasional.\n- Email: diterima 24/7, diproses pada jam operasional berikutnya.\n- Kanal darurat P1 di luar jam operasional: melalui on-call supervisor, maksimal 60 menit.",
+            "cited": true
+          }
+        ],
+        "sources": [
+          {
+            "chunk_id": "KB-POL-005::2-jam-operasional::02",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "2. Jam Operasional",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "steps",
+            "snippet": "## 2. Jam Operasional\n\n- Live chat, WhatsApp, dan telepon: 07.00–22.00 WIB setiap hari, termasuk hari libur nasional.\n- Email: diterima 24/7, diproses pada jam operasional berikutnya.\n- Kanal darurat P1 di luar jam operasional: melalui on-call supervisor, maksimal 60 menit.",
+            "dense_score": null,
+            "bm25_score": 18.07317895807393,
+            "rrf_score": null,
+            "rank": 1,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-FAQ-011::umum::01",
+            "doc_id": "KB-FAQ-011",
+            "title": "Bagaimana cara verifikasi akun TravelKita?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-14",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Verifikasi akun diperlukan agar pesanan, refund, dan PayLater dapat diproses dengan aman.\n\n**Verifikasi dasar:**\n1. Daftar dengan email aktif dan nomor HP Indonesia.\n2. Masukkan kode OTP 6 digit yang dikirim ke email atau SMS.\n3. Buka tautan verifikasi email dalam 24 jam.\n4. Lengkapi nama lengkap, tanggal lahir, dan nomor HP di menu **Akun > Profil**.\n\n**Verifikasi lanjutan (untuk PayLater atau refund nominal besar):**\n1. Buka **Akun > Verifikasi Identitas**.\n2. Unggah foto KTP yang jelas dan s…",
+            "dense_score": null,
+            "bm25_score": 9.44484895975065,
+            "rrf_score": null,
+            "rank": 2,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-010::umum::01",
+            "doc_id": "KB-FAQ-010",
+            "title": "E-tiket tidak masuk email, apa yang harus dilakukan?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-13",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "E-tiket biasanya dikirim maksimal 15 menit setelah pembayaran berhasil. Lakukan pengecekan berikut sebelum menghubungi CS.\n\n1. Periksa folder **Spam**, **Promosi**, dan **All Mail** di email terdaftar.\n2. Pastikan alamat email pada akun dan pesanan sudah benar. Jika salah, hubungi CS untuk memperbarui.\n3. Buka aplikasi TravelKita, masuk ke **Pesanan > Detail Pesanan > Kirim Ulang E-tiket**.\n4. Tunggu 5–10 menit, lalu muat ulang kotak masuk.\n5. Tambahkan domain `travelkita.co.id` ke kontak agar…",
+            "dense_score": null,
+            "bm25_score": 6.374600750501546,
+            "rrf_score": null,
+            "rank": 3,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-001::umum::01",
+            "doc_id": "KB-FAQ-001",
+            "title": "Bagaimana cara booking tiket pesawat di TravelKita?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-08",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Pemesanan tiket pesawat dapat dilakukan 24 jam melalui aplikasi atau situs TravelKita. Ikuti langkah berikut:\n\n1. Masukkan kota asal, kota tujuan, tanggal keberangkatan, dan jumlah penumpang.\n2. Pilih penerbangan dari maskapai mitra (Citilink, Lion, Garuda, atau AirAsia). Perhatikan bagasi, transit, dan fare rules.\n3. Isi data penumpang persis seperti KTP (domestik) atau paspor (internasional). Nama yang salah dapat menyebabkan boarding ditolak.\n4. Pilih add-on seperti bagasi tambahan, kursi, a…",
+            "dense_score": null,
+            "bm25_score": 6.001844174839049,
+            "rrf_score": null,
+            "rank": 4,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-014::umum::01",
+            "doc_id": "KB-FAQ-014",
+            "title": "Bagaimana keamanan OTP dan apa yang dilakukan jika tidak menerimanya?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-15",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "OTP adalah kode 6 digit yang berlaku 5 menit dan hanya dapat digunakan maksimal 3 kali percobaan. OTP bersifat rahasia: **CS TravelKita tidak pernah meminta OTP**, PIN, password, atau kode verifikasi melalui kanal apa pun.\n\n**Jika OTP tidak diterima:**\n1. Pastikan nomor HP atau email terdaftar masih aktif dan benar.\n2. Tunggu 60 detik, lalu klik **Kirim Ulang OTP**.\n3. Periksa folder Spam/Promosi bila OTP dikirim via email.\n4. Aktifkan lalu matikan mode pesawat untuk menyegarkan jaringan SMS.\n5…",
+            "dense_score": null,
+            "bm25_score": 5.981343507492474,
+            "rrf_score": null,
+            "rank": 5,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-015::umum::01",
+            "doc_id": "KB-FAQ-015",
+            "title": "Bagaimana melindungi akun TravelKita dari akses tidak sah?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-16",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Akun TravelKita menyimpan data pribadi dan riwayat pembayaran, sehingga perlu perlindungan berlapis.\n\n**Langkah pencegahan:**\n1. Gunakan password unik minimal 10 karakter dengan kombinasi huruf, angka, dan simbol. Jangan pakai password yang sama dengan akun lain.\n2. Aktifkan verifikasi dua langkah (2FA) di **Akun > Keamanan**.\n3. Periksa **Perangkat Aktif** secara berkala dan keluarkan perangkat yang tidak dikenal.\n4. Jangan pernah membagikan OTP, password, atau kode verifikasi kepada siapa pun…",
+            "dense_score": null,
+            "bm25_score": 5.785075839923553,
+            "rrf_score": null,
+            "rank": 6,
+            "cited": false
+          }
+        ],
+        "confidence": 0.95,
+        "needs_escalation": false,
+        "escalation_reason": null,
+        "refusal_reason": null,
+        "citation_valid": true,
+        "model": "deepseek-flash",
+        "index_version": "20261113T130908Z-f7cc4e68",
+        "prompt_version": "1.0",
+        "latency_ms": 2354,
+        "usage": {
+          "prompt_tokens": 2951,
+          "completion_tokens": 348,
+          "total_tokens": 3299,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 2183
+        },
+        "warnings": [
+          "Embedding query tidak tersedia; memakai BM25 fallback."
+        ],
+        "debug": {
+          "mode": "public",
+          "question_for_retrieval": "Jam operasional CS TravelKita bagaimana, termasuk email dan kasus darurat?",
+          "min_dense_score": 0.2,
+          "context_top_k": 6,
+          "retrieval_mode": "bm25",
+          "retrieval": [
+            {
+              "chunk_id": "KB-POL-005::2-jam-operasional::02",
+              "doc_id": "KB-POL-005",
+              "section_path": "2. Jam Operasional",
+              "dense_score": null,
+              "bm25_score": 18.07317895807393,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-011::umum::01",
+              "doc_id": "KB-FAQ-011",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 9.44484895975065,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-010::umum::01",
+              "doc_id": "KB-FAQ-010",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 6.374600750501546,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-001::umum::01",
+              "doc_id": "KB-FAQ-001",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 6.001844174839049,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-014::umum::01",
+              "doc_id": "KB-FAQ-014",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 5.981343507492474,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-015::umum::01",
+              "doc_id": "KB-FAQ-015",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 5.785075839923553,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-004::3-biaya-perubahan-jadwal::04",
+              "doc_id": "KB-POL-004",
+              "section_path": "3. Biaya Perubahan Jadwal",
+              "dense_score": null,
+              "bm25_score": 4.714483365434445,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-004::1-ruang-lingkup::01",
+              "doc_id": "KB-POL-004",
+              "section_path": "1. Ruang Lingkup",
+              "dense_score": null,
+              "bm25_score": 4.350024077606665,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-004::4-pembatalan-tiket-kereta::06",
+              "doc_id": "KB-POL-004",
+              "section_path": "4. Pembatalan Tiket Kereta",
+              "dense_score": null,
+              "bm25_score": 4.27597413114398,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-008::umum::01",
+              "doc_id": "KB-FAQ-008",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 4.252197575411545,
+              "rrf_score": null
+            }
+          ],
+          "top_dense": null,
+          "generation_attempts": 1,
+          "cited_doc_ids_from_model": [
+            "KB-POL-005"
+          ],
+          "cited_doc_ids_valid": [
+            "KB-POL-005"
+          ]
+        }
+      },
+      "metrics": {
+        "answered": true,
+        "refused": false,
+        "expected_refusal": false,
+        "refusal_correct": true,
+        "citation_valid": true,
+        "citation_count": 1,
+        "source_count": 6,
+        "source_hit": true,
+        "source_coverage": 1.0,
+        "citation_hit": true,
+        "citation_coverage": 1.0,
+        "retrieval_docs": [
+          "KB-POL-005",
+          "KB-FAQ-011",
+          "KB-FAQ-010",
+          "KB-FAQ-001",
+          "KB-FAQ-014",
+          "KB-FAQ-015"
+        ],
+        "cited_docs": [
+          "KB-POL-005"
+        ],
+        "internal_source_count": 0,
+        "leak": false,
+        "latency_ms": 2354,
+        "confidence": 0.95,
+        "customer_reply_length": 657,
+        "internal_notes_length": 347,
+        "needs_escalation": false,
+        "retrieval_mode": "bm25"
+      },
+      "judge": null,
+      "error": null
+    },
+    {
+      "index": 3,
+      "question": "Apa saja yang harus dicatat saat handover shift CS dan bagaimana formatnya?",
+      "ground_truth": "Yang wajib di-log: tiket P1 dan Platinum yang masih terbuka, refund yang melewati SLA atau menunggu dokumen, kasus viral dan eskalasi L2/L3 beserta approver, indikasi fraud atau akun beku, kendala sistem (pembayaran, e-tiket, OTP, integrasi mitra), janji kepada pelanggan yang belum ditepati, serta perubahan kebijakan atau promo. Formatnya: SHIFT/TANGGAL, AGENT, TIKET TERBUKA, REFUND OVERDUE, ESKALASI, FRAUD, SISTEM, dan CATATAN. Ringkasan disiapkan 15 menit sebelum shift berakhir, dikirim ke #cs-handover, P1 di-warm transfer, dan agent penerima wajib ACK.",
+      "difficulty": "easy",
+      "category": "sop",
+      "notes": "Checklist dan format handover ada di satu SOP.",
+      "source_doc_ids": [
+        "KB-SOP-005"
+      ],
+      "expected_refusal": false,
+      "response": {
+        "request_id": "09bc160818e34ea4923381b0b3924122",
+        "answerable": false,
+        "internal_notes": "Pertanyaan meminta prosedur dan format handover shift CS internal. Tidak ada sumber yang membahas handover shift CS; seluruh sumber (KB-FAQ-014, 010, 003, 008, 002, 006) adalah FAQ pelanggan tentang OTP, e-tiket, pembayaran, reschedule, booking, dan refund sakit. Informasi tidak tersedia di sumber.",
+        "customer_reply": "Mohon maaf, untuk saat ini saya belum memiliki informasi yang cukup untuk menjawab pertanyaan tersebut. Agar tidak memberikan informasi yang keliru, saya sarankan Anda menghubungi Customer Service TravelKita melalui live chat, email, WhatsApp, atau telepon pada pukul 07.00–22.00 WIB. Tim kami akan dengan senang hati membantu Anda. Terima kasih atas pengertiannya.",
+        "citations": [],
+        "sources": [
+          {
+            "chunk_id": "KB-FAQ-014::umum::01",
+            "doc_id": "KB-FAQ-014",
+            "title": "Bagaimana keamanan OTP dan apa yang dilakukan jika tidak menerimanya?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-15",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "OTP adalah kode 6 digit yang berlaku 5 menit dan hanya dapat digunakan maksimal 3 kali percobaan. OTP bersifat rahasia: **CS TravelKita tidak pernah meminta OTP**, PIN, password, atau kode verifikasi melalui kanal apa pun.\n\n**Jika OTP tidak diterima:**\n1. Pastikan nomor HP atau email terdaftar masih aktif dan benar.\n2. Tunggu 60 detik, lalu klik **Kirim Ulang OTP**.\n3. Periksa folder Spam/Promosi bila OTP dikirim via email.\n4. Aktifkan lalu matikan mode pesawat untuk menyegarkan jaringan SMS.\n5…",
+            "dense_score": null,
+            "bm25_score": 5.9597110603671375,
+            "rrf_score": null,
+            "rank": 1,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-010::umum::01",
+            "doc_id": "KB-FAQ-010",
+            "title": "E-tiket tidak masuk email, apa yang harus dilakukan?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-13",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "E-tiket biasanya dikirim maksimal 15 menit setelah pembayaran berhasil. Lakukan pengecekan berikut sebelum menghubungi CS.\n\n1. Periksa folder **Spam**, **Promosi**, dan **All Mail** di email terdaftar.\n2. Pastikan alamat email pada akun dan pesanan sudah benar. Jika salah, hubungi CS untuk memperbarui.\n3. Buka aplikasi TravelKita, masuk ke **Pesanan > Detail Pesanan > Kirim Ulang E-tiket**.\n4. Tunggu 5–10 menit, lalu muat ulang kotak masuk.\n5. Tambahkan domain `travelkita.co.id` ke kontak agar…",
+            "dense_score": null,
+            "bm25_score": 5.909738210660986,
+            "rrf_score": null,
+            "rank": 2,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-003::umum::01",
+            "doc_id": "KB-FAQ-003",
+            "title": "Pembayaran gagal tetapi saldo terpotong, apa yang harus dilakukan?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-10",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Saldo terpotong namun pesanan gagal umumnya karena status transaksi masih *pending* di bank atau penyedia e-wallet. Jangan langsung mengulang pembayaran agar tidak terjadi pemotongan ganda.\n\n1. Buka menu **Pesanan** dan pastikan statusnya `GAGAL`, `PENDING`, atau `BERHASIL`.\n2. Tunggu maksimal 1x24 jam; sistem akan melakukan rekonsiliasi otomatis.\n3. Cek mutasi rekening atau riwayat e-wallet. Jika dana sudah kembali, transaksi selesai.\n4. Jika status `GAGAL` dan dana belum kembali, hubungi CS d…",
+            "dense_score": null,
+            "bm25_score": 4.887108397637823,
+            "rrf_score": null,
+            "rank": 3,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-008::umum::01",
+            "doc_id": "KB-FAQ-008",
+            "title": "Bagaimana cara reschedule tiket pesawat, hotel, atau kereta?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-12",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Reschedule berarti mengubah tanggal atau jam, bukan mengganti nama penumpang. Ketersediaan bergantung pada kursi atau kamar yang tersedia.\n\n**Tiket pesawat:**\n1. Buka **Pesanan > Ubah Jadwal**, atau hubungi CS bila opsi tidak muncul.\n2. Pilih tanggal baru dan periksa selisih tarif.\n3. Biaya perubahan mengikuti fare rules maskapai; tiket promo umumnya tidak dapat direschedule.\n4. Bayar fare difference sebelum batas waktu yang diberikan.\n\n**Hotel:**\n1. Ajukan maksimal H-2 pukul 14.00 waktu lokal…",
+            "dense_score": null,
+            "bm25_score": 4.256139399030778,
+            "rrf_score": null,
+            "rank": 4,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-002::umum::01",
+            "doc_id": "KB-FAQ-002",
+            "title": "Bagaimana cara booking hotel dan tiket kereta api?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-08",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "**Hotel.** Buka menu Hotel, masukkan destinasi, tanggal check-in/check-out, jumlah kamar dan tamu, lalu klik Cari. Pilih properti dan tipe kamar, perhatikan rate policy (flexible atau non-refundable) serta fasilitas. Isi nama tamu sesuai KTP/paspor, lalu bayar. Voucher hotel terbit maksimal 30 menit setelah pembayaran.\n\n**Kereta api.** Buka menu Kereta, pilih stasiun asal dan tujuan, tanggal, serta jumlah penumpang. Pilih jadwal KAI dan kelas (Ekonomi, Eksekutif, atau Luxury), lalu tentukan kur…",
+            "dense_score": null,
+            "bm25_score": 3.984218662402284,
+            "rrf_score": null,
+            "rank": 5,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-006::umum::01",
+            "doc_id": "KB-FAQ-006",
+            "title": "Apakah pembatalan karena sakit bisa direfund?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-11",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Pembatalan karena sakit dapat diajukan, tetapi tidak otomatis mendapat refund penuh. Keputusan mengikuti fare rules maskapai, rate policy hotel, atau ketentuan KAI, serta persetujuan mitra.\n\n**Syarat dokumen:**\n1. Surat keterangan sakit dari dokter klinik atau rumah sakit, maksimal 7 hari sebelum keberangkatan/check-in.\n2. Mencantumkan nama pasien sesuai tiket, diagnosis, tanggal pemeriksaan, tanda tangan, dan stempel dokter.\n3. Surat rawat inap bila pasien dirawat.\n4. KTP penumpang dan bukti p…",
+            "dense_score": null,
+            "bm25_score": 3.550081834793797,
+            "rrf_score": null,
+            "rank": 6,
+            "cited": false
+          }
+        ],
+        "confidence": 0.0,
+        "needs_escalation": true,
+        "escalation_reason": "Informasi mengenai prosedur dan format handover shift CS tidak tersedia dalam sumber yang diberikan; perlu diteruskan ke pihak yang berwenang.",
+        "refusal_reason": "Informasi mengenai prosedur dan format handover shift CS tidak tersedia dalam sumber yang diberikan; perlu diteruskan ke pihak yang berwenang.",
+        "citation_valid": true,
+        "model": "deepseek-flash",
+        "index_version": "20261113T130908Z-f7cc4e68",
+        "prompt_version": "1.0",
+        "latency_ms": 2449,
+        "usage": {
+          "prompt_tokens": 3156,
+          "completion_tokens": 255,
+          "total_tokens": 3411,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 2388
+        },
+        "warnings": [
+          "Embedding query tidak tersedia; memakai BM25 fallback."
+        ],
+        "debug": {
+          "mode": "public",
+          "question_for_retrieval": "Apa saja yang harus dicatat saat handover shift CS dan bagaimana formatnya?",
+          "min_dense_score": 0.2,
+          "context_top_k": 6,
+          "retrieval_mode": "bm25",
+          "retrieval": [
+            {
+              "chunk_id": "KB-FAQ-014::umum::01",
+              "doc_id": "KB-FAQ-014",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 5.9597110603671375,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-010::umum::01",
+              "doc_id": "KB-FAQ-010",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 5.909738210660986,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-003::umum::01",
+              "doc_id": "KB-FAQ-003",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 4.887108397637823,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-008::umum::01",
+              "doc_id": "KB-FAQ-008",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 4.256139399030778,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-002::umum::01",
+              "doc_id": "KB-FAQ-002",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 3.984218662402284,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-006::umum::01",
+              "doc_id": "KB-FAQ-006",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 3.550081834793797,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-004::5-prosedur-layanan::07",
+              "doc_id": "KB-POL-004",
+              "section_path": "5. Prosedur Layanan",
+              "dense_score": null,
+              "bm25_score": 3.2948235614500416,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-003::5-penanganan-overbooking::06",
+              "doc_id": "KB-POL-003",
+              "section_path": "5. Penanganan Overbooking",
+              "dense_score": null,
+              "bm25_score": 3.1229446334509086,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-001::4-alur-dan-timeline::05",
+              "doc_id": "KB-POL-001",
+              "section_path": "4. Alur dan Timeline",
+              "dense_score": null,
+              "bm25_score": 3.024339168600157,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+              "doc_id": "KB-POL-005",
+              "section_path": "7. Contoh Penerapan",
+              "dense_score": null,
+              "bm25_score": 2.856935998861872,
+              "rrf_score": null
+            }
+          ],
+          "top_dense": null,
+          "generation_attempts": 1,
+          "cited_doc_ids_from_model": [],
+          "cited_doc_ids_valid": [
+            "KB-FAQ-014"
+          ]
+        }
+      },
+      "metrics": {
+        "answered": false,
+        "refused": true,
+        "expected_refusal": false,
+        "refusal_correct": false,
+        "citation_valid": true,
+        "citation_count": 0,
+        "source_count": 6,
+        "source_hit": false,
+        "source_coverage": 0.0,
+        "citation_hit": false,
+        "citation_coverage": 0.0,
+        "retrieval_docs": [
+          "KB-FAQ-014",
+          "KB-FAQ-010",
+          "KB-FAQ-003",
+          "KB-FAQ-008",
+          "KB-FAQ-002",
+          "KB-FAQ-006"
+        ],
+        "cited_docs": [],
+        "internal_source_count": 0,
+        "leak": false,
+        "latency_ms": 2449,
+        "confidence": 0.0,
+        "customer_reply_length": 365,
+        "internal_notes_length": 299,
+        "needs_escalation": true,
+        "retrieval_mode": "bm25"
+      },
+      "judge": null,
+      "error": null
+    },
+    {
+      "index": 4,
+      "question": "Pelanggan Platinum komplain refund tertunda. Bagaimana prioritas dan SLA-nya?",
+      "ground_truth": "Pelanggan Platinum mendapat respons live chat/WhatsApp maksimal 2 menit, email 1 jam, dan telepon 2 menit jalur khusus. Komplain refund tertunda ditangani dengan SOP refund overdue: cek SLA metode, dashboard refund, dan eskalasi ke L2 bila melewati SLA atau 7 hari kerja. Selama tiket berada di L2/L3, pelanggan menerima pembaruan status minimal setiap 4 jam.",
+      "difficulty": "medium",
+      "category": "sop",
+      "notes": "Butuh SLA tier Platinum KB-POL-005 dan prosedur refund tertunda KB-SOP-001.",
+      "source_doc_ids": [
+        "KB-POL-005",
+        "KB-SOP-001"
+      ],
+      "expected_refusal": false,
+      "response": {
+        "request_id": "1c6484e7b1654ca5891b5879bd9cd6a4",
+        "answerable": true,
+        "internal_notes": "Audit: Refund berjalan = P2, target respons awal 30 menit [KB-POL-005 §4]. Contoh penerapan menyebut Platinum P1 hanya untuk kasus <24 jam/keberangkatan besok, bukan refund [KB-POL-005 §7]. Total SLA refund maks 7 hari kerja sejak persetujuan; jika terlampaui eskalasi ke Supervisor Refund & Settlement (L2) [KB-POL-002 §6]. Biaya admin dibebaskan untuk Platinum [KB-POL-002 §3]. Perlu cek status refund di aplikasi (DIAJUKAN/DIPROSES/DISETUJUI/DANA DIKIRIM/SELESAI) dan minta Ticket ID TK-YYYYMMDD-XXXX + bukti pembayaran bila lewat SLA [KB-FAQ-005]. Catatan: pertanyaan menyebut 'prioritas dan SLA' — refund berjalan masuk P2, bukan P1, kecuali ada kondisi mendesak lain.",
+        "customer_reply": "Halo, terima kasih sudah menghubungi TravelKita. Kami memahami kekhawatiran Anda terkait refund yang masih tertunda.\n\nUntuk permintaan refund yang sedang berjalan, tim kami menargetkan respons awal dalam 30 menit. Proses pencairan refund memiliki batas waktu maksimal 7 hari kerja sejak refund disetujui. Sebagai pelanggan Platinum, Anda juga tidak dikenakan biaya admin untuk pembatalan yang memenuhi ketentuan.\n\nLangkah cepat yang bisa Anda lakukan:\n1. Buka menu Pesanan di aplikasi, pilih pesanan yang dibatalkan, lalu masuk ke tab Refund/Pengembalian Dana untuk melihat status dan estimasi pencairan.\n2. Jika status tidak berubah melebihi batas waktu tersebut, silakan hubungi kami kembali dengan menyertakan Ticket ID (format TK-YYYYMMDD-XXXX) dan bukti pembayaran agar kami dapat mengecek dan menindaklanjuti ke tim terkait.\n\nKami akan bantu pantau agar refund Anda segera selesai. Terima kasih atas kesabarannya.",
+        "citations": [
+          {
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "section_path": "4. Prioritas Tiket",
+            "snippet": "## 4. Prioritas Tiket\n\n| Prioritas | Kriteria | Target respons awal |\n|---|---|---|\n| P1 | Keberangkatan < 24 jam, overbooking, tiket tidak diterima, kehilangan dana | 5 menit |\n| P2 | Perubahan jadwal, refund berjalan, masalah pembayaran | 30 menit |\n| P3 | Informasi umum, pertanyaan kebijakan, umpan balik | 2 jam |",
+            "cited": true
+          },
+          {
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "section_path": "3. Potongan Admin",
+            "snippet": "## 3. Potongan Admin\n\nBiaya admin pada tabel berlaku untuk refund sukarela. Biaya ini dibebaskan untuk pembatalan oleh maskapai/hotel/KAI, force majeure, kesalahan sistem TravelKita, dan pelanggan tier Platinum. Biaya admin tidak dipotong dua kali apabila satu pembatalan mencakup beberapa penumpang dalam satu kode booking.",
+            "cited": true
+          },
+          {
+            "doc_id": "KB-FAQ-005",
+            "title": "Bagaimana cara cek status refund?",
+            "version": null,
+            "effective_date": "2025-07-11",
+            "section_path": "Umum",
+            "snippet": "Status refund dapat dilihat mandiri melalui aplikasi tanpa perlu menghubungi CS.\n\n1. Buka menu **Pesanan**, lalu pilih pesanan yang dibatalkan.\n2. Masuk ke tab **Refund** atau **Pengembalian Dana**.\n3. Periksa status dan tanggal estimasi pencairan.\n\nStatus yang akan muncul:\n- `DIAJUKAN`: permintaan diterima dan menunggu verifikasi dokumen.\n- `DIPROSES`: sedang diverifikasi Divisi Refund & Settlement.\n- `DISETUJUI`: nominal refund sudah final dan menunggu eksekusi transfer.\n- `DANA DIKIRIM`: dan…",
+            "cited": true
+          }
+        ],
+        "sources": [
+          {
+            "chunk_id": "KB-POL-005::4-prioritas-tiket::05",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "4. Prioritas Tiket",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "table",
+            "snippet": "## 4. Prioritas Tiket\n\n| Prioritas | Kriteria | Target respons awal |\n|---|---|---|\n| P1 | Keberangkatan < 24 jam, overbooking, tiket tidak diterima, kehilangan dana | 5 menit |\n| P2 | Perubahan jadwal, refund berjalan, masalah pembayaran | 30 menit |\n| P3 | Informasi umum, pertanyaan kebijakan, umpan balik | 2 jam |",
+            "dense_score": null,
+            "bm25_score": 6.430707694534936,
+            "rrf_score": null,
+            "rank": 1,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "7. Contoh Penerapan",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 7. Contoh Penerapan\n\nPelanggan Platinum menghubungi live chat pukul 21.50 WIB terkait penerbangan besok pagi. Tiket dikategorikan P1 dan harus direspons maksimal pukul 21.52. Jika belum tuntas dalam 4 jam, tiket dieskalasi ke L2 dan pelanggan dihubungi melalui telepon jalur khusus. Pelanggan Regular dengan pertanyaan refund menerima respons awal maksimal 15 menit dan penyelesaian maksimal 3x24 jam.",
+            "dense_score": null,
+            "bm25_score": 5.069995001886524,
+            "rrf_score": null,
+            "rank": 2,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-002::3-potongan-admin::04",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "3. Potongan Admin",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 3. Potongan Admin\n\nBiaya admin pada tabel berlaku untuk refund sukarela. Biaya ini dibebaskan untuk pembatalan oleh maskapai/hotel/KAI, force majeure, kesalahan sistem TravelKita, dan pelanggan tier Platinum. Biaya admin tidak dipotong dua kali apabila satu pembatalan mencakup beberapa penumpang dalam satu kode booking.",
+            "dense_score": null,
+            "bm25_score": 4.521994965487098,
+            "rrf_score": null,
+            "rank": 3,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-FAQ-005::umum::01",
+            "doc_id": "KB-FAQ-005",
+            "title": "Bagaimana cara cek status refund?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-11",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Status refund dapat dilihat mandiri melalui aplikasi tanpa perlu menghubungi CS.\n\n1. Buka menu **Pesanan**, lalu pilih pesanan yang dibatalkan.\n2. Masuk ke tab **Refund** atau **Pengembalian Dana**.\n3. Periksa status dan tanggal estimasi pencairan.\n\nStatus yang akan muncul:\n- `DIAJUKAN`: permintaan diterima dan menunggu verifikasi dokumen.\n- `DIPROSES`: sedang diverifikasi Divisi Refund & Settlement.\n- `DISETUJUI`: nominal refund sudah final dan menunggu eksekusi transfer.\n- `DANA DIKIRIM`: dan…",
+            "dense_score": null,
+            "bm25_score": 4.28649694063113,
+            "rrf_score": null,
+            "rank": 4,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-002::6-alur-dan-sla::07",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "6. Alur dan SLA",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "steps",
+            "snippet": "## 6. Alur dan SLA\n\n1. Verifikasi kelengkapan dokumen: maksimal 1 hari kerja.\n2. Persetujuan finansial: maksimal 2 hari kerja.\n3. Eksekusi transfer: maksimal 4 hari kerja.\n4. Konfirmasi ke pelanggan disertai nomor referensi refund.\n\nTotal SLA maksimal 7 hari kerja sejak persetujuan. Jika terlampaui, agent mengeskalasi ke Supervisor Refund & Settlement (L2).",
+            "dense_score": null,
+            "bm25_score": 3.6936438678706915,
+            "rrf_score": null,
+            "rank": 5,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-005::6-pemantauan-dan-konsekuensi::08",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "6. Pemantauan dan Konsekuensi",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "steps",
+            "snippet": "## 6. Pemantauan dan Konsekuensi\n\n- Dashboard SLA direview harian pukul 09.00 WIB dan dilaporkan mingguan ke Head of Customer Experience.\n- Tiket yang berpotensi breach diberi flag otomatis 30 menit sebelum batas waktu.\n- Breach P1 pada tier Platinum wajib diikuti analisis akar masalah dalam 3 hari kerja.",
+            "dense_score": null,
+            "bm25_score": 3.3703707948565715,
+            "rrf_score": null,
+            "rank": 6,
+            "cited": true
+          }
+        ],
+        "confidence": 0.82,
+        "needs_escalation": false,
+        "escalation_reason": null,
+        "refusal_reason": null,
+        "citation_valid": true,
+        "model": "deepseek-flash",
+        "index_version": "20261113T130908Z-f7cc4e68",
+        "prompt_version": "1.0",
+        "latency_ms": 4097,
+        "usage": {
+          "prompt_tokens": 2190,
+          "completion_tokens": 539,
+          "total_tokens": 2729,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 1422
+        },
+        "warnings": [
+          "Embedding query tidak tersedia; memakai BM25 fallback."
+        ],
+        "debug": {
+          "mode": "public",
+          "question_for_retrieval": "Pelanggan Platinum komplain refund tertunda. Bagaimana prioritas dan SLA-nya?",
+          "min_dense_score": 0.2,
+          "context_top_k": 6,
+          "retrieval_mode": "bm25",
+          "retrieval": [
+            {
+              "chunk_id": "KB-POL-005::4-prioritas-tiket::05",
+              "doc_id": "KB-POL-005",
+              "section_path": "4. Prioritas Tiket",
+              "dense_score": null,
+              "bm25_score": 6.430707694534936,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+              "doc_id": "KB-POL-005",
+              "section_path": "7. Contoh Penerapan",
+              "dense_score": null,
+              "bm25_score": 5.069995001886524,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::3-potongan-admin::04",
+              "doc_id": "KB-POL-002",
+              "section_path": "3. Potongan Admin",
+              "dense_score": null,
+              "bm25_score": 4.521994965487098,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-005::umum::01",
+              "doc_id": "KB-FAQ-005",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 4.28649694063113,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::6-alur-dan-sla::07",
+              "doc_id": "KB-POL-002",
+              "section_path": "6. Alur dan SLA",
+              "dense_score": null,
+              "bm25_score": 3.6936438678706915,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::6-pemantauan-dan-konsekuensi::08",
+              "doc_id": "KB-POL-005",
+              "section_path": "6. Pemantauan dan Konsekuensi",
+              "dense_score": null,
+              "bm25_score": 3.3703707948565715,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-011::umum::01",
+              "doc_id": "KB-FAQ-011",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 2.8541504212948134,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-001::4-alur-dan-timeline::05",
+              "doc_id": "KB-POL-001",
+              "section_path": "4. Alur dan Timeline",
+              "dense_score": null,
+              "bm25_score": 2.6349620181581743,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-007::umum::01",
+              "doc_id": "KB-FAQ-007",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 2.6148472187610103,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::8-riwayat-versi::09",
+              "doc_id": "KB-POL-002",
+              "section_path": "8. Riwayat Versi",
+              "dense_score": null,
+              "bm25_score": 2.539223968700732,
+              "rrf_score": null
+            }
+          ],
+          "top_dense": null,
+          "generation_attempts": 1,
+          "cited_doc_ids_from_model": [
+            "KB-POL-005",
+            "KB-POL-002",
+            "KB-FAQ-005"
+          ],
+          "cited_doc_ids_valid": [
+            "KB-POL-005",
+            "KB-POL-002",
+            "KB-FAQ-005"
+          ]
+        }
+      },
+      "metrics": {
+        "answered": true,
+        "refused": false,
+        "expected_refusal": false,
+        "refusal_correct": true,
+        "citation_valid": true,
+        "citation_count": 3,
+        "source_count": 6,
+        "source_hit": true,
+        "source_coverage": 0.5,
+        "citation_hit": true,
+        "citation_coverage": 0.5,
+        "retrieval_docs": [
+          "KB-POL-005",
+          "KB-POL-002",
+          "KB-FAQ-005"
+        ],
+        "cited_docs": [
+          "KB-POL-005",
+          "KB-POL-002",
+          "KB-FAQ-005"
+        ],
+        "internal_source_count": 0,
+        "leak": false,
+        "latency_ms": 4097,
+        "confidence": 0.82,
+        "customer_reply_length": 919,
+        "internal_notes_length": 673,
+        "needs_escalation": false,
+        "retrieval_mode": "bm25"
+      },
+      "judge": null,
+      "error": null
+    },
+    {
+      "index": 5,
+      "question": "Keluhan pelanggan viral di media sosial. Bagaimana langkah penanganannya?",
+      "ground_truth": "Kasus viral adalah unggahan dengan lebih dari 10.000 views atau dibagikan berulang dalam 24 jam. Buat Ticket ID dan tag VIRAL, kirim respons awal maksimal 15 menit, tetapkan dedicated agent, dan verifikasi fakta. Jangan berdebat atau menyebut data pribadi di ruang publik; arahkan ke DM. Eskalasi ke L2 maksimal 15 menit, lalu libatkan Manager CX dan Communications/Legal maksimal 1 jam untuk menyiapkan holding statement. Hubungi pelanggan setiap 4 jam hingga selesai.",
+      "difficulty": "medium",
+      "category": "sop",
+      "notes": "Butuh dasar SLA KB-POL-005 dan prosedur kasus viral KB-SOP-002.",
+      "source_doc_ids": [
+        "KB-POL-005",
+        "KB-SOP-002"
+      ],
+      "expected_refusal": false,
+      "response": {
+        "request_id": "37ecd73b679041f195a83a6a15ab2211",
+        "answerable": true,
+        "internal_notes": "Audit: KB-POL-005 §5 menyebut 'potensi viral' sebagai pemicu eskalasi L3 (Manager Customer Experience + unit terkait, batas 1x24 jam) [KB-POL-005]. Sumber tidak memuat SOP langkah demi langkah khusus penanganan keluhan viral, hanya tabel eskalasi; jawaban publik dibatasi pada arahan kanal resmi dan eskalasi. Tidak ada instruksi internal yang boleh dibocorkan.",
+        "customer_reply": "Halo, terima kasih sudah menghubungi TravelKita. Kami memahami kekhawatiran Anda terkait keluhan yang ramai dibicarakan di media sosial. Keluhan seperti ini kami tangani dengan serius dan diteruskan ke tim penanggung jawab yang berwenang agar dapat ditindaklanjuti dengan cepat, maksimal dalam 1x24 jam sejak diterima.\n\nAgar kami dapat membantu lebih lanjut, mohon sampaikan detail berikut melalui kanal resmi Customer Service TravelKita (live chat, email, WhatsApp, atau telepon pada pukul 07.00–22.00 WIB):\n1. Ticket ID atau nomor pesanan (format TK-YYYYMMDD-XXXX) bila ada.\n2. Ringkasan keluhan dan tangkapan layar unggahan yang dimaksud.\n3. Kontak yang bisa dihubungi.\n\nSebagai pengingat, CS TravelKita tidak pernah meminta OTP, PIN, password, atau data kartu lengkap Anda. Mohon hanya mengakses travelkita.co.id atau aplikasi resmi kami.",
+        "citations": [
+          {
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "section_path": "5. Eskalasi Level 1–3",
+            "snippet": "## 5. Eskalasi Level 1–3\n\n| Level | Penanggung jawab | Pemicu | Batas waktu |\n|---|---|---|---|\n| L1 | Agent CS | Penanganan awal seluruh tiket | Sesuai SLA tier |\n| L2 | Supervisor / Team Lead | Belum selesai melewati SLA, keluhan berulang, nilai > Rp 5.000.000 | 2 jam sejak eskalasi |\n| L3 | Manager Customer Experience + unit terkait | Sengketa maskapai/hotel, potensi viral, nilai > Rp 25.000.000 | 1x24 jam |",
+            "cited": true
+          }
+        ],
+        "sources": [
+          {
+            "chunk_id": "KB-POL-005::5-eskalasi-level-1-3::06",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "5. Eskalasi Level 1–3",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "table",
+            "snippet": "## 5. Eskalasi Level 1–3\n\n| Level | Penanggung jawab | Pemicu | Batas waktu |\n|---|---|---|---|\n| L1 | Agent CS | Penanganan awal seluruh tiket | Sesuai SLA tier |\n| L2 | Supervisor / Team Lead | Belum selesai melewati SLA, keluhan berulang, nilai > Rp 5.000.000 | 2 jam sejak eskalasi |\n| L3 | Manager Customer Experience + unit terkait | Sengketa maskapai/hotel, potensi viral, nilai > Rp 25.000.000 | 1x24 jam |",
+            "dense_score": null,
+            "bm25_score": 5.9034947175347465,
+            "rrf_score": null,
+            "rank": 1,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-FAQ-015::umum::01",
+            "doc_id": "KB-FAQ-015",
+            "title": "Bagaimana melindungi akun TravelKita dari akses tidak sah?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-16",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Akun TravelKita menyimpan data pribadi dan riwayat pembayaran, sehingga perlu perlindungan berlapis.\n\n**Langkah pencegahan:**\n1. Gunakan password unik minimal 10 karakter dengan kombinasi huruf, angka, dan simbol. Jangan pakai password yang sama dengan akun lain.\n2. Aktifkan verifikasi dua langkah (2FA) di **Akun > Keamanan**.\n3. Periksa **Perangkat Aktif** secara berkala dan keluarkan perangkat yang tidak dikenal.\n4. Jangan pernah membagikan OTP, password, atau kode verifikasi kepada siapa pun…",
+            "dense_score": null,
+            "bm25_score": 3.1486376405086407,
+            "rrf_score": null,
+            "rank": 2,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-001::umum::01",
+            "doc_id": "KB-FAQ-001",
+            "title": "Bagaimana cara booking tiket pesawat di TravelKita?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-08",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Pemesanan tiket pesawat dapat dilakukan 24 jam melalui aplikasi atau situs TravelKita. Ikuti langkah berikut:\n\n1. Masukkan kota asal, kota tujuan, tanggal keberangkatan, dan jumlah penumpang.\n2. Pilih penerbangan dari maskapai mitra (Citilink, Lion, Garuda, atau AirAsia). Perhatikan bagasi, transit, dan fare rules.\n3. Isi data penumpang persis seperti KTP (domestik) atau paspor (internasional). Nama yang salah dapat menyebabkan boarding ditolak.\n4. Pilih add-on seperti bagasi tambahan, kursi, a…",
+            "dense_score": null,
+            "bm25_score": 2.6907404186231787,
+            "rrf_score": null,
+            "rank": 3,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-005::umum::01",
+            "doc_id": "KB-FAQ-005",
+            "title": "Bagaimana cara cek status refund?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-11",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Status refund dapat dilihat mandiri melalui aplikasi tanpa perlu menghubungi CS.\n\n1. Buka menu **Pesanan**, lalu pilih pesanan yang dibatalkan.\n2. Masuk ke tab **Refund** atau **Pengembalian Dana**.\n3. Periksa status dan tanggal estimasi pencairan.\n\nStatus yang akan muncul:\n- `DIAJUKAN`: permintaan diterima dan menunggu verifikasi dokumen.\n- `DIPROSES`: sedang diverifikasi Divisi Refund & Settlement.\n- `DISETUJUI`: nominal refund sudah final dan menunggu eksekusi transfer.\n- `DANA DIKIRIM`: dan…",
+            "dense_score": null,
+            "bm25_score": 1.8706672748643327,
+            "rrf_score": null,
+            "rank": 4,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-008::umum::01",
+            "doc_id": "KB-FAQ-008",
+            "title": "Bagaimana cara reschedule tiket pesawat, hotel, atau kereta?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-12",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Reschedule berarti mengubah tanggal atau jam, bukan mengganti nama penumpang. Ketersediaan bergantung pada kursi atau kamar yang tersedia.\n\n**Tiket pesawat:**\n1. Buka **Pesanan > Ubah Jadwal**, atau hubungi CS bila opsi tidak muncul.\n2. Pilih tanggal baru dan periksa selisih tarif.\n3. Biaya perubahan mengikuti fare rules maskapai; tiket promo umumnya tidak dapat direschedule.\n4. Bayar fare difference sebelum batas waktu yang diberikan.\n\n**Hotel:**\n1. Ajukan maksimal H-2 pukul 14.00 waktu lokal…",
+            "dense_score": null,
+            "bm25_score": 1.7612512147803545,
+            "rrf_score": null,
+            "rank": 5,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-011::umum::01",
+            "doc_id": "KB-FAQ-011",
+            "title": "Bagaimana cara verifikasi akun TravelKita?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-14",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Verifikasi akun diperlukan agar pesanan, refund, dan PayLater dapat diproses dengan aman.\n\n**Verifikasi dasar:**\n1. Daftar dengan email aktif dan nomor HP Indonesia.\n2. Masukkan kode OTP 6 digit yang dikirim ke email atau SMS.\n3. Buka tautan verifikasi email dalam 24 jam.\n4. Lengkapi nama lengkap, tanggal lahir, dan nomor HP di menu **Akun > Profil**.\n\n**Verifikasi lanjutan (untuk PayLater atau refund nominal besar):**\n1. Buka **Akun > Verifikasi Identitas**.\n2. Unggah foto KTP yang jelas dan s…",
+            "dense_score": null,
+            "bm25_score": 1.401333763337573,
+            "rrf_score": null,
+            "rank": 6,
+            "cited": false
+          }
+        ],
+        "confidence": 0.82,
+        "needs_escalation": true,
+        "escalation_reason": "Keluhan berpotensi viral merupakan pemicu eskalasi L3 sesuai KB-POL-005 §5; perlu diteruskan ke Manager Customer Experience + unit terkait dengan batas waktu 1x24 jam.",
+        "refusal_reason": null,
+        "citation_valid": true,
+        "model": "deepseek-flash",
+        "index_version": "20261113T130908Z-f7cc4e68",
+        "prompt_version": "1.0",
+        "latency_ms": 3070,
+        "usage": {
+          "prompt_tokens": 3083,
+          "completion_tokens": 451,
+          "total_tokens": 3534,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 2315
+        },
+        "warnings": [
+          "Embedding query tidak tersedia; memakai BM25 fallback."
+        ],
+        "debug": {
+          "mode": "public",
+          "question_for_retrieval": "Keluhan pelanggan viral di media sosial. Bagaimana langkah penanganannya?",
+          "min_dense_score": 0.2,
+          "context_top_k": 6,
+          "retrieval_mode": "bm25",
+          "retrieval": [
+            {
+              "chunk_id": "KB-POL-005::5-eskalasi-level-1-3::06",
+              "doc_id": "KB-POL-005",
+              "section_path": "5. Eskalasi Level 1–3",
+              "dense_score": null,
+              "bm25_score": 5.9034947175347465,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-015::umum::01",
+              "doc_id": "KB-FAQ-015",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 3.1486376405086407,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-001::umum::01",
+              "doc_id": "KB-FAQ-001",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 2.6907404186231787,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-005::umum::01",
+              "doc_id": "KB-FAQ-005",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 1.8706672748643327,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-008::umum::01",
+              "doc_id": "KB-FAQ-008",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 1.7612512147803545,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-011::umum::01",
+              "doc_id": "KB-FAQ-011",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 1.401333763337573,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+              "doc_id": "KB-POL-005",
+              "section_path": "7. Contoh Penerapan",
+              "dense_score": null,
+              "bm25_score": 1.3951015105197675,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-004::umum::01",
+              "doc_id": "KB-FAQ-004",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 1.3819027795608092,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-013::umum::01",
+              "doc_id": "KB-FAQ-013",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 1.36924541642622,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-007::umum::01",
+              "doc_id": "KB-FAQ-007",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 1.3630032886033878,
+              "rrf_score": null
+            }
+          ],
+          "top_dense": null,
+          "generation_attempts": 1,
+          "cited_doc_ids_from_model": [
+            "KB-POL-005"
+          ],
+          "cited_doc_ids_valid": [
+            "KB-POL-005"
+          ]
+        }
+      },
+      "metrics": {
+        "answered": true,
+        "refused": false,
+        "expected_refusal": false,
+        "refusal_correct": true,
+        "citation_valid": true,
+        "citation_count": 1,
+        "source_count": 6,
+        "source_hit": true,
+        "source_coverage": 0.5,
+        "citation_hit": true,
+        "citation_coverage": 0.5,
+        "retrieval_docs": [
+          "KB-POL-005",
+          "KB-FAQ-015",
+          "KB-FAQ-001",
+          "KB-FAQ-005",
+          "KB-FAQ-008",
+          "KB-FAQ-011"
+        ],
+        "cited_docs": [
+          "KB-POL-005"
+        ],
+        "internal_source_count": 0,
+        "leak": false,
+        "latency_ms": 3070,
+        "confidence": 0.82,
+        "customer_reply_length": 842,
+        "internal_notes_length": 361,
+        "needs_escalation": true,
+        "retrieval_mode": "bm25"
+      },
+      "judge": null,
+      "error": null
+    },
+    {
+      "index": 6,
+      "question": "Pelanggan minta refund dialihkan ke rekening saudaranya karena kartunya sudah tutup. Boleh?",
+      "ground_truth": "Tidak. Refund hanya dapat dikirim ke instrumen pembayaran asal, bukan rekening pihak ketiga. Permintaan pengalihan ke rekening lain merupakan indikator fraud. CS harus menghentikan sementara transaksi, menandai FRAUD-REVIEW, memverifikasi identitas melalui kontak terdaftar, dan mengeskalasi ke Tim Risk & Fraud maksimal 15 menit. Jangan meminta atau menerima OTP, dan simpan bukti minimal 90 hari.",
+      "difficulty": "medium",
+      "category": "sop",
+      "notes": "Butuh aturan refund ke instrumen asal KB-POL-002 dan prosedur fraud KB-SOP-004.",
+      "source_doc_ids": [
+        "KB-POL-002",
+        "KB-SOP-004"
+      ],
+      "expected_refusal": false,
+      "response": {
+        "request_id": "93e2155d9f71428d8b92ad626f2a3a3d",
+        "answerable": true,
+        "internal_notes": "Audit: KB-POL-002 v2.5 (berlaku 2025-09-01) §1 menyatakan refund dikembalikan ke instrumen pembayaran asli, bukan rekening pihak ketiga, kecuali pelanggan memilih TravelKita Wallet. §2 menegaskan tujuan refund: kartu asal, rekening atas nama pemesan, e-wallet asal. Jadi permintaan pengalihan ke rekening saudara tidak dapat dipenuhi sesuai kebijakan. Opsi yang bisa ditawarkan: TravelKita Wallet (saldo akun, instan, gratis) sebagai alternatif tujuan dana. Tidak perlu eskalasi karena kebijakan sudah jelas.",
+        "customer_reply": "Halo, terima kasih sudah menghubungi TravelKita. Mohon maaf, untuk pengembalian dana (refund) kami tidak dapat mengalihkannya ke rekening pihak lain seperti rekening saudara. Dana refund hanya bisa dikembalikan ke metode pembayaran asli yang Anda gunakan saat memesan, atau ke saldo TravelKita Wallet atas nama akun Anda.\n\nSebagai alternatif, Anda bisa memilih pengembalian ke TravelKita Wallet yang prosesnya instan dan tanpa biaya admin, lalu dananya bisa Anda gunakan untuk pemesanan berikutnya. Jika Anda ingin mengajukan opsi ini atau menanyakan status refund, silakan hubungi Customer Service TravelKita melalui live chat, email, WhatsApp, atau telepon pada pukul 07.00–22.00 WIB. Demi keamanan, kami tidak pernah meminta OTP, PIN, atau data kartu lengkap Anda.",
+        "citations": [
+          {
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "section_path": "1. Prinsip Umum",
+            "snippet": "## 1. Prinsip Umum\n\nRefund hanya dapat diproses setelah permintaan pembatalan disetujui sesuai kebijakan produk masing-masing (KB-POL-001, KB-POL-003, KB-POL-004). Dana dikembalikan ke instrumen pembayaran asli, bukan ke rekening pihak ketiga, kecuali pelanggan memilih TravelKita Wallet. Setiap refund wajib memiliki Ticket ID `TK-YYYYMMDD-XXXX` dan bukti pembayaran.",
+            "cited": true
+          }
+        ],
+        "sources": [
+          {
+            "chunk_id": "KB-FAQ-003::umum::01",
+            "doc_id": "KB-FAQ-003",
+            "title": "Pembayaran gagal tetapi saldo terpotong, apa yang harus dilakukan?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-10",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Saldo terpotong namun pesanan gagal umumnya karena status transaksi masih *pending* di bank atau penyedia e-wallet. Jangan langsung mengulang pembayaran agar tidak terjadi pemotongan ganda.\n\n1. Buka menu **Pesanan** dan pastikan statusnya `GAGAL`, `PENDING`, atau `BERHASIL`.\n2. Tunggu maksimal 1x24 jam; sistem akan melakukan rekonsiliasi otomatis.\n3. Cek mutasi rekening atau riwayat e-wallet. Jika dana sudah kembali, transaksi selesai.\n4. Jika status `GAGAL` dan dana belum kembali, hubungi CS d…",
+            "dense_score": null,
+            "bm25_score": 5.095500004484393,
+            "rrf_score": null,
+            "rank": 1,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-POL-002::1-prinsip-umum::01",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "1. Prinsip Umum",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 1. Prinsip Umum\n\nRefund hanya dapat diproses setelah permintaan pembatalan disetujui sesuai kebijakan produk masing-masing (KB-POL-001, KB-POL-003, KB-POL-004). Dana dikembalikan ke instrumen pembayaran asli, bukan ke rekening pihak ketiga, kecuali pelanggan memilih TravelKita Wallet. Setiap refund wajib memiliki Ticket ID `TK-YYYYMMDD-XXXX` dan bukti pembayaran.",
+            "dense_score": null,
+            "bm25_score": 4.7878486548202215,
+            "rrf_score": null,
+            "rank": 2,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-004::4-pembatalan-tiket-kereta::06",
+            "doc_id": "KB-POL-004",
+            "title": "Kebijakan Reschedule dan Perubahan Jadwal Kereta Api",
+            "section_path": "4. Pembatalan Tiket Kereta",
+            "version": "2.1",
+            "effective_date": "2025-05-15",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 4. Pembatalan Tiket Kereta\n\nRefund mengikuti KB-POL-002 dan diproses maksimal 7 hari kerja ke instrumen pembayaran asli. Pembatalan oleh KAI karena gangguan operasional, cuaca ekstrem, atau force majeure mendapat refund 100% tanpa potongan.",
+            "dense_score": null,
+            "bm25_score": 4.409282125049489,
+            "rrf_score": null,
+            "rank": 3,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-POL-002::7-contoh-perhitungan::08",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "7. Contoh Perhitungan",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 7. Contoh Perhitungan\n\nPembatalan hotel Rp 2.400.000 melalui kartu kredit: refund Rp 2.400.000 − Rp 25.000 = Rp 2.375.000, maksimal 7 hari kerja. Pembayaran via GoPay Rp 850.000: refund Rp 840.000 dalam 1–3 hari kerja. Pembatalan karena penerbangan dibatalkan maskapai: Rp 1.200.000 kembali penuh tanpa potongan.",
+            "dense_score": null,
+            "bm25_score": 4.047145056463787,
+            "rrf_score": null,
+            "rank": 4,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-002::2-metode-pengembalian-dan-lama-proses::02",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "2. Metode Pengembalian dan Lama Proses",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "table",
+            "snippet": "## 2. Metode Pengembalian dan Lama Proses\n\n| Metode pembayaran | Tujuan refund | Lama proses | Biaya admin |\n|---|---|---|---|\n| Kartu kredit/debit | Kartu asal | Maks. 7 hari kerja | Rp 25.000 |\n| Transfer bank / Virtual Account | Rekening atas nama pemesan | 3–7 hari kerja | Rp 25.000 |\n| GoPay / OVO / Dana | Nomor e-wallet asal | 1–3 hari kerja | Rp 10.000 |\n| QRIS | Rekening merchant pemroses | 3–7 hari kerja | Rp 15.000 |\n| TravelKita PayLater | Pengurangan tagihan berjalan | 3–5 hari kerj…",
+            "dense_score": null,
+            "bm25_score": 3.9534824171451426,
+            "rrf_score": null,
+            "rank": 5,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-FAQ-006::umum::01",
+            "doc_id": "KB-FAQ-006",
+            "title": "Apakah pembatalan karena sakit bisa direfund?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-11",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Pembatalan karena sakit dapat diajukan, tetapi tidak otomatis mendapat refund penuh. Keputusan mengikuti fare rules maskapai, rate policy hotel, atau ketentuan KAI, serta persetujuan mitra.\n\n**Syarat dokumen:**\n1. Surat keterangan sakit dari dokter klinik atau rumah sakit, maksimal 7 hari sebelum keberangkatan/check-in.\n2. Mencantumkan nama pasien sesuai tiket, diagnosis, tanggal pemeriksaan, tanda tangan, dan stempel dokter.\n3. Surat rawat inap bila pasien dirawat.\n4. KTP penumpang dan bukti p…",
+            "dense_score": null,
+            "bm25_score": 3.71614871351466,
+            "rrf_score": null,
+            "rank": 6,
+            "cited": false
+          }
+        ],
+        "confidence": 0.95,
+        "needs_escalation": false,
+        "escalation_reason": null,
+        "refusal_reason": null,
+        "citation_valid": true,
+        "model": "deepseek-flash",
+        "index_version": "20261113T130908Z-f7cc4e68",
+        "prompt_version": "1.0",
+        "latency_ms": 3068,
+        "usage": {
+          "prompt_tokens": 2465,
+          "completion_tokens": 415,
+          "total_tokens": 2880,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 1697
+        },
+        "warnings": [
+          "Embedding query tidak tersedia; memakai BM25 fallback."
+        ],
+        "debug": {
+          "mode": "public",
+          "question_for_retrieval": "Pelanggan minta refund dialihkan ke rekening saudaranya karena kartunya sudah tutup. Boleh?",
+          "min_dense_score": 0.2,
+          "context_top_k": 6,
+          "retrieval_mode": "bm25",
+          "retrieval": [
+            {
+              "chunk_id": "KB-FAQ-003::umum::01",
+              "doc_id": "KB-FAQ-003",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 5.095500004484393,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::1-prinsip-umum::01",
+              "doc_id": "KB-POL-002",
+              "section_path": "1. Prinsip Umum",
+              "dense_score": null,
+              "bm25_score": 4.7878486548202215,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-004::4-pembatalan-tiket-kereta::06",
+              "doc_id": "KB-POL-004",
+              "section_path": "4. Pembatalan Tiket Kereta",
+              "dense_score": null,
+              "bm25_score": 4.409282125049489,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::7-contoh-perhitungan::08",
+              "doc_id": "KB-POL-002",
+              "section_path": "7. Contoh Perhitungan",
+              "dense_score": null,
+              "bm25_score": 4.047145056463787,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::2-metode-pengembalian-dan-lama-proses::02",
+              "doc_id": "KB-POL-002",
+              "section_path": "2. Metode Pengembalian dan Lama Proses",
+              "dense_score": null,
+              "bm25_score": 3.9534824171451426,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-006::umum::01",
+              "doc_id": "KB-FAQ-006",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 3.71614871351466,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-013::umum::01",
+              "doc_id": "KB-FAQ-013",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 3.3354005916708385,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::6-alur-dan-sla::07",
+              "doc_id": "KB-POL-002",
+              "section_path": "6. Alur dan SLA",
+              "dense_score": null,
+              "bm25_score": 2.3613421308015288,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::3-potongan-admin::04",
+              "doc_id": "KB-POL-002",
+              "section_path": "3. Potongan Admin",
+              "dense_score": null,
+              "bm25_score": 2.298501115563658,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::4-force-majeure::05",
+              "doc_id": "KB-POL-002",
+              "section_path": "4. Force Majeure",
+              "dense_score": null,
+              "bm25_score": 2.283932731096425,
+              "rrf_score": null
+            }
+          ],
+          "top_dense": null,
+          "generation_attempts": 1,
+          "cited_doc_ids_from_model": [
+            "KB-POL-002"
+          ],
+          "cited_doc_ids_valid": [
+            "KB-POL-002"
+          ]
+        }
+      },
+      "metrics": {
+        "answered": true,
+        "refused": false,
+        "expected_refusal": false,
+        "refusal_correct": true,
+        "citation_valid": true,
+        "citation_count": 1,
+        "source_count": 6,
+        "source_hit": true,
+        "source_coverage": 0.5,
+        "citation_hit": true,
+        "citation_coverage": 0.5,
+        "retrieval_docs": [
+          "KB-FAQ-003",
+          "KB-POL-002",
+          "KB-POL-004",
+          "KB-FAQ-006"
+        ],
+        "cited_docs": [
+          "KB-POL-002"
+        ],
+        "internal_source_count": 0,
+        "leak": false,
+        "latency_ms": 3068,
+        "confidence": 0.95,
+        "customer_reply_length": 767,
+        "internal_notes_length": 508,
+        "needs_escalation": false,
+        "retrieval_mode": "bm25"
+      },
+      "judge": null,
+      "error": null
+    },
+    {
+      "index": 7,
+      "question": "Pelanggan Platinum punya penerbangan besok, refund-nya macet 10 hari, dan mengancam viral. Bagaimana urutan penanganannya?",
+      "ground_truth": "Kategorikan sebagai P1 karena keberangkatan kurang dari 24 jam dan ada potensi kehilangan dana, dengan tag P1-PLAT/VIRAL. Respons awal maksimal 2 menit, tetapkan dedicated agent, dan verifikasi kronologi serta bukti. Buka dashboard refund: untuk kartu kredit, SLA maksimal 7 hari kerja, sehingga 10 hari sudah melewati SLA dan memicu SOP refund tertunda. Eskalasi ke L2 maksimal 15 menit; karena ada ancaman viral, libatkan Manager CX dan Communications/Legal maksimal 1 jam untuk holding statement. Beri pembaruan setiap 4 jam dan jangan menjanjikan tanggal di luar SLA.",
+      "difficulty": "hard",
+      "category": "sop",
+      "notes": "Butuh prioritas P1/Platinum, prosedur refund overdue, dan protokol viral secara bersamaan.",
+      "source_doc_ids": [
+        "KB-POL-005",
+        "KB-SOP-001",
+        "KB-SOP-002"
+      ],
+      "expected_refusal": false,
+      "response": {
+        "request_id": "a768fa6463404add8a84a8775b91dfe1",
+        "answerable": true,
+        "internal_notes": "Audit: Pelanggan Platinum dengan penerbangan besok = kategori P1, respons maksimal 2 menit dan jika belum tuntas dalam 4 jam dieskalasi ke L2 dengan telepon jalur khusus [KB-POL-005]. Refund macet 10 hari melampaui SLA refund yang diseragamkan maksimal 7 hari kerja [KB-POL-002 v2.5, bagian 8]. Biaya admin dibebaskan untuk tier Platinum dan force majeure [KB-POL-002 bagian 3]; refund force majeure 100% tanpa potongan dan diprioritaskan 3 hari kerja lebih cepat [KB-POL-002 bagian 4]. Perlu cek: penyebab keterlambatan, status tiket P1, apakah kasus force majeure, dan riwayat eskalasi. Ancaman viral + SLA terlampaui + penerbangan besok = eskalasi prioritas tinggi.",
+        "customer_reply": "Halo, terima kasih sudah menghubungi TravelKita. Kami memahami situasi Bapak/Ibu sangat mendesak karena penerbangan besok dan refund yang sudah tertunda 10 hari. Kami mohon maaf atas ketidaknyamanan ini.\n\nKami akan menangani kasus ini sebagai prioritas: tim kami akan segera mengecek status refund dan menghubungi Bapak/Ibu melalui telepon jalur khusus untuk tindak lanjut. Sebagai informasi, untuk pelanggan Platinum biaya admin refund dibebaskan, dan refund karena pembatalan maskapai/force majeure diproses penuh serta diprioritaskan lebih cepat. Standar penyelesaian refund kami maksimal 7 hari kerja, sehingga keterlambatan ini akan kami tindak lanjuti segera.\n\nMohon pastikan Bapak/Ibu dapat dihubungi di nomor terdaftar. Kami juga mengingatkan bahwa TravelKita tidak pernah meminta OTP, PIN, atau password. Jika ingin menghubungi kami, silakan gunakan live chat, email, WhatsApp, atau telepon Customer Service TravelKita pada pukul 07.00–22.00 WIB.",
+        "citations": [
+          {
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "section_path": "7. Contoh Penerapan",
+            "snippet": "## 7. Contoh Penerapan\n\nPelanggan Platinum menghubungi live chat pukul 21.50 WIB terkait penerbangan besok pagi. Tiket dikategorikan P1 dan harus direspons maksimal pukul 21.52. Jika belum tuntas dalam 4 jam, tiket dieskalasi ke L2 dan pelanggan dihubungi melalui telepon jalur khusus. Pelanggan Regular dengan pertanyaan refund menerima respons awal maksimal 15 menit dan penyelesaian maksimal 3x24 jam.",
+            "cited": true
+          },
+          {
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "section_path": "4. Force Majeure",
+            "snippet": "## 4. Force Majeure\n\nRefund force majeure diproses 100% tanpa potongan admin dan diprioritaskan 3 hari kerja lebih cepat. Pelanggan dapat memilih pengembalian dana penuh atau credit shell dengan bonus 10% (maksimal Rp 500.000). Dokumen pendukung wajib diunggah maksimal 30 hari sejak kejadian.",
+            "cited": true
+          }
+        ],
+        "sources": [
+          {
+            "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+            "doc_id": "KB-POL-005",
+            "title": "Kebijakan SLA Customer Service",
+            "section_path": "7. Contoh Penerapan",
+            "version": "4.1",
+            "effective_date": "2025-07-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 7. Contoh Penerapan\n\nPelanggan Platinum menghubungi live chat pukul 21.50 WIB terkait penerbangan besok pagi. Tiket dikategorikan P1 dan harus direspons maksimal pukul 21.52. Jika belum tuntas dalam 4 jam, tiket dieskalasi ke L2 dan pelanggan dihubungi melalui telepon jalur khusus. Pelanggan Regular dengan pertanyaan refund menerima respons awal maksimal 15 menit dan penyelesaian maksimal 3x24 jam.",
+            "dense_score": null,
+            "bm25_score": 11.223964960718542,
+            "rrf_score": null,
+            "rank": 1,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-002::4-force-majeure::05",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "4. Force Majeure",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 4. Force Majeure\n\nRefund force majeure diproses 100% tanpa potongan admin dan diprioritaskan 3 hari kerja lebih cepat. Pelanggan dapat memilih pengembalian dana penuh atau credit shell dengan bonus 10% (maksimal Rp 500.000). Dokumen pendukung wajib diunggah maksimal 30 hari sejak kejadian.",
+            "dense_score": null,
+            "bm25_score": 5.573477411154067,
+            "rrf_score": null,
+            "rank": 2,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-002::7-contoh-perhitungan::08",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "7. Contoh Perhitungan",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 7. Contoh Perhitungan\n\nPembatalan hotel Rp 2.400.000 melalui kartu kredit: refund Rp 2.400.000 − Rp 25.000 = Rp 2.375.000, maksimal 7 hari kerja. Pembayaran via GoPay Rp 850.000: refund Rp 840.000 dalam 1–3 hari kerja. Pembatalan karena penerbangan dibatalkan maskapai: Rp 1.200.000 kembali penuh tanpa potongan.",
+            "dense_score": null,
+            "bm25_score": 4.93240876402843,
+            "rrf_score": null,
+            "rank": 3,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-001::5-force-majeure::06",
+            "doc_id": "KB-POL-001",
+            "title": "Kebijakan Pembatalan Tiket Pesawat",
+            "section_path": "5. Force Majeure",
+            "version": "3.2",
+            "effective_date": "2025-03-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 5. Force Majeure\n\nPembatalan dibebaskan dari cancellation fee apabila terjadi pembatalan penerbangan oleh maskapai, perubahan jadwal lebih dari 2 jam, bencana alam, atau kebijakan pemerintah. Pelanggan berhak atas refund 100% atau credit shell berlaku 12 bulan. Dokumen pendukung (surat maskapai, berita resmi) wajib dilampirkan.",
+            "dense_score": null,
+            "bm25_score": 4.852038129805605,
+            "rrf_score": null,
+            "rank": 4,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-POL-002::3-potongan-admin::04",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "3. Potongan Admin",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 3. Potongan Admin\n\nBiaya admin pada tabel berlaku untuk refund sukarela. Biaya ini dibebaskan untuk pembatalan oleh maskapai/hotel/KAI, force majeure, kesalahan sistem TravelKita, dan pelanggan tier Platinum. Biaya admin tidak dipotong dua kali apabila satu pembatalan mencakup beberapa penumpang dalam satu kode booking.",
+            "dense_score": null,
+            "bm25_score": 4.521994965487098,
+            "rrf_score": null,
+            "rank": 5,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-002::8-riwayat-versi::09",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "8. Riwayat Versi",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "changelog",
+            "snippet": "## 8. Riwayat Versi\n\n- **v2.5 (2025-08-20):** seluruh refund diseragamkan maksimal 7 hari kerja; menggantikan v2.4.\n- **v2.4 (2025-04-09):** SLA per metode 1–14 hari kerja, total 21 hari kerja.\n- **v2.1 (2025-02-10):** SLA maksimal 7 hari kerja.\n- **v1.0 (2023):** SLA 14 hari kerja untuk semua metode.",
+            "dense_score": null,
+            "bm25_score": 4.516282370346749,
+            "rrf_score": null,
+            "rank": 6,
+            "cited": true
+          }
+        ],
+        "confidence": 0.82,
+        "needs_escalation": true,
+        "escalation_reason": "Pelanggan Platinum dengan penerbangan besok (kategori P1), refund tertunda 10 hari melampaui SLA maksimal 7 hari kerja, dan pelanggan mengancam viral sehingga memerlukan eskalasi prioritas tinggi.",
+        "refusal_reason": null,
+        "citation_valid": true,
+        "model": "deepseek-flash",
+        "index_version": "20261113T130908Z-f7cc4e68",
+        "prompt_version": "1.0",
+        "latency_ms": 4096,
+        "usage": {
+          "prompt_tokens": 1996,
+          "completion_tokens": 585,
+          "total_tokens": 2581,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 1228
+        },
+        "warnings": [
+          "Embedding query tidak tersedia; memakai BM25 fallback."
+        ],
+        "debug": {
+          "mode": "public",
+          "question_for_retrieval": "Pelanggan Platinum punya penerbangan besok, refund-nya macet 10 hari, dan mengancam viral. Bagaimana urutan penanganannya?",
+          "min_dense_score": 0.2,
+          "context_top_k": 6,
+          "retrieval_mode": "bm25",
+          "retrieval": [
+            {
+              "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+              "doc_id": "KB-POL-005",
+              "section_path": "7. Contoh Penerapan",
+              "dense_score": null,
+              "bm25_score": 11.223964960718542,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::4-force-majeure::05",
+              "doc_id": "KB-POL-002",
+              "section_path": "4. Force Majeure",
+              "dense_score": null,
+              "bm25_score": 5.573477411154067,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::7-contoh-perhitungan::08",
+              "doc_id": "KB-POL-002",
+              "section_path": "7. Contoh Perhitungan",
+              "dense_score": null,
+              "bm25_score": 4.93240876402843,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-001::5-force-majeure::06",
+              "doc_id": "KB-POL-001",
+              "section_path": "5. Force Majeure",
+              "dense_score": null,
+              "bm25_score": 4.852038129805605,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::3-potongan-admin::04",
+              "doc_id": "KB-POL-002",
+              "section_path": "3. Potongan Admin",
+              "dense_score": null,
+              "bm25_score": 4.521994965487098,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::8-riwayat-versi::09",
+              "doc_id": "KB-POL-002",
+              "section_path": "8. Riwayat Versi",
+              "dense_score": null,
+              "bm25_score": 4.516282370346749,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::3-response-time-per-tier::03",
+              "doc_id": "KB-POL-005",
+              "section_path": "3. Response Time per Tier",
+              "dense_score": null,
+              "bm25_score": 4.4952925693509584,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-007::umum::01",
+              "doc_id": "KB-FAQ-007",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 4.3448616085142575,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-005::umum::01",
+              "doc_id": "KB-FAQ-005",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 4.326412641090421,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-004::3-biaya-perubahan-jadwal::03",
+              "doc_id": "KB-POL-004",
+              "section_path": "3. Biaya Perubahan Jadwal",
+              "dense_score": null,
+              "bm25_score": 4.218130124260468,
+              "rrf_score": null
+            }
+          ],
+          "top_dense": null,
+          "generation_attempts": 1,
+          "cited_doc_ids_from_model": [
+            "KB-POL-005",
+            "KB-POL-002"
+          ],
+          "cited_doc_ids_valid": [
+            "KB-POL-005",
+            "KB-POL-002"
+          ]
+        }
+      },
+      "metrics": {
+        "answered": true,
+        "refused": false,
+        "expected_refusal": false,
+        "refusal_correct": true,
+        "citation_valid": true,
+        "citation_count": 2,
+        "source_count": 6,
+        "source_hit": true,
+        "source_coverage": 0.3333333333333333,
+        "citation_hit": true,
+        "citation_coverage": 0.3333333333333333,
+        "retrieval_docs": [
+          "KB-POL-005",
+          "KB-POL-002",
+          "KB-POL-001"
+        ],
+        "cited_docs": [
+          "KB-POL-005",
+          "KB-POL-002"
+        ],
+        "internal_source_count": 0,
+        "leak": false,
+        "latency_ms": 4096,
+        "confidence": 0.82,
+        "customer_reply_length": 955,
+        "internal_notes_length": 668,
+        "needs_escalation": true,
+        "retrieval_mode": "bm25"
+      },
+      "judge": null,
+      "error": null
+    },
+    {
+      "index": 8,
+      "question": "Saya curiga akun saya diambil alih dan ada permintaan refund ke rekening orang lain. Apa yang harus dilakukan?",
+      "ground_truth": "Bekukan sementara akun dan transaksi, tandai FRAUD-REVIEW, dan jangan menuduh pelanggan. Verifikasi identitas hanya melalui kontak terdaftar, minta pelanggan mengganti password dan logout semua perangkat, lalu kumpulkan log login, IP, perangkat, riwayat pembayaran, dan rekaman komunikasi. Eskalasi ke Tim Risk & Fraud maksimal 15 menit. Tolak refund ke rekening pihak ketiga karena refund hanya ke instrumen asal. Jika melibatkan PayLater, koordinasikan penangguhan tagihan. Simpan bukti minimal 90 hari.",
+      "difficulty": "hard",
+      "category": "sop",
+      "notes": "Butuh penggabungan prosedur fraud, aturan refund ke instrumen asal, dan langkah pengamanan akun.",
+      "source_doc_ids": [
+        "KB-FAQ-015",
+        "KB-POL-002",
+        "KB-SOP-004"
+      ],
+      "expected_refusal": false,
+      "response": {
+        "request_id": "05d0d6ab5a8a435a9fde2d5f53ff65a2",
+        "answerable": true,
+        "internal_notes": "Audit: Pertanyaan soal dugaan account takeover + permintaan refund ke rekening orang lain. Sumber relevan: KB-FAQ-014 (keamanan OTP, langkah jika menerima OTP tanpa transaksi: jangan bagikan, ubah password, keluarkan perangkat tidak dikenal, hubungi CS dengan Ticket ID) dan KB-POL-002 v2.5 (refund hanya ke instrumen pembayaran asli, bukan rekening pihak ketiga, kecuali TravelKita Wallet). Tidak ada SOP khusus account takeover/fraud di sumber; KB-FAQ-014 merujuk KB-FAQ-015 yang tidak tersedia. Perlu eskalasi karena indikasi fraud/account takeover. Jangan pernah meminta OTP/PIN/password/CVV. Arahkan ke kanal resmi CS.",
+        "customer_reply": "Halo, terima kasih sudah waspada. Kami paham ini situasi yang membuat cemas. Jika Anda mencurigai akun diambil alih, segera lakukan langkah berikut: (1) Jangan bagikan kode OTP, PIN, password, atau kode verifikasi kepada siapa pun, termasuk yang mengaku dari TravelKita — CS TravelKita tidak pernah meminta kode tersebut. (2) Ubah password akun Anda sekarang. (3) Keluarkan perangkat yang tidak Anda kenal melalui menu Akun > Keamanan > Perangkat Aktif. (4) Hubungi Customer Service TravelKita melalui kanal resmi (live chat, email, WhatsApp, atau telepon 07.00–22.00 WIB) dengan menyertakan Ticket ID pesanan Anda (format TK-YYYYMMDD-XXXX) agar kasus ini bisa ditangani lebih lanjut. Sebagai informasi, dana refund hanya dikembalikan ke metode pembayaran asli, bukan ke rekening pihak lain, kecuali Anda memilih TravelKita Wallet. Tim kami akan membantu memeriksa permintaan refund yang mencurigakan tersebut.",
+        "citations": [
+          {
+            "doc_id": "KB-FAQ-014",
+            "title": "Bagaimana keamanan OTP dan apa yang dilakukan jika tidak menerimanya?",
+            "version": null,
+            "effective_date": "2025-07-15",
+            "section_path": "Umum",
+            "snippet": "OTP adalah kode 6 digit yang berlaku 5 menit dan hanya dapat digunakan maksimal 3 kali percobaan. OTP bersifat rahasia: **CS TravelKita tidak pernah meminta OTP**, PIN, password, atau kode verifikasi melalui kanal apa pun.\n\n**Jika OTP tidak diterima:**\n1. Pastikan nomor HP atau email terdaftar masih aktif dan benar.\n2. Tunggu 60 detik, lalu klik **Kirim Ulang OTP**.\n3. Periksa folder Spam/Promosi bila OTP dikirim via email.\n4. Aktifkan lalu matikan mode pesawat untuk menyegarkan jaringan SMS.\n5…",
+            "cited": true
+          },
+          {
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "section_path": "1. Prinsip Umum",
+            "snippet": "## 1. Prinsip Umum\n\nRefund hanya dapat diproses setelah permintaan pembatalan disetujui sesuai kebijakan produk masing-masing (KB-POL-001, KB-POL-003, KB-POL-004). Dana dikembalikan ke instrumen pembayaran asli, bukan ke rekening pihak ketiga, kecuali pelanggan memilih TravelKita Wallet. Setiap refund wajib memiliki Ticket ID `TK-YYYYMMDD-XXXX` dan bukti pembayaran.",
+            "cited": true
+          }
+        ],
+        "sources": [
+          {
+            "chunk_id": "KB-FAQ-009::umum::01",
+            "doc_id": "KB-FAQ-009",
+            "title": "Bisakah mengubah nama penumpang pada tiket?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-13",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Secara umum tiket pesawat dan kereta api bersifat *non-transferable*, sehingga nama penumpang tidak dapat diganti kepada orang lain. Yang diperbolehkan hanya koreksi salah ketik (typo) dengan syarat tertentu.\n\n**Koreksi typo tiket pesawat/kereta:**\n1. Hubungi CS maksimal 24 jam setelah tiket diterbitkan.\n2. Lampirkan KTP penumpang dan tiket asli.\n3. Koreksi maksimal 3 karakter dan tidak mengubah identitas orang.\n4. Maskapai/KAI dapat mengenakan biaya koreksi sesuai kebijakan masing-masing.\n5. P…",
+            "dense_score": null,
+            "bm25_score": 7.920834271864783,
+            "rrf_score": null,
+            "rank": 1,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-003::umum::01",
+            "doc_id": "KB-FAQ-003",
+            "title": "Pembayaran gagal tetapi saldo terpotong, apa yang harus dilakukan?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-10",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "Saldo terpotong namun pesanan gagal umumnya karena status transaksi masih *pending* di bank atau penyedia e-wallet. Jangan langsung mengulang pembayaran agar tidak terjadi pemotongan ganda.\n\n1. Buka menu **Pesanan** dan pastikan statusnya `GAGAL`, `PENDING`, atau `BERHASIL`.\n2. Tunggu maksimal 1x24 jam; sistem akan melakukan rekonsiliasi otomatis.\n3. Cek mutasi rekening atau riwayat e-wallet. Jika dana sudah kembali, transaksi selesai.\n4. Jika status `GAGAL` dan dana belum kembali, hubungi CS d…",
+            "dense_score": null,
+            "bm25_score": 7.833003893341034,
+            "rrf_score": null,
+            "rank": 2,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-010::umum::01",
+            "doc_id": "KB-FAQ-010",
+            "title": "E-tiket tidak masuk email, apa yang harus dilakukan?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-13",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "E-tiket biasanya dikirim maksimal 15 menit setelah pembayaran berhasil. Lakukan pengecekan berikut sebelum menghubungi CS.\n\n1. Periksa folder **Spam**, **Promosi**, dan **All Mail** di email terdaftar.\n2. Pastikan alamat email pada akun dan pesanan sudah benar. Jika salah, hubungi CS untuk memperbarui.\n3. Buka aplikasi TravelKita, masuk ke **Pesanan > Detail Pesanan > Kirim Ulang E-tiket**.\n4. Tunggu 5–10 menit, lalu muat ulang kotak masuk.\n5. Tambahkan domain `travelkita.co.id` ke kontak agar…",
+            "dense_score": null,
+            "bm25_score": 6.8911053876018125,
+            "rrf_score": null,
+            "rank": 3,
+            "cited": false
+          },
+          {
+            "chunk_id": "KB-FAQ-014::umum::01",
+            "doc_id": "KB-FAQ-014",
+            "title": "Bagaimana keamanan OTP dan apa yang dilakukan jika tidak menerimanya?",
+            "section_path": "Umum",
+            "version": null,
+            "effective_date": "2025-07-15",
+            "audience": "public",
+            "chunk_type": "faq",
+            "snippet": "OTP adalah kode 6 digit yang berlaku 5 menit dan hanya dapat digunakan maksimal 3 kali percobaan. OTP bersifat rahasia: **CS TravelKita tidak pernah meminta OTP**, PIN, password, atau kode verifikasi melalui kanal apa pun.\n\n**Jika OTP tidak diterima:**\n1. Pastikan nomor HP atau email terdaftar masih aktif dan benar.\n2. Tunggu 60 detik, lalu klik **Kirim Ulang OTP**.\n3. Periksa folder Spam/Promosi bila OTP dikirim via email.\n4. Aktifkan lalu matikan mode pesawat untuk menyegarkan jaringan SMS.\n5…",
+            "dense_score": null,
+            "bm25_score": 6.533352464546174,
+            "rrf_score": null,
+            "rank": 4,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-002::1-prinsip-umum::01",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "1. Prinsip Umum",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "prose",
+            "snippet": "## 1. Prinsip Umum\n\nRefund hanya dapat diproses setelah permintaan pembatalan disetujui sesuai kebijakan produk masing-masing (KB-POL-001, KB-POL-003, KB-POL-004). Dana dikembalikan ke instrumen pembayaran asli, bukan ke rekening pihak ketiga, kecuali pelanggan memilih TravelKita Wallet. Setiap refund wajib memiliki Ticket ID `TK-YYYYMMDD-XXXX` dan bukti pembayaran.",
+            "dense_score": null,
+            "bm25_score": 6.334105396177721,
+            "rrf_score": null,
+            "rank": 5,
+            "cited": true
+          },
+          {
+            "chunk_id": "KB-POL-002::2-metode-pengembalian-dan-lama-proses::02",
+            "doc_id": "KB-POL-002",
+            "title": "Kebijakan Refund Dana",
+            "section_path": "2. Metode Pengembalian dan Lama Proses",
+            "version": "2.5",
+            "effective_date": "2025-09-01",
+            "audience": "public",
+            "chunk_type": "table",
+            "snippet": "## 2. Metode Pengembalian dan Lama Proses\n\n| Metode pembayaran | Tujuan refund | Lama proses | Biaya admin |\n|---|---|---|---|\n| Kartu kredit/debit | Kartu asal | Maks. 7 hari kerja | Rp 25.000 |\n| Transfer bank / Virtual Account | Rekening atas nama pemesan | 3–7 hari kerja | Rp 25.000 |\n| GoPay / OVO / Dana | Nomor e-wallet asal | 1–3 hari kerja | Rp 10.000 |\n| QRIS | Rekening merchant pemroses | 3–7 hari kerja | Rp 15.000 |\n| TravelKita PayLater | Pengurangan tagihan berjalan | 3–5 hari kerj…",
+            "dense_score": null,
+            "bm25_score": 5.511246356834397,
+            "rrf_score": null,
+            "rank": 6,
+            "cited": true
+          }
+        ],
+        "confidence": 0.82,
+        "needs_escalation": true,
+        "escalation_reason": "Indikasi fraud/account takeover dan permintaan refund ke rekening pihak lain; perlu penanganan tim keamanan/CS khusus.",
+        "refusal_reason": null,
+        "citation_valid": true,
+        "model": "deepseek-flash",
+        "index_version": "20261113T130908Z-f7cc4e68",
+        "prompt_version": "1.0",
+        "latency_ms": 2866,
+        "usage": {
+          "prompt_tokens": 2828,
+          "completion_tokens": 526,
+          "total_tokens": 3354,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 2060
+        },
+        "warnings": [
+          "Embedding query tidak tersedia; memakai BM25 fallback."
+        ],
+        "debug": {
+          "mode": "public",
+          "question_for_retrieval": "Saya curiga akun saya diambil alih dan ada permintaan refund ke rekening orang lain. Apa yang harus dilakukan?",
+          "min_dense_score": 0.2,
+          "context_top_k": 6,
+          "retrieval_mode": "bm25",
+          "retrieval": [
+            {
+              "chunk_id": "KB-FAQ-009::umum::01",
+              "doc_id": "KB-FAQ-009",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 7.920834271864783,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-003::umum::01",
+              "doc_id": "KB-FAQ-003",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 7.833003893341034,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-010::umum::01",
+              "doc_id": "KB-FAQ-010",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 6.8911053876018125,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-014::umum::01",
+              "doc_id": "KB-FAQ-014",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 6.533352464546174,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::1-prinsip-umum::01",
+              "doc_id": "KB-POL-002",
+              "section_path": "1. Prinsip Umum",
+              "dense_score": null,
+              "bm25_score": 6.334105396177721,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-002::2-metode-pengembalian-dan-lama-proses::02",
+              "doc_id": "KB-POL-002",
+              "section_path": "2. Metode Pengembalian dan Lama Proses",
+              "dense_score": null,
+              "bm25_score": 5.511246356834397,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-015::umum::01",
+              "doc_id": "KB-FAQ-015",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 5.09404852041551,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-012::umum::01",
+              "doc_id": "KB-FAQ-012",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 3.965603444002565,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-POL-005::7-contoh-penerapan::09",
+              "doc_id": "KB-POL-005",
+              "section_path": "7. Contoh Penerapan",
+              "dense_score": null,
+              "bm25_score": 3.7390013344455384,
+              "rrf_score": null
+            },
+            {
+              "chunk_id": "KB-FAQ-011::umum::01",
+              "doc_id": "KB-FAQ-011",
+              "section_path": "Umum",
+              "dense_score": null,
+              "bm25_score": 3.6339709902383333,
+              "rrf_score": null
+            }
+          ],
+          "top_dense": null,
+          "generation_attempts": 1,
+          "cited_doc_ids_from_model": [
+            "KB-FAQ-014",
+            "KB-POL-002"
+          ],
+          "cited_doc_ids_valid": [
+            "KB-FAQ-014",
+            "KB-POL-002"
+          ]
+        }
+      },
+      "metrics": {
+        "answered": true,
+        "refused": false,
+        "expected_refusal": false,
+        "refusal_correct": true,
+        "citation_valid": true,
+        "citation_count": 2,
+        "source_count": 6,
+        "source_hit": true,
+        "source_coverage": 0.3333333333333333,
+        "citation_hit": true,
+        "citation_coverage": 0.3333333333333333,
+        "retrieval_docs": [
+          "KB-FAQ-009",
+          "KB-FAQ-003",
+          "KB-FAQ-010",
+          "KB-FAQ-014",
+          "KB-POL-002"
+        ],
+        "cited_docs": [
+          "KB-FAQ-014",
+          "KB-POL-002"
+        ],
+        "internal_source_count": 0,
+        "leak": false,
+        "latency_ms": 2866,
+        "confidence": 0.82,
+        "customer_reply_length": 910,
+        "internal_notes_length": 623,
+        "needs_escalation": true,
+        "retrieval_mode": "bm25"
+      },
+      "judge": null,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}Chat · TravelKita Customer Care{% endblock %}
+{% block content %}
+<section class="hero chat-hero">
+  <div class="hero-copy">
+    <p class="eyebrow">TravelKita Customer Care</p>
+    <h1>Halo, ada yang<br>bisa kami bantu?</h1>
+    <p class="lede">
+      Tanyakan seputar pesanan, pembatalan, refund, reschedule, atau akun
+      TravelKita. Kami akan membantu dengan informasi yang jelas dan sesuai
+      kebijakan yang berlaku.
+    </p>
+    <div class="hero-badges">
+      <span class="status-pill ok">Online</span>
+      <span class="hero-hours">Senin–Minggu · 07.00–22.00 WIB</span>
+    </div>
+  </div>
+  <div class="hero-note">
+    <p class="eyebrow">Sebelum mulai</p>
+    <p>
+      Siapkan nomor pesanan atau <strong>Ticket ID</strong> agar kami bisa
+      membantu lebih cepat. Jangan pernah membagikan OTP, PIN, atau data kartu.
+    </p>
+  </div>
+</section>
+
+<div class="workspace-grid">
+  <section class="chat-panel" aria-label="Chat customer service">
+    <div class="panel-head">
+      <div>
+        <p class="eyebrow">Live chat</p>
+        <h2>TravelKita Assistant</h2>
+      </div>
+      <span class="status-pill ok">siap membantu</span>
+    </div>
+
+    <div id="thinking" class="thinking htmx-indicator" role="status" aria-live="polite">
+      <span class="spinner" aria-hidden="true"></span>
+      Sedang mencari informasi untukmu…
+      <small>Mohon tunggu sebentar.</small>
+    </div>
+
+    <div id="conversation" class="conversation" aria-live="polite">
+      <div class="empty-state">
+        <div class="empty-icon" aria-hidden="true">👋</div>
+        <h3>Halo! Saya asisten virtual TravelKita.</h3>
+        <p>
+          Silakan tulis pertanyaanmu, atau pilih topik populer di samping.
+          Saya akan membantu berdasarkan kebijakan resmi TravelKita.
+        </p>
+      </div>
+    </div>
+
+    <form
+      id="chat-form"
+      class="composer"
+      hx-post="/chat"
+      hx-target="#conversation"
+      hx-swap="beforeend"
+      hx-indicator="#thinking"
+      hx-disabled-elt="#send-button"
+    >
+      <input type="hidden" name="mode" value="public">
+      <label for="message">Tulis pertanyaanmu</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        maxlength="{{ max_input_chars }}"
+        placeholder="Contoh: Bagaimana cara membatalkan tiket pesawat?"
+        required
+      ></textarea>
+      <div class="composer-row">
+        <p class="hint">
+          Jawaban dibuat berdasarkan kebijakan TravelKita. Untuk kasus spesifik,
+          tim Customer Care kami siap membantu.
+        </p>
+        <button type="submit" class="primary-button" id="send-button">
+          Kirim
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <aside class="side-panel" aria-label="Bantuan">
+    <section class="side-card">
+      <p class="eyebrow">Topik populer</p>
+      <div class="suggestions">
+        {% for item in suggested_questions %}
+          <button type="button" class="suggestion" data-question="{{ item.text }}">
+            <span>{{ item.label }}</span>
+            <small>{{ item.hint }}</small>
+          </button>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="side-card">
+      <p class="eyebrow">Butuh bantuan lain?</p>
+      <ul class="contact-list">
+        <li><strong>Live chat</strong><span>07.00–22.00 WIB</span></li>
+        <li><strong>Email</strong><span>Balasan maksimal 1×24 jam</span></li>
+        <li><strong>WhatsApp</strong><span>Untuk pertanyaan singkat</span></li>
+        <li><strong>Telepon</strong><span>07.00–22.00 WIB</span></li>
+      </ul>
+      <p class="hint">
+        Untuk kasus mendesak atau keluhan yang butuh penanganan khusus, hubungi
+        agen manusia melalui kanal resmi TravelKita.
+      </p>
+    </section>
+
+    <section class="side-card safety-card">
+      <p class="eyebrow">Keamanan</p>
+      <p>
+        TravelKita tidak pernah meminta OTP, PIN, password, atau data kartu
+        lengkap melalui chat.
+      </p>
+    </section>
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ document.doc_id }} · TravelKita CS Copilot{% endblock %}
+{% block content %}
+<section class="page-head">
+  <p class="eyebrow"><a href="/internal/documents" class="breadcrumb">← Internal documents</a></p>
+  <h1>{{ document.doc_id }} — {{ document.title }}</h1>
+  <div class="turn-meta">
+    <span class="badge">{{ document.category }}</span>
+    <span class="badge">{{ document.audience }}</span>
+    <span class="badge">{{ document.status }}</span>
+    {% if document.version %}<span class="badge">v{{ document.version }}</span>{% endif %}
+    {% if document.effective_date %}<span class="badge">berlaku {{ document.effective_date }}</span>{% endif %}
+    <span class="badge">{{ document.chunks|length }} chunk</span>
+  </div>
+</section>
+
+<section class="content-card">
+  <dl class="meta-grid">
+    <div><dt>Subkategori</dt><dd>{{ document.subcategory or '—' }}</dd></div>
+    <div><dt>Pemilik</dt><dd>{{ document.owner or '—' }}</dd></div>
+    <div><dt>Terakhir update</dt><dd>{{ document.last_updated or '—' }}</dd></div>
+    <div><dt>Source</dt><dd><code>{{ document.source_path }}</code></dd></div>
+  </dl>
+</section>
+
+{% for chunk in document.chunks %}
+  <section class="content-card source-chunk">
+    <div class="source-chunk-head">
+      <div>
+        <p class="eyebrow">{{ chunk.chunk_id }}</p>
+        <h3>{{ chunk.section_path }}</h3>
+      </div>
+      <span class="badge">{{ chunk.chunk_type }}</span>
+    </div>
+    <pre class="prose">{{ chunk.text }}</pre>
+  </section>
+{% endfor %}
+{% endblock %}

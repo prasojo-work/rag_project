@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.env
+.DS_Store
+*.log
+
+# Local smoke-test artifacts
+data/index-hash/
+data/audit-local/
+data/eval/cache/

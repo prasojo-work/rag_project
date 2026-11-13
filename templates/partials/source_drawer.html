@@ -1,0 +1,28 @@
+{% if document.category == 'faq' %}
+  {% set category_label = 'Pertanyaan umum' %}
+{% elif document.category == 'policy' %}
+  {% set category_label = 'Kebijakan TravelKita' %}
+{% else %}
+  {% set category_label = 'Panduan TravelKita' %}
+{% endif %}
+<div class="source-drawer-meta">
+  <div>
+    <p class="eyebrow">{{ category_label }}</p>
+    <h3>{{ document.title }}</h3>
+  </div>
+</div>
+
+<p class="muted source-note">
+  Informasi berikut menjadi dasar jawaban TravelKita Assistant.
+</p>
+
+{% for chunk in document.chunks %}
+  <section class="source-chunk">
+    <div class="source-chunk-head">
+      <h4>{{ chunk.section_path }}</h4>
+    </div>
+    <pre class="prose">{{ chunk.text }}</pre>
+  </section>
+{% else %}
+  <p class="muted">Informasi tidak tersedia.</p>
+{% endfor %}

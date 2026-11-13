@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Dokumen · TravelKita CS Copilot{% endblock %}
+{% block content %}
+<section class="page-head">
+  <p class="eyebrow">Internal review · Knowledge base</p>
+  <h1>Dokumen aktif</h1>
+  <p class="lede">
+    Hanya dokumen <code>status=active</code> yang masuk index produksi.
+    Dokumen versi lama dan noise disimpan sebagai fixture evaluasi.
+  </p>
+</section>
+
+<section class="content-card">
+  <div class="card-head">
+    <div>
+      <p class="eyebrow">{{ documents|length }} dokumen</p>
+      <h2>Index saat ini</h2>
+    </div>
+    <a class="ghost-button" href="/internal/eval">Lihat evaluasi</a>
+  </div>
+
+  {% if documents %}
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>doc_id</th>
+            <th>Judul</th>
+            <th>Kategori</th>
+            <th>Versi</th>
+            <th>Berlaku</th>
+            <th>Audiens</th>
+            <th>Chunk</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for document in documents %}
+            <tr>
+              <td><a class="doc-link" href="/internal/documents/{{ document.doc_id }}"><code>{{ document.doc_id }}</code></a></td>
+              <td>{{ document.title }}</td>
+              <td><span class="badge">{{ document.category }}</span></td>
+              <td>{{ document.version or '—' }}</td>
+              <td>{{ document.effective_date or '—' }}</td>
+              <td>
+                <span class="badge {{ 'badge-warn' if document.audience == 'internal' else '' }}">
+                  {{ document.audience }}
+                </span>
+              </td>
+              <td>{{ document.chunk_count }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="muted">Index belum tersedia. Jalankan <code>scripts/build_index.py</code>.</p>
+  {% endif %}
+</section>
+{% endblock %}

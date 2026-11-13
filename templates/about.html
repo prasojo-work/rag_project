@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}Tentang · TravelKita CS Copilot{% endblock %}
+{% block content %}
+<section class="page-head">
+  <p class="eyebrow">Internal review · About this project</p>
+  <h1>RAG yang dibuat untuk bisa dipercaya.</h1>
+  <p class="lede">
+    Bukan chatbot yang menjawab segala hal. Ini adalah agent copilot yang mencari
+    dokumen resmi, menunjukkan sumbernya, dan berhenti ketika buktinya tidak ada.
+  </p>
+</section>
+
+<div class="about-grid">
+  <section class="content-card">
+    <p class="eyebrow">Problem</p>
+    <h2>Knowledge base yang tersebar dan cepat berubah</h2>
+    <p>
+      Agen customer service harus menjawab kebijakan refund, pembatalan,
+      reschedule, dan eskalasi dari banyak dokumen. Konflik versi dan dokumen
+      noise membuat jawaban tidak konsisten. Copilot ini menyatukan retrieval,
+      sitasi, dan guardrail dalam satu alur.
+    </p>
+    <div class="stat-row">
+      <div><strong>{{ index_meta.document_count if index_meta else 25 }}</strong><span>dokumen aktif</span></div>
+      <div><strong>{{ index_meta.chunk_count if index_meta else 85 }}</strong><span>chunk</span></div>
+      <div><strong>50</strong><span>pertanyaan evaluasi</span></div>
+      <div><strong>2</strong><span>unanswerable</span></div>
+    </div>
+  </section>
+
+  <section class="content-card">
+    <p class="eyebrow">Architecture</p>
+    <h2>Alur singkat</h2>
+    <pre class="architecture">Pertanyaan
+   │
+   ▼
+Validasi input ──► redaksi PII ──► anti prompt injection
+   │
+   ▼
+Embedding query (OpenRouter)
+   │
+   ▼
+Hybrid retrieval: dense + BM25 + RRF
+   │  filter: active · effective_date · audience
+   ▼
+Refusal gate (kosong / skor rendah)
+   │
+   ▼
+LLM (DeepSeek dev / OpenRouter deploy)
+   │  JSON terstruktur + dua output
+   ▼
+Validasi sitasi ──► scrub balasan ──► response</pre>
+    <p class="hint">
+      Backend FastAPI, index NumPy, tanpa vector database eksternal. Corpus
+      kecil membuat pendekatan ini lebih sederhana dan cepat cold start-nya.
+    </p>
+  </section>
+</div>
+
+<div class="about-grid">
+  <section class="content-card">
+    <p class="eyebrow">Keputusan desain</p>
+    <h2>Yang sengaja dipilih</h2>
+    <ul class="decision-list">
+      <li>
+        <strong>NumPy, bukan ChromaDB.</strong>
+        Puluhan chunk tidak butuh HNSW; import Chroma menambah cold start.
+      </li>
+      <li>
+        <strong>Table-aware chunking.</strong>
+        Tabel refund tidak dipotong di tengah baris; header diulang.
+      </li>
+      <li>
+        <strong>Version-aware metadata.</strong>
+        Dokumen lama dan noise tidak masuk index produksi.
+      </li>
+      <li>
+        <strong>Hybrid retrieval.</strong>
+        BM25 kuat untuk angka dan doc_id; dense kuat untuk parafrase.
+      </li>
+      <li>
+        <strong>Dua output.</strong>
+        Catatan internal untuk agen, balasan bersih untuk pelanggan.
+      </li>
+      <li>
+        <strong>Provider-agnostic.</strong>
+        DeepSeek untuk development, OpenRouter untuk deploy.
+      </li>
+    </ul>
+  </section>
+
+  <section class="content-card">
+    <p class="eyebrow">Current runtime</p>
+    <h2>Konfigurasi aktif</h2>
+    <dl class="meta-grid">
+      <div><dt>Chat provider</dt><dd>{{ llm_provider or '—' }}</dd></div>
+      <div><dt>Chat model</dt><dd>{{ llm_model or '—' }}</dd></div>
+      <div><dt>Embedding</dt><dd>{{ index_meta.embedding_model if index_meta else '—' }}</dd></div>
+      <div><dt>Index</dt><dd>{{ index_meta.index_version if index_meta else '—' }}</dd></div>
+      <div><dt>Chunk</dt><dd>{{ index_meta.chunk_count if index_meta else '—' }}</dd></div>
+      <div><dt>Dimensi</dt><dd>{{ index_meta.dimension if index_meta else '—' }}</dd></div>
+    </dl>
+    <p class="hint">
+      Ganti provider lewat <code>LLM_PROVIDER</code> di environment. Embedding
+      selalu lewat OpenRouter karena DeepSeek tidak menyediakan embeddings.
+    </p>
+  </section>
+</div>
+
+<section class="content-card">
+  <p class="eyebrow">Batasan</p>
+  <h2>Yang belum diklaim</h2>
+  <ul class="decision-list">
+    <li>Generation baru diuji smoke test, belum dievaluasi penuh pada 50 pertanyaan.</li>
+    <li>Model free bisa lambat (10–20 detik) dan terkena rate limit.</li>
+    <li>Rate limit aplikasi bersifat per-process, bukan global.</li>
+    <li>Belum ada autentikasi; seluruh data adalah sintetis.</li>
+    <li>Belum ada streaming; UI memakai indikator loading.</li>
+    <li>Multi-turn conversation belum disimpan di server.</li>
+  </ul>
+  <div class="callout callout-info">
+    <strong>Disclaimer.</strong>
+    TravelKita, kebijakan, harga, dan prosedurnya fiktif. Project ini dibuat
+    untuk portfolio, bukan layanan produksi. Jangan memasukkan data pribadi nyata.
+  </div>
+</section>
+{% endblock %}

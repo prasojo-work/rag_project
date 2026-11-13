@@ -1,0 +1,66 @@
+{% set rid = response.request_id %}
+{% if response.answerable and not response.citation_valid %}
+  {% set reply_text = "Mohon maaf, saya belum bisa memastikan jawabannya saat ini. Saya akan bantu eskalasikan pertanyaan Anda ke tim Customer Care agar dapat dicek lebih lanjut." %}
+{% else %}
+  {% set reply_text = response.customer_reply %}
+{% endif %}
+<article class="turn" id="turn-{{ rid }}">
+  <div class="turn-question">
+    <span class="turn-label">Kamu</span>
+    <p>{{ question }}</p>
+  </div>
+
+  <div class="turn-answer customer-answer">
+    <div class="assistant-head">
+      <span class="assistant-avatar" aria-hidden="true">TK</span>
+      <div>
+        <strong>TravelKita Assistant</strong>
+        <span class="muted">Customer Care</span>
+      </div>
+    </div>
+
+    <div class="reply-block">
+      <pre class="prose" id="reply-{{ rid }}">{{ reply_text }}</pre>
+      <button
+        type="button"
+        class="ghost-button copy-button"
+        data-copy-target="reply-{{ rid }}"
+      >Copy</button>
+    </div>
+
+    {% if response.answerable and response.citations %}
+      <div class="citation-row">
+        <span class="citation-label">Sumber</span>
+        {% for citation in response.citations %}
+          <button
+            type="button"
+            class="citation-chip"
+            data-open-drawer
+            data-source-title="{{ citation.title }}"
+            hx-get="/partials/documents/{{ citation.doc_id }}?section={{ citation.section_path|urlencode }}"
+            hx-target="#source-body"
+            hx-swap="innerHTML"
+            title="Lihat sumber: {{ citation.title }}"
+          >
+            {{ citation.title }}
+          </button>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if response.needs_escalation %}
+      <div class="callout callout-info">
+        <strong>Butuh bantuan lebih lanjut?</strong>
+        Hubungi tim Customer Care TravelKita melalui live chat, email, WhatsApp,
+        atau telepon pada jam 07.00–22.00 WIB.
+      </div>
+    {% endif %}
+
+    <form class="feedback" hx-post="/feedback" hx-target="this" hx-swap="outerHTML">
+      <input type="hidden" name="message_id" value="{{ rid }}">
+      <span class="muted">Apakah jawaban ini membantu?</span>
+      <button type="submit" name="rating" value="up" class="ghost-button">👍 Membantu</button>
+      <button type="submit" name="rating" value="down" class="ghost-button">👎 Kurang</button>
+    </form>
+  </div>
+</article>

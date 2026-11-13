@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Asisten virtual Customer Care TravelKita. Demo portfolio dengan data sintetis, bukan layanan resmi.">
+  <title>{% block title %}TravelKita Customer Care{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+  <script>
+    try {
+      const saved = localStorage.getItem("travelkita-theme");
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch (error) { /* ignore */ }
+  </script>
+  <script src="/static/js/htmx.min.js" defer></script>
+  <script src="/static/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="TravelKita CS Copilot">
+        <span class="brand-mark">TK</span>
+        <span class="brand-copy">
+          <strong>TravelKita</strong>
+          <small>Customer Care</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="/" class="{% if active == 'chat' %}active{% endif %}">Chat</a>
+      </nav>
+      <button type="button" class="icon-button" id="theme-toggle" aria-label="Ganti tema">
+        <span class="theme-light">☾</span>
+        <span class="theme-dark">☀</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="demo-banner">
+    <span class="demo-dot" aria-hidden="true"></span>
+    Demo portfolio — data sintetis, bukan layanan resmi TravelKita.
+  </div>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>TravelKita Customer Care</strong>
+      <span class="muted">Demo portfolio · data sintetis</span>
+    </div>
+    <div class="footer-meta">
+      <span>Senin–Minggu · 07.00–22.00 WIB</span>
+    </div>
+  </footer>
+
+  <dialog id="source-drawer" class="source-drawer">
+    <div class="drawer-head">
+      <div>
+        <p class="eyebrow">Sumber informasi</p>
+        <h2 id="source-title">Detail sumber</h2>
+      </div>
+      <button type="button" class="icon-button" data-close-drawer aria-label="Tutup">✕</button>
+    </div>
+    <div id="source-body" class="drawer-body">
+      <p class="muted">Pilih chip sitasi untuk melihat sumber.</p>
+    </div>
+  </dialog>
+</body>
+</html>
