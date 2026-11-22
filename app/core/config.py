@@ -8,6 +8,27 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 ROOT = Path(__file__).resolve().parents[2]
 
+# Placeholders people commonly leave in .env. Treating them as unset keeps the
+# provider fallback working: DEEPSEEK_API_KEY=- used to look "configured", so a
+# bearer token of "-" was sent to the API and every chat request became a 401
+# that the UI reported as "layanan sedang sibuk".
+PLACEHOLDER_SECRETS = {
+    "-",
+    "--",
+    "changeme",
+    "change-me",
+    "your-key-here",
+    "todo",
+    "xxx",
+}
+
+
+def is_secret_set(value: str | None) -> bool:
+    """True only when a secret is present and is not an obvious placeholder."""
+    if not value:
+        return False
+    return value.strip().lower() not in PLACEHOLDER_SECRETS
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -24,6 +45,12 @@ class Settings(BaseSettings):
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     openrouter_http_referer: str = ""
     openrouter_x_title: str = "TravelKita RAG"
+
+    # Generic OpenAI-compatible chat provider. Used when LLM_PROVIDER is any
+    # label other than the deepseek/openrouter shorthands, so adding a provider
+    # (NVIDIA NIM, Groq, Together, ...) becomes an .env-only change.
+    llm_base_url: str = ""
+    llm_api_key: str = ""
 
     # Chat provider: "deepseek" for development, "openrouter" for deploy/demo.
     llm_provider: str = "openrouter"
@@ -46,6 +73,11 @@ class Settings(BaseSettings):
     embedding_batch_size: int = 16
     embedding_input_type: str = ""
     embedding_failure_cooldown_seconds: int = 120
+
+    # Generic OpenAI-compatible embedding provider.
+    embedding_provider: str = "openrouter"
+    embedding_base_url: str = ""
+    embedding_api_key: str = ""
 
     index_dir: Path = ROOT / "data/index"
     prompt_version: str = "1.0"
@@ -84,14 +116,48 @@ class Settings(BaseSettings):
     @property
     def chat_api_key(self) -> str:
         if self.chat_provider == "deepseek":
-            return self.deepseek_api_key
-        return self.openrouter_api_key
+            value = self.deepseek_api_key
+        elif self.chat_provider == "openrouter":
+            value = self.openrouter_api_key
+        else:
+            value = self.llm_api_key
+        return value if is_secret_set(value) else ""
 
     @property
     def chat_base_url(self) -> str:
         if self.chat_provider == "deepseek":
             return self.deepseek_base_url
-        return self.openrouter_base_url
+        if self.chat_provider == "openrouter":
+            return self.openrouter_base_url
+        return self.llm_base_url
+
+    @property
+    def chat_provider_is_generic(self) -> bool:
+        return self.chat_provider not in {"deepseek", "openrouter"}
+
+    @property
+    def embedding_provider_name(self) -> str:
+        return (self.embedding_provider or "openrouter").strip().lower()
+
+    @property
+    def resolved_embedding_api_key(self) -> str:
+        if self.embedding_provider_name == "openrouter":
+            value = self.openrouter_api_key
+        else:
+            value = self.embedding_api_key
+            if not is_secret_set(value) and self.embedding_provider_name == self.chat_provider:
+                # Same vendor for chat and embeddings: reuse the chat key so the
+                # secret is not duplicated in .env.
+                value = self.llm_api_key
+        return value if is_secret_set(value) else ""
+
+    @property
+    def resolved_embedding_base_url(self) -> str:
+        if self.embedding_provider_name == "openrouter":
+            return self.openrouter_base_url
+        if not self.embedding_base_url and self.embedding_provider_name == self.chat_provider:
+            return self.llm_base_url
+        return self.embedding_base_url
 
     @property
     def chat_models(self) -> list[str]:

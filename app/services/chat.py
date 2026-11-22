@@ -80,8 +80,20 @@ QUOTA_CUSTOMER_REPLY = (
 )
 
 QUOTA_INTERNAL_NOTES = (
-    "Kuota provider LLM habis (HTTP 402/403/429). Jangan mengarang jawaban. "
+    "Kuota provider LLM habis (HTTP 402/403). Jangan mengarang jawaban. "
     "Eskalasi ke agen manusia atau coba lagi setelah kuota direset."
+)
+
+RATE_LIMIT_CUSTOMER_REPLY = (
+    "Mohon maaf, layanan kami sedang ramai sehingga permintaan Anda belum bisa "
+    "diproses. Silakan coba lagi dalam satu menit. Jika masih belum berhasil, "
+    "teruskan ke agen manusia melalui kanal resmi TravelKita."
+)
+
+RATE_LIMIT_INTERNAL_NOTES = (
+    "Provider menolak dengan HTTP 429: rate limit sementara, bukan kuota harian. "
+    "Biasanya pulih sendiri dalam hitungan detik sampai satu menit. Coba lagi; "
+    "jangan mengarang jawaban dan jangan menjanjikan perbaikan ke pelanggan."
 )
 
 
@@ -372,7 +384,23 @@ class ChatService:
             )
             self._request_count += 1
         except GenerationError as exc:
-            if exc.status in {402, 403, 429}:
+            if exc.status == 429:
+                logger.error(
+                    "request_id=%s generation_rate_limited status=429 error=%s",
+                    request_id,
+                    exc,
+                )
+                return self._refuse(
+                    request_id=request_id,
+                    reason="llm_rate_limited",
+                    hits=context_hits,
+                    warnings=warnings,
+                    debug=debug,
+                    started=started,
+                    internal_notes=RATE_LIMIT_INTERNAL_NOTES,
+                    customer_reply=RATE_LIMIT_CUSTOMER_REPLY,
+                )
+            if exc.status in {402, 403}:
                 logger.error(
                     "request_id=%s generation_quota_exhausted status=%s error=%s",
                     request_id,

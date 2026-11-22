@@ -132,8 +132,17 @@ class ChatClient:
                             json=payload,
                         )
                     if response.status_code == 429:
-                        # Fail fast to the fallback model instead of burning the
-                        # limited free-tier quota on retries.
+                        # Fail fast to the fallback model: retrying here burns
+                        # the request budget fighting a limit that usually
+                        # clears within a minute. The body distinguishes a
+                        # per-minute throttle from a per-day cap, so log it.
+                        logger.warning(
+                            "provider=%s model=%s rate_limited status=429 retry_after=%s body=%s",
+                            self.provider,
+                            model,
+                            response.headers.get("retry-after", "-"),
+                            response.text[:300],
+                        )
                         raise LLMError(
                             "Model chat kena rate limit.",
                             status=429,
@@ -152,7 +161,7 @@ class ChatClient:
                         )
                     if response.status_code in {401, 402}:
                         raise LLMError(
-                            "OpenRouter menolak kredensial/kredit.",
+                            f"Provider chat {self.provider} menolak kredensial/kredit.",
                             status=response.status_code,
                             model=model,
                             body=response.text[:300],
@@ -199,7 +208,7 @@ class ChatClient:
                     if attempt < self.max_retries:
                         time.sleep(2**attempt)
                         continue
-                    raise LLMError(f"Koneksi ke OpenRouter gagal: {exc}", model=model) from exc
+                    raise LLMError(f"Koneksi ke {self.base_url} gagal: {exc}", model=model) from exc
         raise LLMError("Request chat gagal setelah retry.", model=model)
 
     def complete(

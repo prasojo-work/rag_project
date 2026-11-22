@@ -108,9 +108,31 @@ class FailingEmbedder:
         raise RuntimeError("429 free-models-per-day")
 
 
-class QuotaLLM:
+class RateLimitedLLM:
     def complete(self, messages, *, response_format=True):
         raise LLMError("rate limit", status=429)
+
+
+class QuotaExhaustedLLM:
+    def complete(self, messages, *, response_format=True):
+        raise LLMError("kredit habis", status=402)
+
+
+def test_llm_rate_limit_is_not_reported_as_daily_quota() -> None:
+    """A 429 is a short-lived throttle; telling the customer to come back
+    tomorrow (the old behaviour) was wrong and confusing."""
+    service = ChatService(
+        settings=make_settings(),
+        index=make_index(),
+        embedder=FailingEmbedder(),
+        llm=RateLimitedLLM(),
+    )
+    response = service.answer(ChatRequest(message="Refund GoPay berapa lama?"))
+    assert response.answerable is False
+    assert response.refusal_reason == "llm_rate_limited"
+    assert "sedang ramai" in response.customer_reply
+    assert "batas kapasitas" not in response.customer_reply
+    assert response.needs_escalation is True
 
 
 def test_llm_quota_exhaustion_returns_safe_message() -> None:
@@ -118,7 +140,7 @@ def test_llm_quota_exhaustion_returns_safe_message() -> None:
         settings=make_settings(),
         index=make_index(),
         embedder=FailingEmbedder(),
-        llm=QuotaLLM(),
+        llm=QuotaExhaustedLLM(),
     )
     response = service.answer(ChatRequest(message="Refund GoPay berapa lama?"))
     assert response.answerable is False

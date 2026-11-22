@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from unittest.mock import patch
 
-from app.core.config import Settings
+from app.core.config import Settings, is_secret_set
 from app.rag.llm import ChatClient
 
 
@@ -98,3 +98,31 @@ def test_openrouter_payload_uses_reasoning_effort() -> None:
     _, payload = fake.posts[0]
     assert payload["reasoning_effort"] == "low"
     assert "thinking" not in payload
+
+
+def test_generic_openai_compatible_provider() -> None:
+    settings = Settings(
+        llm_provider="nvidia",
+        llm_base_url="https://integrate.api.nvidia.com/v1",
+        llm_api_key="nvapi-test",
+        llm_model="minimaxai/minimax-m3.1-flash",
+        llm_fallback_models="backup-model",
+    )
+    assert settings.chat_provider_is_generic is True
+    assert settings.chat_api_key == "nvapi-test"
+    assert settings.chat_base_url == "https://integrate.api.nvidia.com/v1"
+    assert settings.chat_models == ["minimaxai/minimax-m3.1-flash", "backup-model"]
+
+
+def test_placeholder_secret_is_treated_as_unset() -> None:
+    """DEEPSEEK_API_KEY=- used to look configured and produced a 401 on every
+    request instead of triggering the OpenRouter fallback."""
+    settings = Settings(
+        llm_provider="deepseek",
+        deepseek_api_key="-",
+        openrouter_api_key="openrouter-key",
+    )
+    assert is_secret_set("-") is False
+    assert is_secret_set("sk-real-key") is True
+    assert settings.chat_api_key == ""
+    assert settings.openrouter_api_key == "openrouter-key"

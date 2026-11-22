@@ -46,7 +46,7 @@ class OpenRouterEmbeddings:
         max_retries: int = 3,
     ) -> None:
         if not api_key:
-            raise ValueError("OPENROUTER_API_KEY kosong")
+            raise ValueError("API key embedding kosong")
         self.api_key = api_key
         self.model = model
         self.base_url = base_url.rstrip("/")
@@ -113,14 +113,13 @@ class OpenRouterEmbeddings:
                 body = exc.response.text[:500]
                 if status in {401, 402, 403}:
                     raise RuntimeError(
-                        f"OpenRouter menolak request (HTTP {status}): {body}"
+                        f"Provider embedding {self.name} menolak request (HTTP {status}): {body}"
                     ) from exc
                 if status == 429:
                     # Daily/per-minute quota will not recover in a few seconds.
                     # Let ChatService fall back to BM25 immediately.
                     raise RuntimeError(
-                        "Rate limit embedding OpenRouter tercapai. "
-                        "Cek kuota free model atau gunakan BM25 fallback."
+                        f"Rate limit embedding {self.name} tercapai (HTTP 429): {body}"
                     ) from exc
                 if status >= 500 and attempt < self.max_retries:
                     time.sleep(2**attempt)
@@ -138,7 +137,7 @@ class OpenRouterEmbeddings:
                 if attempt < self.max_retries:
                     time.sleep(2**attempt)
                     continue
-                raise RuntimeError(f"Koneksi ke OpenRouter gagal: {exc}") from exc
+                raise RuntimeError(f"Koneksi ke {self.name} gagal: {exc}") from exc
 
         raise RuntimeError(f"Embedding gagal setelah retry: {last_error}")
 
@@ -203,6 +202,8 @@ def get_embedding_provider(
     x_title: str | None = None,
 ) -> EmbeddingProvider:
     provider = provider.lower().strip()
+    if provider == "hash":
+        return HashEmbeddings()
     if provider == "openrouter":
         key = api_key or os.getenv("OPENROUTER_API_KEY", "")
         if not key:
@@ -219,6 +220,26 @@ def get_embedding_provider(
             http_referer=http_referer,
             x_title=x_title,
         )
-    if provider == "hash":
-        return HashEmbeddings()
-    raise ValueError(f"Provider embedding tidak dikenal: {provider}")
+
+    # Any other name is treated as an OpenAI-compatible endpoint (NVIDIA NIM,
+    # etc.). It must come with an explicit base_url so a typo in the provider
+    # name cannot silently fall back to OpenRouter.
+    if not base_url or base_url.rstrip("/") == DEFAULT_BASE_URL:
+        raise ValueError(
+            f"Provider embedding {provider!r} butuh base_url endpoint "
+            "OpenAI-compatible, mis. https://integrate.api.nvidia.com/v1"
+        )
+    key = api_key or ""
+    if not key:
+        raise RuntimeError(f"API key embedding untuk provider {provider!r} kosong.")
+    instance = OpenRouterEmbeddings(
+        api_key=key,
+        model=model or "",
+        base_url=base_url,
+        batch_size=batch_size,
+        input_type=input_type,
+        http_referer=http_referer,
+        x_title=x_title,
+    )
+    instance.name = provider
+    return instance

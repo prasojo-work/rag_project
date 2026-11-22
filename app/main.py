@@ -13,7 +13,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from app.core.config import ROOT, Settings
+from app.core.config import ROOT, Settings, is_secret_set
 from app.core.logging import configure_logging
 from app.core.security import RateLimiter, client_key
 from app.rag.embeddings import get_embedding_provider
@@ -103,12 +103,20 @@ def create_app(
     configure_logging(settings.log_level)
 
     provider = settings.chat_provider
-    if provider not in {"deepseek", "openrouter"}:
-        raise ValueError(f"LLM_PROVIDER tidak dikenal: {provider}")
+    if provider not in {"deepseek", "openrouter"} and not settings.llm_base_url:
+        raise ValueError(
+            f"LLM_PROVIDER={provider!r} bukan shorthand yang dikenal. Set "
+            "LLM_BASE_URL dan LLM_API_KEY untuk provider OpenAI-compatible, "
+            "atau gunakan 'deepseek' / 'openrouter'."
+        )
     chat_key_available = bool(settings.chat_api_key)
-    if provider == "deepseek" and not settings.deepseek_api_key and settings.openrouter_api_key:
-        # Development convenience: if DEEPSEEK_API_KEY is not set yet, use
-        # OpenRouter instead of failing to boot.
+    if (
+        provider == "deepseek"
+        and not is_secret_set(settings.deepseek_api_key)
+        and settings.openrouter_api_key
+    ):
+        # Development convenience: if DEEPSEEK_API_KEY is missing or is still a
+        # placeholder like "-", use OpenRouter instead of failing to boot.
         provider = "openrouter"
         chat_key_available = True
 
@@ -129,28 +137,42 @@ def create_app(
             try:
                 index = NumPyIndex.load(settings.resolved_index_dir)
                 app.state.index = index
+                if settings.embedding_provider_name == "openrouter":
+                    embed_referer = settings.openrouter_http_referer or None
+                    embed_title = settings.openrouter_x_title or None
+                else:
+                    embed_referer = None
+                    embed_title = None
                 embedder = get_embedding_provider(
-                    "openrouter",
-                    api_key=settings.openrouter_api_key,
+                    settings.embedding_provider_name,
+                    api_key=settings.resolved_embedding_api_key,
                     model=settings.embedding_model,
                     batch_size=settings.embedding_batch_size,
                     input_type=settings.embedding_input_type or None,
-                    base_url=settings.openrouter_base_url,
-                    http_referer=settings.openrouter_http_referer or None,
-                    x_title=settings.openrouter_x_title or None,
+                    base_url=settings.resolved_embedding_base_url,
+                    http_referer=embed_referer,
+                    x_title=embed_title,
                 )
+                # `provider` may have been switched to openrouter above, so pick
+                # the credentials from the resolved value, not from settings.
                 if provider == "deepseek":
                     chat_api_key = settings.deepseek_api_key
                     chat_base_url = settings.deepseek_base_url
                     chat_models = settings.chat_models
                     chat_referer = None
                     chat_title = None
-                else:
+                elif provider == "openrouter":
                     chat_api_key = settings.openrouter_api_key
                     chat_base_url = settings.openrouter_base_url
                     chat_models = settings.model_candidates
                     chat_referer = settings.openrouter_http_referer or None
                     chat_title = settings.openrouter_x_title or None
+                else:
+                    chat_api_key = settings.llm_api_key
+                    chat_base_url = settings.llm_base_url
+                    chat_models = settings.model_candidates
+                    chat_referer = None
+                    chat_title = None
 
                 app.state.chat_model = chat_models[0]
                 llm = ChatClient(

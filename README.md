@@ -264,9 +264,19 @@ Response memisahkan:
 | Mode | Provider | Model | Catatan |
 |---|---|---|---|
 | Development | DeepSeek | `deepseek-flash` | Murah, JSON output, thinking dimatikan |
-| Deploy/demo | OpenRouter | `baidu/ernie-5.5-flash-preview:free` | Gratis, fallback Gemma 26B |
+| Deploy/demo | NVIDIA NIM | `minimaxai/minimax-m3.1-flash` | Gratis, ~40 RPM, JSON mode, 12 s |
+| Deploy/demo (lama) | OpenRouter | `baidu/ernie-5.5-flash-preview:free` | Gratis, 50 req/hari, sering 429 |
 
-- DeepSeek **tidak punya embeddings**; query embedding tetap lewat OpenRouter.
+Provider chat dan embedding kini **generik**: `LLM_PROVIDER` boleh nama apa pun
+selama endpoint-nya OpenAI-compatible, lalu isi `LLM_BASE_URL`, `LLM_API_KEY`,
+dan `LLM_MODEL`. Hanya `deepseek` dan `openrouter` yang punya shorthand khusus.
+Menambah provider baru cukup edit `.env`, tanpa menyentuh kode.
+
+- DeepSeek dan Groq **tidak punya embeddings**. NVIDIA NIM punya:
+  `nvidia/nemotron-3.5-embed-8b`. Vector query dari NVIDIA identik dengan yang
+  dipakai membangun index (`cosine 1.000000`), jadi index tidak perlu dibangun
+  ulang. Model ini asimetris sehingga `EMBEDDING_INPUT_TYPE=query` wajib diisi,
+  dan rebuild index harus memakai `--input-type passage`.
 - DeepSeek `deepseek-flash` mendukung JSON output. Thinking mode dimatikan
   (`thinking: {"type": "disabled"}`) agar lebih cepat dan murah.
 - OpenRouter free dibatasi ~50 request/hari; **embedding query ikut dihitung**.
@@ -278,23 +288,34 @@ Response memisahkan:
 - Ganti provider cukup lewat env:
 
 ```dotenv
-# development
+# Provider generik — contoh NVIDIA NIM
+LLM_PROVIDER=nvidia
+LLM_BASE_URL=https://integrate.api.nvidia.com/v1
+LLM_API_KEY=nvapi-...
+LLM_MODEL=minimaxai/minimax-m3.1-flash
+
+# Embedding ikut NVIDIA; key dan base_url diwarisi dari LLM_* di atas
+EMBEDDING_PROVIDER=nvidia
+EMBEDDING_MODEL=nvidia/nemotron-3.5-embed-8b
+EMBEDDING_INPUT_TYPE=query
+```
+
+Shorthand lama tetap berfungsi:
+
+```dotenv
 LLM_PROVIDER=deepseek
 DEEPSEEK_API_KEY=...
-
-# deploy
-LLM_PROVIDER=openrouter
-OPENROUTER_API_KEY=...
 ```
 
 ### Jika key/kuota bermasalah
 
 | Kondisi | Perilaku |
 |---|---|
-| `DEEPSEEK_API_KEY` kosong, `OPENROUTER_API_KEY` ada | Fallback otomatis ke OpenRouter; aplikasi tetap menjawab selama kuota OpenRouter tersedia |
-| Kuota/rate limit OpenRouter habis | Embedding → BM25 fallback; LLM → balasan sopan `llm_quota_exhausted` (HTTP 200), bukan crash |
-| Kedua key kosong | Index tetap dimuat, tetapi `/api/v1/ready` = 503 dan `/api/v1/chat` = 503 |
-| `OPENROUTER_API_KEY` kosong tetapi DeepSeek ada | Saat ini service chat belum siap karena embedding provider dibuat saat startup; ini batasan yang perlu diperbaiki jika ingin mode DeepSeek + BM25 saja |
+| `DEEPSEEK_API_KEY` kosong atau placeholder seperti `-`, `OPENROUTER_API_KEY` ada | Fallback otomatis ke OpenRouter |
+| Provider membalas **429** (rate limit sementara) | Pesan "layanan sedang ramai, coba lagi dalam satu menit", reason `llm_rate_limited`. Body 429 dan `Retry-After` ikut dicatat di log |
+| Provider membalas **402/403** (kredit/kuota habis) | Pesan "mencapai batas kapasitas harian", reason `llm_quota_exhausted` |
+| Embedding gagal (429/5xx) | Otomatis BM25 fallback + warning di response; chat tetap jalan |
+| Semua key kosong | Index tetap dimuat, tetapi `/api/v1/ready` = 503 dan `/api/v1/chat` = 503 |
 
 Catatan: `/api/v1/ready` tidak memanggil provider (agar tidak membakar kuota),
 jadi statusnya bisa `ready` meskipun kuota harian sudah habis. Kuota baru
@@ -328,7 +349,7 @@ uv run ruff check .
 uv run ruff format --check .
 ```
 
-Status: **59 test passed** (data pipeline, retrieval, generation, guardrails,
+Status: **63 test passed** (data pipeline, retrieval, generation, guardrails,
 API, UI Jinja/HTMX, provider config, judge).
 
 ## Struktur

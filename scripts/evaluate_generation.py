@@ -25,7 +25,7 @@ if str(ROOT) not in sys.path:
 
 from dotenv import load_dotenv  # noqa: E402
 
-from app.core.config import Settings  # noqa: E402
+from app.core.config import Settings, is_secret_set  # noqa: E402
 from app.rag.embeddings import get_embedding_provider  # noqa: E402
 from app.rag.index import NumPyIndex  # noqa: E402
 from app.rag.judge import JudgeError, judge_answer, judge_to_dict  # noqa: E402
@@ -74,37 +74,54 @@ def _safe(value: str) -> str:
 
 def _build_service(settings: Settings) -> ChatService:
     index = NumPyIndex.load(settings.resolved_index_dir)
-    if not settings.openrouter_api_key:
-        raise RuntimeError("OPENROUTER_API_KEY dibutuhkan untuk embedding query")
+    if not settings.resolved_embedding_api_key:
+        raise RuntimeError(
+            f"API key embedding untuk provider {settings.embedding_provider_name!r} belum di-set"
+        )
+    if settings.embedding_provider_name == "openrouter":
+        embed_referer = settings.openrouter_http_referer or None
+        embed_title = settings.openrouter_x_title or None
+    else:
+        embed_referer = None
+        embed_title = None
     embedder = get_embedding_provider(
-        "openrouter",
-        api_key=settings.openrouter_api_key,
+        settings.embedding_provider_name,
+        api_key=settings.resolved_embedding_api_key,
         model=settings.embedding_model,
         batch_size=settings.embedding_batch_size,
         input_type=settings.embedding_input_type or None,
-        base_url=settings.openrouter_base_url,
-        http_referer=settings.openrouter_http_referer or None,
-        x_title=settings.openrouter_x_title or None,
+        base_url=settings.resolved_embedding_base_url,
+        http_referer=embed_referer,
+        x_title=embed_title,
     )
 
     provider = settings.chat_provider
-    if provider == "deepseek" and not settings.deepseek_api_key:
-        if settings.openrouter_api_key:
-            provider = "openrouter"
-        else:
-            raise RuntimeError("DEEPSEEK_API_KEY atau OPENROUTER_API_KEY harus di-set")
+    if (
+        provider == "deepseek"
+        and not is_secret_set(settings.deepseek_api_key)
+        and settings.openrouter_api_key
+    ):
+        provider = "openrouter"
     if provider == "deepseek":
         chat_key = settings.deepseek_api_key
         chat_base = settings.deepseek_base_url
         chat_models = settings.chat_models
         referer = None
         title = None
-    else:
+    elif provider == "openrouter":
         chat_key = settings.openrouter_api_key
         chat_base = settings.openrouter_base_url
         chat_models = settings.model_candidates
         referer = settings.openrouter_http_referer or None
         title = settings.openrouter_x_title or None
+    else:
+        chat_key = settings.llm_api_key
+        chat_base = settings.llm_base_url
+        chat_models = settings.model_candidates
+        referer = None
+        title = None
+    if not is_secret_set(chat_key):
+        raise RuntimeError(f"API key chat untuk provider {provider!r} kosong")
 
     llm = ChatClient(
         chat_key,
@@ -124,7 +141,7 @@ def _build_service(settings: Settings) -> ChatService:
 
 def _build_judge(settings: Settings, judge_model: str | None) -> ChatClient:
     model = judge_model or settings.judge_model
-    if settings.deepseek_api_key:
+    if is_secret_set(settings.deepseek_api_key):
         models = [model, *settings.judge_models]
         if model not in models:
             models.insert(0, model)
@@ -138,7 +155,7 @@ def _build_judge(settings: Settings, judge_model: str | None) -> ChatClient:
             thinking_disabled=True,
             timeout=settings.request_timeout,
         )
-    if settings.openrouter_api_key:
+    if is_secret_set(settings.openrouter_api_key):
         return ChatClient(
             settings.openrouter_api_key,
             [model, settings.llm_model],

@@ -1,9 +1,9 @@
 # Evaluasi Retrieval
 
 - Index version: `20261113T130908Z-f7cc4e68`
-- Embedding: `nvidia/nemotron-3.5-embed-8b:free`
+- Embedding: `nvidia/nemotron-3.5-embed-8b`
 - Pertanyaan: 50
-- Top-k: 10 | as-of: 2026-11-13
+- Top-k: 10 | as-of: 2026-11-22
 
 ## Ringkasan
 

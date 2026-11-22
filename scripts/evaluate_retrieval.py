@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
 from collections import defaultdict
 from datetime import date
@@ -18,6 +17,7 @@ if str(ROOT) not in sys.path:
 import numpy as np  # noqa: E402
 from dotenv import load_dotenv  # noqa: E402
 
+from app.core.config import Settings  # noqa: E402
 from app.rag.embeddings import get_embedding_provider  # noqa: E402
 from app.rag.index import NumPyIndex  # noqa: E402
 from app.rag.metrics import (  # noqa: E402
@@ -72,15 +72,22 @@ def _display(path: Path) -> str:
 
 
 def main() -> int:
+    # Load .env first: argparse defaults are derived from it, and reading
+    # os.getenv() before load_dotenv() silently returned None.
+    load_dotenv(ROOT / ".env")
+    settings = Settings()
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--index", default="data/index")
     parser.add_argument("--eval", default="hasil_evaluasi/eval_set.json")
     parser.add_argument("--out", default="data/eval")
     parser.add_argument(
         "--provider",
-        default="openrouter",
-        choices=["openrouter", "hash", "none"],
-        help="none = BM25-only, tanpa panggilan embedding",
+        default=None,
+        help=(
+            "openrouter | hash | none (BM25-only) | nama endpoint "
+            f"OpenAI-compatible. Default: {settings.embedding_provider_name}"
+        ),
     )
     parser.add_argument("--model", default=None)
     parser.add_argument("--batch-size", type=int, default=16)
@@ -95,11 +102,12 @@ def main() -> int:
     )
     parser.add_argument(
         "--input-type",
-        default=os.getenv("EMBEDDING_INPUT_TYPE", "") or None,
+        default=None,
+        help="Default: EMBEDDING_INPUT_TYPE dari .env (wajib untuk model asimetris)",
     )
     args = parser.parse_args()
-
-    load_dotenv(ROOT / ".env")
+    input_type = args.input_type or settings.embedding_input_type or None
+    provider_choice = args.provider or settings.embedding_provider_name
     index_dir = Path(args.index) if Path(args.index).is_absolute() else ROOT / args.index
     eval_path = Path(args.eval) if Path(args.eval).is_absolute() else ROOT / args.eval
     out_dir = Path(args.out) if Path(args.out).is_absolute() else ROOT / args.out
@@ -119,21 +127,38 @@ def main() -> int:
     print(f"  Mode          : {modes}")
 
     needs_embeddings = any(mode in {"dense", "hybrid"} for mode in modes)
-    if needs_embeddings and args.provider == "none":
+    if needs_embeddings and provider_choice == "none":
         print(
             "--provider none hanya untuk mode bm25; dense/hybrid butuh embedding.",
             file=sys.stderr,
         )
         return 1
     if needs_embeddings:
+        if provider_choice == "openrouter":
+            embed_key = settings.openrouter_api_key
+            embed_base = settings.openrouter_base_url
+            embed_referer = settings.openrouter_http_referer or None
+            embed_title = settings.openrouter_x_title or None
+        elif provider_choice == "hash":
+            embed_key = None
+            embed_base = None
+            embed_referer = None
+            embed_title = None
+        else:
+            embed_key = settings.resolved_embedding_api_key
+            embed_base = settings.resolved_embedding_base_url
+            embed_referer = None
+            embed_title = None
+
         provider = get_embedding_provider(
-            args.provider,
-            model=args.model,
+            provider_choice,
+            api_key=embed_key,
+            model=args.model or settings.embedding_model,
             batch_size=args.batch_size,
-            input_type=args.input_type,
-            base_url=os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
-            http_referer=os.getenv("OPENROUTER_HTTP_REFERER") or None,
-            x_title=os.getenv("OPENROUTER_X_TITLE") or None,
+            input_type=input_type,
+            base_url=embed_base,
+            http_referer=embed_referer,
+            x_title=embed_title,
         )
         if provider.synthetic:
             print(
@@ -141,10 +166,10 @@ def main() -> int:
                 "metrik dense/hybrid tidak mencerminkan kualitas produksi.",
                 file=sys.stderr,
             )
-        print(f"  Embedding     : {provider.model}")
+        print(f"  Embedding     : {provider.name} / {provider.model}")
         query_vectors = provider.embed(
             [question["question"] for question in questions],
-            input_type=args.input_type,
+            input_type=input_type,
         )
         if query_vectors.shape[0] != len(questions):
             print("Jumlah embedding query tidak sesuai.", file=sys.stderr)
